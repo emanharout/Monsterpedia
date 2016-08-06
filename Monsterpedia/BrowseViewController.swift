@@ -12,8 +12,8 @@ class BrowseViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+	
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var segmentController: UISegmentedControl!
 	
 	var monsters: [String]!
 	
@@ -24,6 +24,9 @@ class BrowseViewController: UIViewController {
 		setupFlowLayout()
 		collectionView.alwaysBounceVertical = true
 		
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 88
+		
 		print(monsters)
 	}
 	
@@ -32,13 +35,6 @@ class BrowseViewController: UIViewController {
 		
 		let yPoint = flowLayout.headerReferenceSize.height
 		collectionView.contentOffset = CGPointMake(0, yPoint - 20.0)
-		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
-		//collectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
 }
 
@@ -74,15 +70,42 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
 	// MARK: CollectionView Functions
 	func setupFlowLayout() {
 		
-		let itemWidthDimension = ((view.frame.size.width - 72.0)/3)
+		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
+		
+		let itemWidthDimension = ((view.frame.size.width - 36.0)/3)
 		let itemHeightDimension = itemWidthDimension + 40.0
-		
 		flowLayout.minimumLineSpacing = CGFloat(20.0)
-		flowLayout.minimumInteritemSpacing = CGFloat(16.0)
+		flowLayout.minimumInteritemSpacing = CGFloat(6.0)
 		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
-		
-		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
 	}
+	
+	
+}
+
+
+
+extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return monsters.count
+	}
+	
+	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		
+		let cell = tableView.dequeueReusableCellWithIdentifier("MonsterSpriteCell", forIndexPath: indexPath) as! MonsterSpriteCell
+		
+		cell.nameLabel.text = monsters[indexPath.row]
+		cell.spriteImageView.image = UIImage(named: "sprite-front-\(indexPath.row + 1)")
+		
+		print("\(indexPath.row + 1) height: \(cell.bounds.height)")
+		return cell
+		
+	}
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		
+	}
+	
 	
 	
 }

@@ -19,6 +19,8 @@
 		030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */; };
 		030939DE1D4DE643004CC0A7 /* MonstersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DD1D4DE643004CC0A7 /* MonstersManager.swift */; };
 		030939E01D4DFF6E004CC0A7 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DF1D4DFF6E004CC0A7 /* Monster.swift */; };
+		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
+		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		030939DD1D4DE643004CC0A7 /* MonstersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonstersManager.swift; sourceTree = "<group>"; };
 		030939DF1D4DFF6E004CC0A7 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
+		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */,
+				033970781D566C69003A95F3 /* MonsterSpriteCell.swift */,
 				030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */,
 				030939AA1D4D5FE8004CC0A7 /* Main.storyboard */,
 				030939AF1D4D5FE8004CC0A7 /* LaunchScreen.storyboard */,
@@ -160,6 +165,7 @@
 				030939D41D4D63B8004CC0A7 /* PokeAPIClient.swift */,
 				030939DD1D4DE643004CC0A7 /* MonstersManager.swift */,
 				030939DF1D4DFF6E004CC0A7 /* Monster.swift */,
+				03C60DC81D5661390046486B /* Model.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				030939D71D4D9AEA004CC0A7 /* MonsterCell.swift in Sources */,
+				033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
 				030939DE1D4DE643004CC0A7 /* MonstersManager.swift in Sources */,
+				03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */,
 				030939D51D4D63B8004CC0A7 /* PokeAPIClient.swift in Sources */,
 				030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */,
 				030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */,
@@ -550,6 +558,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		03C60DC81D5661390046486B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				03C60DC91D5661390046486B /* Model.xcdatamodel */,
+			);
+			currentVersion = 03C60DC91D5661390046486B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0309399B1D4D5FE8004CC0A7 /* Project object */;
 }
