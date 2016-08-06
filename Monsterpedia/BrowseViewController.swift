@@ -12,7 +12,6 @@ class BrowseViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-	
 	@IBOutlet weak var tableView: UITableView!
 	
 	var monsters: [String]!
