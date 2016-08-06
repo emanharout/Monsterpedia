@@ -25,15 +25,6 @@ class BrowseViewController: UIViewController {
 		collectionView.alwaysBounceVertical = true
 		
 		print(monsters)
-		
-//		dispatch_async(dispatch_get_main_queue()) {
-//			self.collectionView.contentOffset = CGPointMake(0, 100)
-//			print(self.flowLayout.headerReferenceSize)
-//		}
-		//collectionView.contentOffset.y = 100
-		//collectionView.contentInset = UIEdgeInsets(top: -50, left: 0, bottom: 0, right: 0)
-//		collectionView.setContentOffset(CGPointMake(0, 90.0), animated: true)
-//		collectionView.alwaysBounceVertical = true
 	}
 	
 	override func viewDidLayoutSubviews() {
@@ -41,16 +32,14 @@ class BrowseViewController: UIViewController {
 		
 		let yPoint = flowLayout.headerReferenceSize.height
 		collectionView.contentOffset = CGPointMake(0, yPoint - 20.0)
+		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
+		//collectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-	
-	
-
-	
 }
 
 
@@ -87,8 +76,6 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
 		
 		print("view width: \(view.frame.width)")
 		print("collectionView width: \(collectionView.frame.size.width)")
-		// view width < collectionView width, so we use view width as its smaller
-		// 20 * 2 subtracted in itemWidthDimension for view margins on either side
 		
 		let itemWidthDimension = ((view.frame.size.width - 72.0)/3)
 		print("item width: \(itemWidthDimension)")
@@ -98,6 +85,8 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
 		flowLayout.minimumInteritemSpacing = CGFloat(16.0)
 		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
 		print("flowlayout item size: \(flowLayout.itemSize)")
+		
+		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
 	}
 	
 	

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Browse-->
@@ -19,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKs-5Y-CSi">
-                                <rect key="frame" x="20" y="20" width="560" height="531"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezp-6Q-hea">
                                     <size key="itemSize" width="132" height="136"/>
                                     <size key="headerReferenceSize" width="50" height="88"/>
@@ -47,6 +46,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Ya1-ai-Yn2" secondAttribute="bottom" id="7WS-Cf-6M7"/>
                                             <constraint firstItem="Ya1-ai-Yn2" firstAttribute="top" secondItem="Uxh-af-toG" secondAttribute="bottom" constant="12" id="9FI-pD-K4O"/>
@@ -63,19 +63,19 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionHeaderView" id="yDp-Rd-OsS" customClass="CollectionHeaderView" customModule="Monsterpedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="560" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Bv-BS-nz7">
-                                            <rect key="frame" x="471" y="19" width="81" height="29"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Bv-BS-nz7">
+                                            <rect key="frame" x="511" y="30" width="81" height="29"/>
                                             <segments>
                                                 <segment title="List"/>
                                                 <segment title="Grid"/>
                                             </segments>
                                             <color key="tintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </segmentedControl>
-                                        <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="z81-4I-YCK">
-                                            <rect key="frame" x="8" y="12" width="447" height="44"/>
+                                        <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="z81-4I-YCK">
+                                            <rect key="frame" x="8" y="23" width="487" height="44"/>
                                             <color key="barTintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
@@ -101,9 +101,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hKs-5Y-CSi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0sJ-Lp-QEn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hKs-5Y-CSi" secondAttribute="trailing" id="OZq-ik-1kc"/>
+                            <constraint firstAttribute="trailing" secondItem="hKs-5Y-CSi" secondAttribute="trailing" id="OZq-ik-1kc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hKs-5Y-CSi" secondAttribute="bottom" id="UlC-ra-960"/>
-                            <constraint firstItem="hKs-5Y-CSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jh4-cw-HF0"/>
+                            <constraint firstItem="hKs-5Y-CSi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jh4-cw-HF0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Browse" id="x0b-rJ-t88"/>

@@ -11,7 +11,15 @@ import Foundation
 struct Monster {
 	let name: String
 	let id: Int
+	let b = (5, "BLA")
+	
+	
+	var array = [(name: "bulbasaur", id: 001), (name: "ivysaur", id: 002)]
+
+
+	
 }
+
 
 
 
