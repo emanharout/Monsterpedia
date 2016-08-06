@@ -74,17 +74,12 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
 	// MARK: CollectionView Functions
 	func setupFlowLayout() {
 		
-		print("view width: \(view.frame.width)")
-		print("collectionView width: \(collectionView.frame.size.width)")
-		
 		let itemWidthDimension = ((view.frame.size.width - 72.0)/3)
-		print("item width: \(itemWidthDimension)")
-		let itemHeightDimension = itemWidthDimension + 26.0
+		let itemHeightDimension = itemWidthDimension + 40.0
 		
 		flowLayout.minimumLineSpacing = CGFloat(20.0)
 		flowLayout.minimumInteritemSpacing = CGFloat(16.0)
 		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
-		print("flowlayout item size: \(flowLayout.itemSize)")
 		
 		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 20.0, bottom: 0, right: 20.0)
 	}

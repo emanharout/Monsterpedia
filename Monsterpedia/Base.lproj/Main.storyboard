@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-af-toG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="132" height="103"/>
+                                                    <rect key="frame" x="4" y="2" width="124" height="101"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-ai-Yn2">
                                                     <rect key="frame" x="0.0" y="115" width="132" height="21"/>
@@ -50,9 +50,9 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Ya1-ai-Yn2" secondAttribute="bottom" id="7WS-Cf-6M7"/>
                                             <constraint firstItem="Ya1-ai-Yn2" firstAttribute="top" secondItem="Uxh-af-toG" secondAttribute="bottom" constant="12" id="9FI-pD-K4O"/>
-                                            <constraint firstItem="Uxh-af-toG" firstAttribute="leading" secondItem="P0y-1v-NaP" secondAttribute="leading" id="Ck2-ff-lv2"/>
-                                            <constraint firstAttribute="trailing" secondItem="Uxh-af-toG" secondAttribute="trailing" id="cjP-jh-BHK"/>
-                                            <constraint firstItem="Uxh-af-toG" firstAttribute="top" secondItem="P0y-1v-NaP" secondAttribute="top" id="gFy-GA-uYE"/>
+                                            <constraint firstItem="Uxh-af-toG" firstAttribute="leading" secondItem="P0y-1v-NaP" secondAttribute="leading" constant="4" id="Ck2-ff-lv2"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uxh-af-toG" secondAttribute="trailing" constant="4" id="cjP-jh-BHK"/>
+                                            <constraint firstItem="Uxh-af-toG" firstAttribute="top" secondItem="P0y-1v-NaP" secondAttribute="top" constant="2" id="gFy-GA-uYE"/>
                                             <constraint firstItem="Ya1-ai-Yn2" firstAttribute="leading" secondItem="P0y-1v-NaP" secondAttribute="leading" id="mK1-Jh-mpN"/>
                                             <constraint firstAttribute="trailing" secondItem="Ya1-ai-Yn2" secondAttribute="trailing" id="wof-PR-aDX"/>
                                         </constraints>
