@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Monster" syncable="YES">
+        <attribute name="genus" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="imageString2D" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageStringSprite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCaught" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="moves" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Move" inverseName="monster" inverseEntity="Move" syncable="YES"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="monsters" inverseEntity="Team" syncable="YES"/>
+        <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="monster" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="Move" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="monster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" inverseName="moves" inverseEntity="Monster" syncable="YES"/>
+        <relationship name="type" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Type" inverseName="move" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="Team" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="monsters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Monster" inverseName="teams" inverseEntity="Monster" syncable="YES"/>
+    </entity>
+    <entity name="Type" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="monster" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" inverseName="types" inverseEntity="Monster" syncable="YES"/>
+        <relationship name="move" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Move" inverseName="type" inverseEntity="Move" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Monster" positionX="-36" positionY="9" width="128" height="180"/>
+        <element name="Move" positionX="0" positionY="117" width="128" height="90"/>
+        <element name="Type" positionX="27" positionY="135" width="128" height="90"/>
+        <element name="Team" positionX="54" positionY="144" width="128" height="75"/>
+    </elements>
 </model>
