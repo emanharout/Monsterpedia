@@ -122,3 +122,9 @@ extension CoreDataStack {
 	}
 }
 
+
+
+
+protocol CoreDataComplying {
+	var coreDataStack: CoreDataStack! {get set}
+}

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class BrowseViewController: UIViewController, UISearchResultsUpdating {
+class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataComplying {
 	
 		
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var viewInTableHeader: UIView!
 	var segmentedControl: UISegmentedControl!
 	
+	var coreDataStack: CoreDataStack!
 	var monsters: [String]!
 	var filteredMonsters = [String]()
 	let searchController = UISearchController(searchResultsController: nil)
@@ -42,9 +43,6 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		tableView.estimatedRowHeight = 88
 		let searchBarHeight = searchController.searchBar.bounds.height
 		tableView.contentOffset = CGPointMake(0, searchBarHeight)
-		
-		print(monsters)
-		
 	}
 	
 	func filterContentForSearchText(searchText: String, scope: String = "All") {

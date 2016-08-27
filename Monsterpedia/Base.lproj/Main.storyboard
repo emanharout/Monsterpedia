@@ -197,10 +197,10 @@
             </objects>
             <point key="canvasLocation" x="1044" y="865"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Initial Tab Bar Controller-->
         <scene sceneID="fxT-dy-taw">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o66-mL-sbb" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o66-mL-sbb" customClass="InitialTabBarController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="F1H-3A-lht">
                         <autoresizingMask key="autoresizingMask"/>

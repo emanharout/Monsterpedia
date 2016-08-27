@@ -12,12 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	let coreDataStack = CoreDataStack.sharedInstance
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		// Override point for customization after application launch.
 		
-		let tabBarController = window?.rootViewController as! UITabBarController
+		let tabBarController = window?.rootViewController as! InitialTabBarController
+		tabBarController.coreDataStack = coreDataStack
 		let tabBarRootViewControllers = tabBarController.viewControllers!
 		print(tabBarRootViewControllers)
 		if let browseViewController = tabBarRootViewControllers[0] as? BrowseViewController {

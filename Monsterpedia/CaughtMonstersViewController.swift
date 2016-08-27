@@ -8,11 +8,12 @@
 
 import UIKit
 
-class CaughtMonstersViewController: UIViewController {
+class CaughtMonstersViewController: UIViewController, CoreDataComplying {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
+	var coreDataStack: CoreDataStack!
 	var monsters: [String]!
 
 
