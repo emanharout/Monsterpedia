@@ -1,0 +1,1060 @@
+[
+  {
+    "name": "Bulbasaur",
+    "id": 1,
+    "type": ["Poison","Grass"],
+    "genus": "Seed",
+    "imageName": "sprite-front-1"
+  },
+  {
+    "name": "Ivysaur",
+    "id": 2,
+    "type": ["Poison","Grass"],
+    "genus": "Seed",
+    "imageName": "sprite-front-2"
+  },
+  {
+    "name": "Venusaur",
+    "id": 3,
+    "type": ["Poison","Grass"],
+    "genus": "Seed",
+    "imageName": "sprite-front-3"
+  },
+  {
+    "name": "Charmander",
+    "id": 4,
+    "type": ["Fire"],
+    "genus": "Lizard",
+    "imageName": "sprite-front-4"
+  },
+  {
+    "name": "Charmeleon",
+    "id": 5,
+    "type": ["Fire"],
+    "genus": "Flame",
+    "imageName": "sprite-front-5"
+  },
+  {
+    "name": "Charizard",
+    "id": 6,
+    "type": ["Flying", "Fire"],
+    "genus": "Flame",
+    "imageName": "sprite-front-6"
+  },
+  {
+    "name": "Squirtle",
+    "id": 7,
+    "type": ["Water"],
+    "genus": "Tiny Turtle",
+    "imageName": "sprite-front-7"
+  },
+  {
+    "name": "Wartortle",
+    "id": 8,
+    "type": ["Water"],
+    "genus": "Turtle",
+    "imageName": "sprite-front-8"
+  },
+  {
+    "name": "Blastoise",
+    "id": 9,
+    "type": ["Water"],
+    "genus": "Shellfish",
+    "imageName": "sprite-front-9"
+  },
+  {
+    "name": "Caterpie",
+    "id": 10,
+    "type": ["Bug"],
+    "genus": "Worm",
+    "imageName": "sprite-front-10"
+  },
+  {
+    "name": "Metapod",
+    "id": 11,
+    "type": ["Bug"],
+    "genus": "Cocoon",
+    "imageName": "sprite-front-11"
+  },
+  {
+    "name": "Butterfree",
+    "id": 12,
+    "type": ["Flying","Bug"],
+    "genus": "Butterfly",
+    "imageName": "sprite-front-12"
+  },
+  {
+    "name": "Weedle",
+    "id": 13,
+    "type": ["Poison","Bug"],
+    "genus": "Hairy Bug",
+    "imageName": "sprite-front-13"
+  },
+  {
+    "name": "Kakuna",
+    "id": 14,
+    "type": ["Poison","Bug"],
+    "genus": "Cocoon",
+    "imageName": "sprite-front-14"
+  },
+  {
+    "name": "Beedrill",
+    "id": 15,
+    "type": ["Poison","Bug"],
+    "genus": "Poison Bee",
+    "imageName": "sprite-front-15"
+  },
+  {
+    "name": "Pidgey",
+    "id": 16,
+    "type": ["Flying", "Normal"],
+    "genus": "Tiny Bird",
+    "imageName": "sprite-front-16"
+  },
+  {
+    "name": "Pidgeotto",
+    "id": 17,
+    "type": ["Flying", "Normal"],
+    "genus": "Bird",
+    "imageName": "sprite-front-17"
+  },
+  {
+    "name": "Pidgeot",
+    "id": 18,
+    "type": ["Flying","Normal"],
+    "genus": "Bird",
+    "imageName": "sprite-front-18"
+  },
+  {
+    "name": "Rattata",
+    "id": 19,
+    "type": ["Normal"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-19"
+  },
+  {
+    "name": "Raticate",
+    "id": 20,
+    "type": ["Normal"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-20"
+  },
+  {
+    "name": "Spearow",
+    "id": 21,
+    "type": ["Flying","Normal"],
+    "genus": "Tiny Bird",
+    "imageName": "sprite-front-21"
+  },
+  {
+    "name": "Fearow",
+    "id": 22,
+    "type": ["Flying","Normal"],
+    "genus": "Beak",
+    "imageName": "sprite-front-22"
+  },
+  {
+    "name": "Ekans",
+    "id": 23,
+    "type": ["Poison"],
+    "genus": "Snake",
+    "imageName": "sprite-front-23"
+  },
+  {
+    "name": "Arbok",
+    "id": 24,
+    "type": ["Poison"],
+    "genus": "Cobra",
+    "imageName": "sprite-front-24"
+  },
+  {
+    "name": "Pikachu",
+    "id": 25,
+    "type": ["Electric"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-25"
+  },
+  {
+    "name": "Raichu",
+    "id": 26,
+    "type": ["Electric"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-26"
+  },
+  {
+    "name": "Sandshrew",
+    "id": 27,
+    "type": ["Ground"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-27"
+  },
+  {
+    "name": "Sandslash",
+    "id": 28,
+    "type": ["Ground"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-28"
+  },
+  {
+    "name": "Nidoran♀",
+    "id": 29,
+    "type": ["Poison"],
+    "genus": "Poison Pin",
+    "imageName": "sprite-front-29"
+  },
+  {
+    "name": "Nidorina",
+    "id": 30,
+    "type": ["Poison"],
+    "genus": "Poison Pin",
+    "imageName": "sprite-front-30"
+  },
+  {
+    "name": "Nidoqueen",
+    "id": 31,
+    "type": ["Ground","Poison"],
+    "genus": "Drill",
+    "imageName": "sprite-front-31"
+  },
+  {
+    "name": "Nidoran♂",
+    "id": 32,
+    "type": ["Poison"],
+    "genus": "Poison Pin",
+    "imageName": "sprite-front-32"
+  },
+  {
+    "name": "Nidorino",
+    "id": 33,
+    "type": ["Poison"],
+    "genus": "Poison Pin",
+    "imageName": "sprite-front-33"
+  },
+  {
+    "name": "Nidoking",
+    "id": 34,
+    "type": ["Ground","Poison"],
+    "genus": "Drill",
+    "imageName": "sprite-front-34"
+  },
+  {
+    "name": "Clefairy",
+    "id": 35,
+    "type": ["Fairy"],
+    "genus": "Fairy",
+    "imageName": "sprite-front-35"
+  },
+  {
+    "name": "Clefable",
+    "id": 36,
+    "type": ["Fairy"],
+    "genus": "Fairy",
+    "imageName": "sprite-front-36"
+  },
+  {
+    "name": "Vulpix",
+    "id": 37,
+    "type": ["Fire"],
+    "genus": "Fox",
+    "imageName": "sprite-front-37"
+  },
+  {
+    "name": "Ninetales",
+    "id": 38,
+    "type": ["Fire"],
+    "genus": "Fox",
+    "imageName": "sprite-front-38"
+  },
+  {
+    "name": "Jigglypuff",
+    "id": 39,
+    "type": ["Fairy","Normal"],
+    "genus": "Balloon",
+    "imageName": "sprite-front-39"
+  },
+  {
+    "name": "Wigglytuff",
+    "id": 40,
+    "type": ["Fairy","Normal"],
+    "genus": "Balloon",
+    "imageName": "sprite-front-40"
+  },
+  {
+    "name": "Zubat",
+    "id": 41,
+    "type": ["Flying", "Poison"],
+    "genus": "Bat",
+    "imageName": "sprite-front-41"
+  },
+  {
+    "name": "Golbat",
+    "id": 42,
+    "type": ["Flying", "Poison"],
+    "genus": "Bat",
+    "imageName": "sprite-front-42"
+  },
+  {
+    "name": "Oddish",
+    "id": 43,
+    "type": ["Poison", "Grass"],
+    "genus": "Weed",
+    "imageName": "sprite-front-43"
+  },
+  {
+    "name": "Gloom",
+    "id": 44,
+    "type": ["Poison", "Grass"],
+    "genus": "Weed",
+    "imageName": "sprite-front-44"
+  },
+  {
+    "name": "Vileplume",
+    "id": 45,
+    "type": ["Poison", "Grass"],
+    "genus": "Flower",
+    "imageName": "sprite-front-45"
+  },
+  {
+    "name": "Paras",
+    "id": 46,
+    "type": ["Bug", "Grass"],
+    "genus": "Mushroom",
+    "imageName": "sprite-front-46"
+  },
+  {
+    "name": "Parasect",
+    "id": 47,
+    "type": ["Bug","Grass"],
+    "genus": "Mushroom",
+    "imageName": "sprite-front-47"
+  },
+  {
+    "name": "Venonat",
+    "id": 48,
+    "type": ["Poison", "Bug"],
+    "genus": "Insect",
+    "imageName": "sprite-front-48"
+  },
+  {
+    "name": "Venomoth",
+    "id": 49,
+    "type": ["Poison", "Bug"],
+    "genus": "Poison Moth",
+    "imageName": "sprite-front-49"
+  },
+  {
+    "name": "Diglett",
+    "id": 50,
+    "type": ["Ground"],
+    "genus": "Mole",
+    "imageName": "sprite-front-50"
+  },
+  {
+    "name": "Dugtrio",
+    "id": 51,
+    "type": ["Ground"],
+    "genus": "Mole",
+    "imageName": "sprite-front-51"
+  },
+  {
+    "name": "Meowth",
+    "id": 52,
+    "type": ["Normal"],
+    "genus": "Scratch Cat",
+    "imageName": "sprite-front-52"
+  },
+  {
+    "name": "Persian",
+    "id": 53,
+    "type": ["Normal"],
+    "genus": "Classy Cat",
+    "imageName": "sprite-front-53"
+  },
+  {
+    "name": "Psyduck",
+    "id": 54,
+    "type": ["Water"],
+    "genus": "Duck",
+    "imageName": "sprite-front-54"
+  },
+  {
+    "name": "Golduck",
+    "id": 55,
+    "type": ["Water"],
+    "genus": "Duck",
+    "imageName": "sprite-front-55"
+  },
+  {
+    "name": "Mankey",
+    "id": 56,
+    "type": ["Fighting"],
+    "genus": "Pig Monkey",
+    "imageName": "sprite-front-56"
+  },
+  {
+    "name": "Primeape",
+    "id": 57,
+    "type": ["Fighting"],
+    "genus": "Pig Monkey",
+    "imageName": "sprite-front-57"
+  },
+  {
+    "name": "Growlithe",
+    "id": 58,
+    "type": ["Fire"],
+    "genus": "Puppy",
+    "imageName": "sprite-front-58"
+  },
+  {
+    "name": "Arcanine",
+    "id": 59,
+    "type": ["Fire"],
+    "genus": "Legendary",
+    "imageName": "sprite-front-59"
+  },
+  {
+    "name": "Poliwag",
+    "id": 60,
+    "type": ["Water"],
+    "genus": "Tadpole",
+    "imageName": "sprite-front-60"
+  },
+  {
+    "name": "Poliwhirl",
+    "id": 61,
+    "type": ["Fighting","Water"],
+    "genus": "Tadpole",
+    "imageName": "sprite-front-61"
+  },
+  {
+    "name": "Poliwrath",
+    "id": 62,
+    "type": ["Water"],
+    "genus": "Tadpole",
+    "imageName": "sprite-front-62"
+  },
+  {
+    "name": "Abra",
+    "id": 63,
+    "type": ["Psychic"],
+    "genus": "Psi",
+    "imageName": "sprite-front-63"
+  },
+  {
+    "name": "Kadabra",
+    "id": 64,
+    "type": ["Psychic"],
+    "genus": "Psi",
+    "imageName": "sprite-front-64"
+  },
+  {
+    "name": "Alakazam",
+    "id": 65,
+    "type": ["Psychic"],
+    "genus": "Psi",
+    "imageName": "sprite-front-65"
+  },
+  {
+    "name": "Machop",
+    "id": 66,
+    "type": ["Fighting"],
+    "genus": "Superpower",
+    "imageName": "sprite-front-66"
+  },
+  {
+    "name": "Machoke",
+    "id": 67,
+    "type": ["Fighting"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-67"
+  },
+  {
+    "name": "Machamp",
+    "id": 68,
+    "type": ["Fighting"],
+    "genus": "Mouse",
+    "imageName": "sprite-front-68"
+  },
+  {
+    "name": "Bellsprout",
+    "id": 69,
+    "type": ["Poison", "Grass"],
+    "genus": "Flower",
+    "imageName": "sprite-front-69"
+  },
+  {
+    "name": "Weepinbell",
+    "id": 70,
+    "type": ["Poison", "Grass"],
+    "genus": "Flycatcher",
+    "imageName": "sprite-front-70"
+  },
+  {
+    "name": "Victreebel",
+    "id": 71,
+    "type": ["Poison", "Grass"],
+    "genus": "Flycatcher",
+    "imageName": "sprite-front-71"
+  },
+  {
+    "name": "Tentacool",
+    "id": 72,
+    "type": ["Poison", "Water"],
+    "genus": "Jellyfish",
+    "imageName": "sprite-front-72"
+  },
+  {
+    "name": "Tentacruel",
+    "id": 73,
+    "type": ["Poison", "Water"],
+    "genus": "Jellyfish",
+    "imageName": "sprite-front-73"
+  },
+  {
+    "name": "Geodude",
+    "id": 74,
+    "type": ["Ground", "Rock"],
+    "genus": "Rock",
+    "imageName": "sprite-front-74"
+  },
+  {
+    "name": "Graveler",
+    "id": 75,
+    "type": ["Ground", "Rock"],
+    "genus": "Rock",
+    "imageName": "sprite-front-75"
+  },
+  {
+    "name": "Golem",
+    "id": 76,
+    "type": ["Ground", "Rock"],
+    "genus": "Megaton",
+    "imageName": "sprite-front-76"
+  },
+  {
+    "name": "Ponyta",
+    "id": 77,
+    "type": ["Fire"],
+    "genus": "Fire Horse",
+    "imageName": "sprite-front-77"
+  },
+  {
+    "name": "Rapidash",
+    "id": 78,
+    "type": ["Fire"],
+    "genus": "Fire Horse",
+    "imageName": "sprite-front-78"
+  },
+  {
+    "name": "Slowpoke",
+    "id": 79,
+    "type": ["Psycic", "Water"],
+    "genus": "Dopey",
+    "imageName": "sprite-front-79"
+  },
+  {
+    "name": "Slowbro",
+    "id": 80,
+    "type": ["Psycic", "Water"],
+    "genus": "Hermit Crab",
+    "imageName": "sprite-front-80"
+  },
+  {
+    "name": "Magnemite",
+    "id": 81,
+    "type": ["Electric", "Steel"],
+    "genus": "Magnet",
+    "imageName": "sprite-front-81"
+  },
+  {
+    "name": "Magneton",
+    "id": 82,
+    "type": ["Electric", "Steel"],
+    "genus": "Magnet",
+    "imageName": "sprite-front-82"
+  },
+  {
+    "name": "Farfetch'd",
+    "id": 83,
+    "type": ["Flying","Normal"],
+    "genus": "Wild Duck",
+    "imageName": "sprite-front-83"
+  },
+  {
+    "name": "Doduo",
+    "id": 84,
+    "type": ["Flying","Normal"],
+    "genus": "Twin Bird",
+    "imageName": "sprite-front-84"
+  },
+  {
+    "name": "Dodrio",
+    "id": 85,
+    "type": ["Flying","Normal"],
+    "genus": "Triple Bird",
+    "imageName": "sprite-front-85"
+  },
+  {
+    "name": "Seel",
+    "id": 86,
+    "type": ["Water"],
+    "genus": "Sea Lion",
+    "imageName": "sprite-front-86"
+  },
+  {
+    "name": "Dewgong",
+    "id": 87,
+    "type": ["Ice","Water"],
+    "genus": "Sea Lion",
+    "imageName": "sprite-front-87"
+  },
+  {
+    "name": "Grimer",
+    "id": 88,
+    "type": ["Poison"],
+    "genus": "Sludge",
+    "imageName": "sprite-front-88"
+  },
+  {
+    "name": "Muk",
+    "id": 89,
+    "type": ["Poison"],
+    "genus": "Sludge",
+    "imageName": "sprite-front-89"
+  },
+  {
+    "name": "Shellder",
+    "id": 90,
+    "type": ["Water"],
+    "genus": "Bivalve",
+    "imageName": "sprite-front-90"
+  },
+  {
+    "name": "Cloyster",
+    "id": 91,
+    "type": ["Ice","Water"],
+    "genus": "Bivalve",
+    "imageName": "sprite-front-91"
+  },
+  {
+    "name": "Gastly",
+    "id": 92,
+    "type": ["Ghost","Poison"],
+    "genus": "Gas",
+    "imageName": "sprite-front-92"
+  },
+  {
+    "name": "Haunter",
+    "id": 93,
+    "type": ["Ghost","Poison"],
+    "genus": "Gas",
+    "imageName": "sprite-front-93"
+  },
+  {
+    "name": "Gengar",
+    "id": 94,
+    "type": ["Ghost","Poison"],
+    "genus": "Shadow",
+    "imageName": "sprite-front-94"
+  },
+  {
+    "name": "Onix",
+    "id": 95,
+    "type": ["Ground", "Rock"],
+    "genus": "Rock Snake",
+    "imageName": "sprite-front-95"
+  },
+  {
+    "name": "Drowzee",
+    "id": 96,
+    "type": ["Psychic"],
+    "genus": "Hypnosis",
+    "imageName": "sprite-front-96"
+  },
+  {
+    "name": "Hypno",
+    "id": 97,
+    "type": ["Psychic"],
+    "genus": "Hypnosis",
+    "imageName": "sprite-front-97"
+  },
+  {
+    "name": "Krabby",
+    "id": 98,
+    "type": ["Water"],
+    "genus": "River Crab",
+    "imageName": "sprite-front-98"
+  },
+  {
+    "name": "Kingler",
+    "id": 99,
+    "type": ["Water"],
+    "genus": "Pincer",
+    "imageName": "sprite-front-99"
+  },
+  {
+    "name": "Voltorb",
+    "id": 100,
+    "type": ["Electric"],
+    "genus": "Ball",
+    "imageName": "sprite-front-100"
+  },
+  {
+    "name": "Electrode",
+    "id": 101,
+    "type": ["Electric"],
+    "genus": "Ball",
+    "imageName": "sprite-front-101"
+  },
+  {
+    "name": "Exeggcute",
+    "id": 102,
+    "type": ["Psychic","Grass"],
+    "genus": "Egg",
+    "imageName": "sprite-front-102"
+  },
+  {
+    "name": "Exeggutor",
+    "id": 103,
+    "type": ["Psychic","Grass"],
+    "genus": "Coconut",
+    "imageName": "sprite-front-103"
+  },
+  {
+    "name": "Cubone",
+    "id": 104,
+    "type": ["Ground"],
+    "genus": "Lonely",
+    "imageName": "sprite-front-104"
+  },
+  {
+    "name": "Marowak",
+    "id": 105,
+    "type": ["Ground"],
+    "genus": "Bone Keeper",
+    "imageName": "sprite-front-105"
+  },
+  {
+    "name": "Hitmonlee",
+    "id": 106,
+    "type": ["Fighting"],
+    "genus": "Kicking",
+    "imageName": "sprite-front-106"
+  },
+  {
+    "name": "Hitmonchan",
+    "id": 107,
+    "type": ["Fighting"],
+    "genus": "Punching",
+    "imageName": "sprite-front-107"
+  },
+  {
+    "name": "Lickitung",
+    "id": 108,
+    "type": ["Normal"],
+    "genus": "Licking",
+    "imageName": "sprite-front-108"
+  },
+  {
+    "name": "Koffing",
+    "id": 109,
+    "type": ["Poison"],
+    "genus": "Poison Gas",
+    "imageName": "sprite-front-109"
+  },
+  {
+    "name": "Weezing",
+    "id": 110,
+    "type": ["Poison"],
+    "genus": "Poison Gas",
+    "imageName": "sprite-front-110"
+  },
+  {
+    "name": "Rhyhorn",
+    "id": 111,
+    "type": ["Ground","Rock"],
+    "genus": "Spikes",
+    "imageName": "sprite-front-111"
+  },
+  {
+    "name": "Rhydon",
+    "id": 112,
+    "type": ["Ground","Rock"],
+    "genus": "Drill",
+    "imageName": "sprite-front-112"
+  },
+  {
+    "name": "Chansey",
+    "id": 113,
+    "type": ["Normal"],
+    "genus": "Egg",
+    "imageName": "sprite-front-113"
+  },
+  {
+    "name": "Tangela",
+    "id": 114,
+    "type": ["Grass"],
+    "genus": "Vine",
+    "imageName": "sprite-front-114"
+  },
+  {
+    "name": "Kangaskhan",
+    "id": 115,
+    "type": ["Normal"],
+    "genus": "Parent",
+    "imageName": "sprite-front-115"
+  },
+  {
+    "name": "Horsea",
+    "id": 116,
+    "type": ["Water"],
+    "genus": "Dragon",
+    "imageName": "sprite-front-116"
+  },
+  {
+    "name": "Seadra",
+    "id": 117,
+    "type": ["Water"],
+    "genus": "Dragon",
+    "imageName": "sprite-front-117"
+  },
+  {
+    "name": "Goldeen",
+    "id": 118,
+    "type": ["Water"],
+    "genus": "Goldfish",
+    "imageName": "sprite-front-118"
+  },
+  {
+    "name": "Seaking",
+    "id": 119,
+    "type": ["Water"],
+    "genus": "Goldfish",
+    "imageName": "sprite-front-119"
+  },
+  {
+    "name": "Staryu",
+    "id": 120,
+    "type": ["Water"],
+    "genus": "Star Shape",
+    "imageName": "sprite-front-120"
+  },
+  {
+    "name": "Starmie",
+    "id": 121,
+    "type": ["Psychic","Water"],
+    "genus": "Mysterious",
+    "imageName": "sprite-front-121"
+  },
+  {
+    "name": "Mr. Mime",
+    "id": 122,
+    "type": ["Psychic","Fairy"],
+    "genus": "Barrier",
+    "imageName": "sprite-front-122"
+  },
+  {
+    "name": "Scyther",
+    "id": 123,
+    "type": ["Flying","Bug"],
+    "genus": "Mantis",
+    "imageName": "sprite-front-123"
+  },
+  {
+    "name": "Jynx",
+    "id": 124,
+    "type": ["Psychic", "Ice"],
+    "genus": "Human Shape",
+    "imageName": "sprite-front-124"
+  },
+  {
+    "name": "Electabuzz",
+    "id": 125,
+    "type": ["Electric"],
+    "genus": "Electric",
+    "imageName": "sprite-front-125"
+  },
+  {
+    "name": "Magmar",
+    "id": 126,
+    "type": ["Fire"],
+    "genus": "Spitfire",
+    "imageName": "sprite-front-126"
+  },
+  {
+    "name": "Pinsir",
+    "id": 127,
+    "type": ["Bug"],
+    "genus": "Stag Beetle",
+    "imageName": "sprite-front-127"
+  },
+  {
+    "name": "Tauros",
+    "id": 128,
+    "type": ["Normal"],
+    "genus": "Wild Bull",
+    "imageName": "sprite-front-128"
+  },
+  {
+    "name": "Magikarp",
+    "id": 129,
+    "type": ["Water"],
+    "genus": "Fish",
+    "imageName": "sprite-front-129"
+  },
+  {
+    "name": "Gyarados",
+    "id": 130,
+    "type": ["Flying","Water"],
+    "genus": "Atrocious",
+    "imageName": "sprite-front-130"
+  },
+  {
+    "name": "Lapras",
+    "id": 131,
+    "type": ["Ice","Water"],
+    "genus": "Transport",
+    "imageName": "sprite-front-131"
+  },
+  {
+    "name": "Ditto",
+    "id": 132,
+    "type": ["Normal"],
+    "genus": "Transform",
+    "imageName": "sprite-front-132"
+  },
+  {
+    "name": "Eevee",
+    "id": 133,
+    "type": ["Normal"],
+    "genus": "Evolution",
+    "imageName": "sprite-front-133"
+  },
+  {
+    "name": "Vaporeon",
+    "id": 134,
+    "type": ["Water"],
+    "genus": "Bubble Jet",
+    "imageName": "sprite-front-134"
+  },
+  {
+    "name": "Jolteon",
+    "id": 135,
+    "type": ["Electric"],
+    "genus": "Lightning",
+    "imageName": "sprite-front-135"
+  },
+  {
+    "name": "Flareon",
+    "id": 136,
+    "type": ["Fire"],
+    "genus": "Flame",
+    "imageName": "sprite-front-136"
+  },
+  {
+    "name": "Porygon",
+    "id": 137,
+    "type": ["Normal"],
+    "genus": "Virtual",
+    "imageName": "sprite-front-137"
+  },
+  {
+    "name": "Omanyte",
+    "id": 138,
+    "type": ["Rock","Water"],
+    "genus": "Spiral",
+    "imageName": "sprite-front-138"
+  },
+  {
+    "name": "Omastar",
+    "id": 139,
+    "type": ["Rock","Water"],
+    "genus": "Spiral",
+    "imageName": "sprite-front-139"
+  },
+  {
+    "name": "Kabuto",
+    "id": 140,
+    "type": ["Rock","Water"],
+    "genus": "Shellfish",
+    "imageName": "sprite-front-140"
+  },
+  {
+    "name": "Kabutops",
+    "id": 141,
+    "type": ["Rock","Water"],
+    "genus": "Shellfish",
+    "imageName": "sprite-front-141"
+  },
+  {
+    "name": "Aerodactyl",
+    "id": 142,
+    "type": ["Flying","Rock"],
+    "genus": "Fossil",
+    "imageName": "sprite-front-142"
+  },
+  {
+    "name": "Snorlax",
+    "id": 143,
+    "type": ["Normal"],
+    "genus": "Sleeping",
+    "imageName": "sprite-front-143"
+  },
+  {
+    "name": "Articuno",
+    "id": 144,
+    "type": ["Flying","Ice"],
+    "genus": "Freeze",
+    "imageName": "sprite-front-144"
+  },
+  {
+    "name": "Zapdos",
+    "id": 145,
+    "type": ["Flying","Electric"],
+    "genus": "Electric",
+    "imageName": "sprite-front-145"
+  },
+  {
+    "name": "Moltres",
+    "id": 146,
+    "type": ["Flying","Fire"],
+    "genus": "Flame",
+    "imageName": "sprite-front-146"
+  },
+  {
+    "name": "Dratini",
+    "id": 147,
+    "type": ["Dragon"],
+    "genus": "Dragon",
+    "imageName": "sprite-front-147"
+  },
+  {
+    "name": "Dragonair",
+    "id": 148,
+    "type": ["Dragon"],
+    "genus": "Dragon",
+    "imageName": "sprite-front-148"
+  },
+  {
+    "name": "Dragonite",
+    "id": 149,
+    "type": ["Dragon","Flying"],
+    "genus": "Dragon",
+    "imageName": "sprite-front-149"
+  },
+  {
+    "name": "Mewtwo",
+    "id": 150,
+    "type": ["Psychic"],
+    "genus": "Genetic",
+    "imageName": "sprite-front-150"
+  },
+  {
+    "name": "Mew",
+    "id": 151,
+    "type": ["Normal"],
+    "genus": "New Species",
+    "imageName": "sprite-front-151"
+  }
+ ]
+

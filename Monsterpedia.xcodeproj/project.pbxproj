@@ -22,6 +22,7 @@
 		030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */; };
 		030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D611D72259D0072263C /* CoreDataStack.swift */; };
 		030B2D661D7240940072263C /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D651D7240940072263C /* InitialTabBarController.swift */; };
+		030B2D681D7255F30072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D671D7255F30072263C /* seed.json */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtMonstersViewController.swift; sourceTree = "<group>"; };
 		030B2D611D72259D0072263C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
 		030B2D651D7240940072263C /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
+		030B2D671D7255F30072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +174,7 @@
 			children = (
 				030B2D611D72259D0072263C /* CoreDataStack.swift */,
 				03C60DC81D5661390046486B /* Model.xcdatamodeld */,
+				030B2D671D7255F30072263C /* seed.json */,
 				030939D41D4D63B8004CC0A7 /* PokeAPIClient.swift */,
 				030939DD1D4DE643004CC0A7 /* MonstersManager.swift */,
 				030939DF1D4DFF6E004CC0A7 /* Monster.swift */,
@@ -288,6 +291,7 @@
 			files = (
 				030939B11D4D5FE8004CC0A7 /* LaunchScreen.storyboard in Resources */,
 				030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */,
+				030B2D681D7255F30072263C /* seed.json in Resources */,
 				030939AC1D4D5FE8004CC0A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
