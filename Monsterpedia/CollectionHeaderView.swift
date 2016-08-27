@@ -6,7 +6,6 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
@@ -14,4 +13,16 @@ class CollectionHeaderView: UICollectionReusableView {
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	
+	@IBAction func blabla (sender: AnyObject) {
+		delegate?.didTapButton(self)
+	}
+	
+	var delegate: CollectionHeaderViewDelegate?
+	
 }
+
+protocol CollectionHeaderViewDelegate {
+	func didTapButton(sender: CollectionHeaderView)
+}
+
+

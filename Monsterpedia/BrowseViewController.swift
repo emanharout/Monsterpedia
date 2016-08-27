@@ -8,75 +8,57 @@
 
 import UIKit
 
-class BrowseViewController: UIViewController {
+class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	
-	@IBOutlet weak var collectionView: UICollectionView!
-	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+		
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var viewInTableHeader: UIView!
+	var segmentedControl: UISegmentedControl!
 	
 	var monsters: [String]!
+	var filteredMonsters = [String]()
+	let searchController = UISearchController(searchResultsController: nil)
 	
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupFlowLayout()
-		collectionView.alwaysBounceVertical = true
+		searchController.searchResultsUpdater = self
+		searchController.dimsBackgroundDuringPresentation = false
+		definesPresentationContext = true
+		searchController.hidesNavigationBarDuringPresentation = false
 		
+		let searchBar = searchController.searchBar
+		searchBar.searchBarStyle = .Prominent
+		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+		searchBar.translucent = false
+		searchBar.showsCancelButton = false
+		searchBar.backgroundColor = UIColor.blackColor()
+		tableView.tableHeaderView = searchBar
+		
+		segmentedControl = UISegmentedControl(items: ["sad", "Asdas"])
+				
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
+		let searchBarHeight = searchController.searchBar.bounds.height
+		tableView.contentOffset = CGPointMake(0, searchBarHeight)
 		
 		print(monsters)
-	}
-	
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		
-		let yPoint = flowLayout.headerReferenceSize.height
-		collectionView.contentOffset = CGPointMake(0, yPoint - 20.0)
-	}
-}
-
-
-
-extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-	
-	// MARK: CollectionView Delegate Functions
-	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return monsters.count
-	}
-	
-	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-		
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MonsterCell", forIndexPath: indexPath) as! MonsterCell
-		cell.nameLabel.text = monsters[indexPath.row]
-		cell.imageView.image = UIImage(named: monsters[indexPath.row])
-		
-		return cell
-	}
-	
-	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 		
 	}
 	
-	func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-		let view = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "CollectionHeaderView", forIndexPath: indexPath) as! CollectionHeaderView
-		return view
+	func filterContentForSearchText(searchText: String, scope: String = "All") {
+		filteredMonsters = monsters.filter{ (monster) -> Bool in
+			return monster.lowercaseString.containsString(searchText.lowercaseString)
+		}
+		print(filteredMonsters)
+		tableView.reloadData()
 	}
 	
-	
-	
-	// MARK: CollectionView Functions
-	func setupFlowLayout() {
-		
-		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
-		
-		let itemWidthDimension = ((view.frame.size.width - 36.0)/3)
-		let itemHeightDimension = itemWidthDimension + 40.0
-		flowLayout.minimumLineSpacing = CGFloat(20.0)
-		flowLayout.minimumInteritemSpacing = CGFloat(6.0)
-		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
+	func updateSearchResultsForSearchController(searchController: UISearchController) {
+		filterContentForSearchText(searchController.searchBar.text!)
 	}
+	
 	
 	
 }
@@ -86,25 +68,34 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if searchController.active && searchController.searchBar.text != "" {
+			return filteredMonsters.count
+		}
 		return monsters.count
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("MonsterSpriteCell", forIndexPath: indexPath) as! MonsterSpriteCell
+		let monster: String
+		if searchController.active && searchController.searchBar.text != "" {
+			monster = filteredMonsters[indexPath.row]
+		} else {
+			monster = monsters[indexPath.row]
+		}
 		
-		cell.nameLabel.text = monsters[indexPath.row]
+		cell.nameLabel.text = monster
 		cell.spriteImageView.image = UIImage(named: "sprite-front-\(indexPath.row + 1)")
-		
-		print("\(indexPath.row + 1) height: \(cell.bounds.height)")
 		return cell
 		
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		
+
 	}
 	
-	
-	
 }
+
+
+
+

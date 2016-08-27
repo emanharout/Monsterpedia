@@ -19,8 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let tabBarController = window?.rootViewController as! UITabBarController
 		let tabBarRootViewControllers = tabBarController.viewControllers!
+		print(tabBarRootViewControllers)
 		if let browseViewController = tabBarRootViewControllers[0] as? BrowseViewController {
 			browseViewController.monsters = MonstersManager.sharedInstance.monsters
+		}
+		if let caughtMonstersViewController = tabBarRootViewControllers[1] as? CaughtMonstersViewController {
+			caughtMonstersViewController.monsters = MonstersManager.sharedInstance.monsters
 		}
 		
 		

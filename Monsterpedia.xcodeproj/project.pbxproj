@@ -19,7 +19,9 @@
 		030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */; };
 		030939DE1D4DE643004CC0A7 /* MonstersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DD1D4DE643004CC0A7 /* MonstersManager.swift */; };
 		030939E01D4DFF6E004CC0A7 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DF1D4DFF6E004CC0A7 /* Monster.swift */; };
+		030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
+		0339707B1D572AA1003A95F3 /* CustomSearchClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0339707A1D572AA1003A95F3 /* CustomSearchClasses.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +61,9 @@
 		030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		030939DD1D4DE643004CC0A7 /* MonstersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonstersManager.swift; sourceTree = "<group>"; };
 		030939DF1D4DFF6E004CC0A7 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtMonstersViewController.swift; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
+		0339707A1D572AA1003A95F3 /* CustomSearchClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchClasses.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,7 @@
 				030939AA1D4D5FE8004CC0A7 /* Main.storyboard */,
 				030939AF1D4D5FE8004CC0A7 /* LaunchScreen.storyboard */,
 				030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */,
+				0339707A1D572AA1003A95F3 /* CustomSearchClasses.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */,
+				030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -304,6 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */,
+				0339707B1D572AA1003A95F3 /* CustomSearchClasses.swift in Sources */,
 				030939D71D4D9AEA004CC0A7 /* MonsterCell.swift in Sources */,
 				033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
