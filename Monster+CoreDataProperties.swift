@@ -1,0 +1,27 @@
+//
+//  Monster+CoreDataProperties.swift
+//  Monsterpedia
+//
+//  Created by Emmanuoel Eldridge on 8/27/16.
+//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//
+//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
+//  to delete and recreate this implementation file for your updated model.
+//
+
+import Foundation
+import CoreData
+
+extension Monster {
+
+    @NSManaged var name: String
+    @NSManaged var id: Int16
+    @NSManaged var genus: String
+    @NSManaged var isCaught: Bool
+    @NSManaged var imageString2D: String
+    @NSManaged var imageStringSprite: String
+    @NSManaged var moves: NSSet?
+    @NSManaged var types: NSSet?
+    @NSManaged var teams: NSSet?
+
+}
