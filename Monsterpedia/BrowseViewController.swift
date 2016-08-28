@@ -7,49 +7,31 @@
 //
 
 import UIKit
+import CoreData
 
 class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataComplying {
-	
 		
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var viewInTableHeader: UIView!
-	var segmentedControl: UISegmentedControl!
-	
+
 	var coreDataStack: CoreDataStack!
 	var monsters: [String]!
 	var filteredMonsters = [String]()
 	let searchController = UISearchController(searchResultsController: nil)
 	
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		searchController.searchResultsUpdater = self
-		searchController.dimsBackgroundDuringPresentation = false
-		definesPresentationContext = true
-		searchController.hidesNavigationBarDuringPresentation = false
-		
-		let searchBar = searchController.searchBar
-		searchBar.searchBarStyle = .Prominent
-		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-		searchBar.translucent = false
-		searchBar.showsCancelButton = false
-		searchBar.backgroundColor = UIColor.blackColor()
-		tableView.tableHeaderView = searchBar
-		
-		segmentedControl = UISegmentedControl(items: ["sad", "Asdas"])
-				
-		tableView.rowHeight = UITableViewAutomaticDimension
-		tableView.estimatedRowHeight = 88
-		let searchBarHeight = searchController.searchBar.bounds.height
-		tableView.contentOffset = CGPointMake(0, searchBarHeight)
+		setupSearchResultsController()
+		setupTableViewRowAttributes()
 	}
 	
+	
+	// MARK: SearchResultsController Functions
 	func filterContentForSearchText(searchText: String, scope: String = "All") {
 		filteredMonsters = monsters.filter{ (monster) -> Bool in
 			return monster.lowercaseString.containsString(searchText.lowercaseString)
 		}
-		print(filteredMonsters)
 		tableView.reloadData()
 	}
 	
@@ -57,8 +39,22 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 		filterContentForSearchText(searchController.searchBar.text!)
 	}
 	
-	
-	
+	func setupSearchResultsController() {
+		searchController.searchResultsUpdater = self
+		searchController.dimsBackgroundDuringPresentation = false
+		definesPresentationContext = true
+		searchController.hidesNavigationBarDuringPresentation = false
+		
+		let searchBar = searchController.searchBar
+		searchBar.searchBarStyle = .Minimal
+		searchBar.translucent = false
+		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+		tableView.tableHeaderView?.backgroundColor = UIColor.whiteColor()
+		tableView.tableHeaderView = searchBar
+		
+		let searchBarHeight = searchController.searchBar.bounds.height
+		tableView.contentOffset = CGPointMake(0, searchBarHeight)
+	}
 }
 
 
@@ -90,6 +86,11 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
+	}
+	
+	func setupTableViewRowAttributes() {
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 88
 	}
 	
 }
