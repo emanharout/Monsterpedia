@@ -14,21 +14,19 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying {
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
 	var coreDataStack: CoreDataStack!
-	var monsters: [String]!
+	var monsters = [Monster]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		setupFlowLayout()
-		collectionView.alwaysBounceVertical = true
     }
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		let yPoint = flowLayout.headerReferenceSize.height
-		collectionView.contentOffset = CGPointMake(0, yPoint - 20.0)
+		setupCollectionView()
 	}
 }
 
@@ -44,8 +42,8 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MonsterCell", forIndexPath: indexPath) as! MonsterCell
-		cell.nameLabel.text = monsters[indexPath.row]
-		cell.imageView.image = UIImage(named: monsters[indexPath.row])
+		cell.nameLabel.text = monsters[indexPath.row].name
+		cell.imageView.image = UIImage(named: monsters[indexPath.row].image2DName)
 		
 		return cell
 	}
@@ -60,8 +58,8 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		return headerView
 	}
 	
-	// MARK: CollectionView Functions
 	
+	// MARK: CollectionView Functions
 	func setupFlowLayout() {
 		
 		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
@@ -75,6 +73,12 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 	
 	func didTapButton(sender: CollectionHeaderView) {
 		print("Delegate's Button Tapped")
+	}
+	
+	func setupCollectionView() {
+		collectionView.alwaysBounceVertical = true
+		let verticalOffsetValue = flowLayout.headerReferenceSize.height
+		collectionView.contentOffset = CGPointMake(0, verticalOffsetValue - 20.0)
 	}
 }
 	
