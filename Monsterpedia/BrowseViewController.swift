@@ -15,8 +15,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 	@IBOutlet weak var viewInTableHeader: UIView!
 
 	var coreDataStack: CoreDataStack!
-	var monsters: [String]!
-	var filteredMonsters = [String]()
+	var fetchRequest: NSFetchRequest!
+	var monsters = [Monster]()
+	var filteredMonsters = [Monster]()
 	let searchController = UISearchController(searchResultsController: nil)
 	
 	override func viewDidLoad() {
@@ -24,13 +25,23 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 		
 		setupSearchResultsController()
 		setupTableViewRowAttributes()
+		
+		fetchRequest = NSFetchRequest(entityName: "Monster")
+		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
+		fetchRequest.sortDescriptors = [sortDesc]
+
+		do {
+			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+		} catch let error as NSError {
+			print(error)
+		}
 	}
 	
 	
 	// MARK: SearchResultsController Functions
 	func filterContentForSearchText(searchText: String, scope: String = "All") {
 		filteredMonsters = monsters.filter{ (monster) -> Bool in
-			return monster.lowercaseString.containsString(searchText.lowercaseString)
+			return monster.name.lowercaseString.containsString(searchText.lowercaseString)
 		}
 		tableView.reloadData()
 	}
@@ -71,21 +82,20 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		
 		let cell = tableView.dequeueReusableCellWithIdentifier("MonsterSpriteCell", forIndexPath: indexPath) as! MonsterSpriteCell
-		let monster: String
+		
+		let monster: Monster
 		if searchController.active && searchController.searchBar.text != "" {
 			monster = filteredMonsters[indexPath.row]
 		} else {
 			monster = monsters[indexPath.row]
 		}
 		
-		cell.nameLabel.text = monster
-		cell.spriteImageView.image = UIImage(named: "sprite-front-\(indexPath.row + 1)")
+		cell.nameLabel.text = monster.name
+		cell.spriteImageView.image = UIImage(named: monster.spriteImageName)
 		return cell
-		
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
 	}
 	
 	func setupTableViewRowAttributes() {

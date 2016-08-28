@@ -27,13 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let tabBarController = window?.rootViewController as! InitialTabBarController
 		tabBarController.coreDataStack = coreDataStack
-		let tabBarRootViewControllers = tabBarController.viewControllers!
-		if let browseViewController = tabBarRootViewControllers[0] as? BrowseViewController {
-			browseViewController.monsters = MonstersManager.sharedInstance.monsters
-		}
-		if let caughtMonstersViewController = tabBarRootViewControllers[1] as? CaughtMonstersViewController {
-			caughtMonstersViewController.monsters = MonstersManager.sharedInstance.monsters
-		}
 		return true
 	}
 
@@ -69,19 +62,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				}
 				let image2DName = name.lowercaseString
 				let spriteImageName = "sprite-front-\(id)"
-				var typeSet: Set<Type> = Set()
 				
+				var typeSet: Set<Type> = Set()
 				for type in typeArray {
 					let newType = Type(name: type, context: coreDataStack.context)
 					typeSet.insert(newType)
-					
 				}
 				
-				_ = Monster(name: name, id: Int16(id), type: typeSet, genus: genus, image2DName: image2DName, spriteImageName: spriteImageName, context: coreDataStack.context)
+				let newMon = Monster(name: name, id: Int16(id), types: typeSet, genus: genus, image2DName: image2DName, spriteImageName: spriteImageName, context: coreDataStack.context)
+				
+				print("\(newMon.types?.count)")
+				
 			}
 		} catch let error as NSError {
 			print(error)
 		}
+		coreDataStack.save()
 	}
 
 }

@@ -17,8 +17,6 @@
 		030939D51D4D63B8004CC0A7 /* PokeAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D41D4D63B8004CC0A7 /* PokeAPIClient.swift */; };
 		030939D71D4D9AEA004CC0A7 /* MonsterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */; };
 		030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */; };
-		030939DE1D4DE643004CC0A7 /* MonstersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DD1D4DE643004CC0A7 /* MonstersManager.swift */; };
-		030939E01D4DFF6E004CC0A7 /* Monsterr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939DF1D4DFF6E004CC0A7 /* Monsterr.swift */; };
 		030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */; };
 		030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D611D72259D0072263C /* CoreDataStack.swift */; };
 		030B2D661D7240940072263C /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D651D7240940072263C /* InitialTabBarController.swift */; };
@@ -69,8 +67,6 @@
 		030939D41D4D63B8004CC0A7 /* PokeAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAPIClient.swift; sourceTree = "<group>"; };
 		030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterCell.swift; sourceTree = "<group>"; };
 		030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
-		030939DD1D4DE643004CC0A7 /* MonstersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonstersManager.swift; sourceTree = "<group>"; };
-		030939DF1D4DFF6E004CC0A7 /* Monsterr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monsterr.swift; sourceTree = "<group>"; };
 		030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtMonstersViewController.swift; sourceTree = "<group>"; };
 		030B2D611D72259D0072263C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
 		030B2D651D7240940072263C /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
@@ -193,8 +189,6 @@
 				03C60DC81D5661390046486B /* Model.xcdatamodeld */,
 				030B2D8A1D7268980072263C /* seed.json */,
 				030939D41D4D63B8004CC0A7 /* PokeAPIClient.swift */,
-				030939DD1D4DE643004CC0A7 /* MonstersManager.swift */,
-				030939DF1D4DFF6E004CC0A7 /* Monsterr.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -358,7 +352,6 @@
 				030B2D881D7263050072263C /* Type+CoreDataProperties.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
 				030B2D821D7263050072263C /* Team+CoreDataProperties.swift in Sources */,
-				030939DE1D4DE643004CC0A7 /* MonstersManager.swift in Sources */,
 				03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */,
 				030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */,
 				030B2D871D7263050072263C /* Monster.swift in Sources */,
@@ -369,7 +362,6 @@
 				030B2D851D7263050072263C /* Move.swift in Sources */,
 				030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */,
 				030B2D661D7240940072263C /* InitialTabBarController.swift in Sources */,
-				030939E01D4DFF6E004CC0A7 /* Monsterr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
