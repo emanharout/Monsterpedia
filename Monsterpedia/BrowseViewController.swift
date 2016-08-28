@@ -91,6 +91,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 		
 		cell.nameLabel.text = monster.name
+		cell.descriptionLabel.text = "\(monster.genus) Pokémon"
 		cell.spriteImageView.image = UIImage(named: monster.spriteImageName)
 		return cell
 	}

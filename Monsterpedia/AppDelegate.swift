@@ -69,10 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					typeSet.insert(newType)
 				}
 				
-				let newMon = Monster(name: name, id: Int16(id), types: typeSet, genus: genus, image2DName: image2DName, spriteImageName: spriteImageName, context: coreDataStack.context)
-				
-				print("\(newMon.types?.count)")
-				
+				_ = Monster(name: name, id: Int16(id), types: typeSet, genus: genus, image2DName: image2DName, spriteImageName: spriteImageName, context: coreDataStack.context)
 			}
 		} catch let error as NSError {
 			print(error)

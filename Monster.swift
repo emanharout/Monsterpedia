@@ -12,10 +12,6 @@ import CoreData
 
 class Monster: NSManagedObject {
 
-//	init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-//		<#code#>
-//	}
-
 	convenience init(name: String, id: Int16, types: Set<Type>, genus: String, image2DName: String, spriteImageName: String, context: NSManagedObjectContext){
 		if let monsterEntity = NSEntityDescription.entityForName("Monster", inManagedObjectContext: context) {
 			self.init(entity: monsterEntity, insertIntoManagedObjectContext: context)
