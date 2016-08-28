@@ -12,6 +12,13 @@ import CoreData
 
 class Type: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+	convenience init(name: String, context: NSManagedObjectContext){
+		if let monsterEntity = NSEntityDescription.entityForName("Type", inManagedObjectContext: context) {
+			self.init(entity: monsterEntity, insertIntoManagedObjectContext: context)
+			self.name = name
+		} else {
+			fatalError("Could not initialize Monster Managed Object")
+		}
+	}
 
 }

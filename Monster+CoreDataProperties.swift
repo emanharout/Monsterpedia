@@ -18,8 +18,8 @@ extension Monster {
     @NSManaged var id: Int16
     @NSManaged var genus: String
     @NSManaged var isCaught: Bool
-    @NSManaged var imageString2D: String
-    @NSManaged var imageStringSprite: String
+    @NSManaged var image2DName: String
+    @NSManaged var spriteImageName: String
     @NSManaged var moves: NSSet?
     @NSManaged var types: NSSet?
     @NSManaged var teams: NSSet?

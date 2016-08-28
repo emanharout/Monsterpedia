@@ -12,6 +12,13 @@ import CoreData
 
 class Move: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+	convenience init(name: String, context: NSManagedObjectContext){
+		if let monsterEntity = NSEntityDescription.entityForName("Move", inManagedObjectContext: context) {
+			self.init(entity: monsterEntity, insertIntoManagedObjectContext: context)
+			self.name = name
+		} else {
+			fatalError("Could not initialize Monster Managed Object")
+		}
+	}
 
 }

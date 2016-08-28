@@ -3,1058 +3,906 @@
     "name": "Bulbasaur",
     "id": 1,
     "type": ["Poison","Grass"],
-    "genus": "Seed",
-    "imageName": "sprite-front-1"
+    "genus": "Seed"
   },
   {
     "name": "Ivysaur",
     "id": 2,
     "type": ["Poison","Grass"],
-    "genus": "Seed",
-    "imageName": "sprite-front-2"
+    "genus": "Seed"
   },
   {
     "name": "Venusaur",
     "id": 3,
     "type": ["Poison","Grass"],
-    "genus": "Seed",
-    "imageName": "sprite-front-3"
+    "genus": "Seed"
   },
   {
     "name": "Charmander",
     "id": 4,
     "type": ["Fire"],
-    "genus": "Lizard",
-    "imageName": "sprite-front-4"
+    "genus": "Lizard"
   },
   {
     "name": "Charmeleon",
     "id": 5,
     "type": ["Fire"],
-    "genus": "Flame",
-    "imageName": "sprite-front-5"
+    "genus": "Flame"
   },
   {
     "name": "Charizard",
     "id": 6,
     "type": ["Flying", "Fire"],
-    "genus": "Flame",
-    "imageName": "sprite-front-6"
+    "genus": "Flame"
   },
   {
     "name": "Squirtle",
     "id": 7,
     "type": ["Water"],
-    "genus": "Tiny Turtle",
-    "imageName": "sprite-front-7"
+    "genus": "Tiny Turtle"
   },
   {
     "name": "Wartortle",
     "id": 8,
     "type": ["Water"],
-    "genus": "Turtle",
-    "imageName": "sprite-front-8"
+    "genus": "Turtle"
   },
   {
     "name": "Blastoise",
     "id": 9,
     "type": ["Water"],
-    "genus": "Shellfish",
-    "imageName": "sprite-front-9"
+    "genus": "Shellfish"
   },
   {
     "name": "Caterpie",
     "id": 10,
     "type": ["Bug"],
-    "genus": "Worm",
-    "imageName": "sprite-front-10"
+    "genus": "Worm"
   },
   {
     "name": "Metapod",
     "id": 11,
     "type": ["Bug"],
-    "genus": "Cocoon",
-    "imageName": "sprite-front-11"
+    "genus": "Cocoon"
   },
   {
     "name": "Butterfree",
     "id": 12,
     "type": ["Flying","Bug"],
-    "genus": "Butterfly",
-    "imageName": "sprite-front-12"
+    "genus": "Butterfly"
   },
   {
     "name": "Weedle",
     "id": 13,
     "type": ["Poison","Bug"],
-    "genus": "Hairy Bug",
-    "imageName": "sprite-front-13"
+    "genus": "Hairy Bug"
   },
   {
     "name": "Kakuna",
     "id": 14,
     "type": ["Poison","Bug"],
-    "genus": "Cocoon",
-    "imageName": "sprite-front-14"
+    "genus": "Cocoon"
   },
   {
     "name": "Beedrill",
     "id": 15,
     "type": ["Poison","Bug"],
-    "genus": "Poison Bee",
-    "imageName": "sprite-front-15"
+    "genus": "Poison Bee"
   },
   {
     "name": "Pidgey",
     "id": 16,
     "type": ["Flying", "Normal"],
-    "genus": "Tiny Bird",
-    "imageName": "sprite-front-16"
+    "genus": "Tiny Bird"
   },
   {
     "name": "Pidgeotto",
     "id": 17,
     "type": ["Flying", "Normal"],
-    "genus": "Bird",
-    "imageName": "sprite-front-17"
+    "genus": "Bird"
   },
   {
     "name": "Pidgeot",
     "id": 18,
     "type": ["Flying","Normal"],
-    "genus": "Bird",
-    "imageName": "sprite-front-18"
+    "genus": "Bird"
   },
   {
     "name": "Rattata",
     "id": 19,
     "type": ["Normal"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-19"
+    "genus": "Mouse"
   },
   {
     "name": "Raticate",
     "id": 20,
     "type": ["Normal"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-20"
+    "genus": "Mouse"
   },
   {
     "name": "Spearow",
     "id": 21,
     "type": ["Flying","Normal"],
-    "genus": "Tiny Bird",
-    "imageName": "sprite-front-21"
+    "genus": "Tiny Bird"
   },
   {
     "name": "Fearow",
     "id": 22,
     "type": ["Flying","Normal"],
-    "genus": "Beak",
-    "imageName": "sprite-front-22"
+    "genus": "Beak"
   },
   {
     "name": "Ekans",
     "id": 23,
     "type": ["Poison"],
-    "genus": "Snake",
-    "imageName": "sprite-front-23"
+    "genus": "Snake"
   },
   {
     "name": "Arbok",
     "id": 24,
     "type": ["Poison"],
-    "genus": "Cobra",
-    "imageName": "sprite-front-24"
+    "genus": "Cobra"
   },
   {
     "name": "Pikachu",
     "id": 25,
     "type": ["Electric"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-25"
+    "genus": "Mouse"
   },
   {
     "name": "Raichu",
     "id": 26,
     "type": ["Electric"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-26"
+    "genus": "Mouse"
   },
   {
     "name": "Sandshrew",
     "id": 27,
     "type": ["Ground"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-27"
+    "genus": "Mouse"
   },
   {
     "name": "Sandslash",
     "id": 28,
     "type": ["Ground"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-28"
+    "genus": "Mouse"
   },
   {
     "name": "Nidoran♀",
     "id": 29,
     "type": ["Poison"],
-    "genus": "Poison Pin",
-    "imageName": "sprite-front-29"
+    "genus": "Poison Pin"
   },
   {
     "name": "Nidorina",
     "id": 30,
     "type": ["Poison"],
-    "genus": "Poison Pin",
-    "imageName": "sprite-front-30"
+    "genus": "Poison Pin"
   },
   {
     "name": "Nidoqueen",
     "id": 31,
     "type": ["Ground","Poison"],
-    "genus": "Drill",
-    "imageName": "sprite-front-31"
+    "genus": "Drill"
   },
   {
     "name": "Nidoran♂",
     "id": 32,
     "type": ["Poison"],
-    "genus": "Poison Pin",
-    "imageName": "sprite-front-32"
+    "genus": "Poison Pin"
   },
   {
     "name": "Nidorino",
     "id": 33,
     "type": ["Poison"],
-    "genus": "Poison Pin",
-    "imageName": "sprite-front-33"
+    "genus": "Poison Pin"
   },
   {
     "name": "Nidoking",
     "id": 34,
     "type": ["Ground","Poison"],
-    "genus": "Drill",
-    "imageName": "sprite-front-34"
+    "genus": "Drill"
   },
   {
     "name": "Clefairy",
     "id": 35,
     "type": ["Fairy"],
-    "genus": "Fairy",
-    "imageName": "sprite-front-35"
+    "genus": "Fairy"
   },
   {
     "name": "Clefable",
     "id": 36,
     "type": ["Fairy"],
-    "genus": "Fairy",
-    "imageName": "sprite-front-36"
+    "genus": "Fairy"
   },
   {
     "name": "Vulpix",
     "id": 37,
     "type": ["Fire"],
-    "genus": "Fox",
-    "imageName": "sprite-front-37"
+    "genus": "Fox"
   },
   {
     "name": "Ninetales",
     "id": 38,
     "type": ["Fire"],
-    "genus": "Fox",
-    "imageName": "sprite-front-38"
+    "genus": "Fox"
   },
   {
     "name": "Jigglypuff",
     "id": 39,
     "type": ["Fairy","Normal"],
-    "genus": "Balloon",
-    "imageName": "sprite-front-39"
+    "genus": "Balloon"
   },
   {
     "name": "Wigglytuff",
     "id": 40,
     "type": ["Fairy","Normal"],
-    "genus": "Balloon",
-    "imageName": "sprite-front-40"
+    "genus": "Balloon"
   },
   {
     "name": "Zubat",
     "id": 41,
     "type": ["Flying", "Poison"],
-    "genus": "Bat",
-    "imageName": "sprite-front-41"
+    "genus": "Bat"
   },
   {
     "name": "Golbat",
     "id": 42,
     "type": ["Flying", "Poison"],
-    "genus": "Bat",
-    "imageName": "sprite-front-42"
+    "genus": "Bat"
   },
   {
     "name": "Oddish",
     "id": 43,
     "type": ["Poison", "Grass"],
-    "genus": "Weed",
-    "imageName": "sprite-front-43"
+    "genus": "Weed"
   },
   {
     "name": "Gloom",
     "id": 44,
     "type": ["Poison", "Grass"],
-    "genus": "Weed",
-    "imageName": "sprite-front-44"
+    "genus": "Weed"
   },
   {
     "name": "Vileplume",
     "id": 45,
     "type": ["Poison", "Grass"],
-    "genus": "Flower",
-    "imageName": "sprite-front-45"
+    "genus": "Flower"
   },
   {
     "name": "Paras",
     "id": 46,
     "type": ["Bug", "Grass"],
-    "genus": "Mushroom",
-    "imageName": "sprite-front-46"
+    "genus": "Mushroom"
   },
   {
     "name": "Parasect",
     "id": 47,
     "type": ["Bug","Grass"],
-    "genus": "Mushroom",
-    "imageName": "sprite-front-47"
+    "genus": "Mushroom"
   },
   {
     "name": "Venonat",
     "id": 48,
     "type": ["Poison", "Bug"],
-    "genus": "Insect",
-    "imageName": "sprite-front-48"
+    "genus": "Insect"
   },
   {
     "name": "Venomoth",
     "id": 49,
     "type": ["Poison", "Bug"],
-    "genus": "Poison Moth",
-    "imageName": "sprite-front-49"
+    "genus": "Poison Moth"
   },
   {
     "name": "Diglett",
     "id": 50,
     "type": ["Ground"],
-    "genus": "Mole",
-    "imageName": "sprite-front-50"
+    "genus": "Mole"
   },
   {
     "name": "Dugtrio",
     "id": 51,
     "type": ["Ground"],
-    "genus": "Mole",
-    "imageName": "sprite-front-51"
+    "genus": "Mole"
   },
   {
     "name": "Meowth",
     "id": 52,
     "type": ["Normal"],
-    "genus": "Scratch Cat",
-    "imageName": "sprite-front-52"
+    "genus": "Scratch Cat"
   },
   {
     "name": "Persian",
     "id": 53,
     "type": ["Normal"],
-    "genus": "Classy Cat",
-    "imageName": "sprite-front-53"
+    "genus": "Classy Cat"
   },
   {
     "name": "Psyduck",
     "id": 54,
     "type": ["Water"],
-    "genus": "Duck",
-    "imageName": "sprite-front-54"
+    "genus": "Duck"
   },
   {
     "name": "Golduck",
     "id": 55,
     "type": ["Water"],
-    "genus": "Duck",
-    "imageName": "sprite-front-55"
+    "genus": "Duck"
   },
   {
     "name": "Mankey",
     "id": 56,
     "type": ["Fighting"],
-    "genus": "Pig Monkey",
-    "imageName": "sprite-front-56"
+    "genus": "Pig Monkey"
   },
   {
     "name": "Primeape",
     "id": 57,
     "type": ["Fighting"],
-    "genus": "Pig Monkey",
-    "imageName": "sprite-front-57"
+    "genus": "Pig Monkey"
   },
   {
     "name": "Growlithe",
     "id": 58,
     "type": ["Fire"],
-    "genus": "Puppy",
-    "imageName": "sprite-front-58"
+    "genus": "Puppy"
   },
   {
     "name": "Arcanine",
     "id": 59,
     "type": ["Fire"],
-    "genus": "Legendary",
-    "imageName": "sprite-front-59"
+    "genus": "Legendary"
   },
   {
     "name": "Poliwag",
     "id": 60,
     "type": ["Water"],
-    "genus": "Tadpole",
-    "imageName": "sprite-front-60"
+    "genus": "Tadpole"
   },
   {
     "name": "Poliwhirl",
     "id": 61,
     "type": ["Fighting","Water"],
-    "genus": "Tadpole",
-    "imageName": "sprite-front-61"
+    "genus": "Tadpole"
   },
   {
     "name": "Poliwrath",
     "id": 62,
     "type": ["Water"],
-    "genus": "Tadpole",
-    "imageName": "sprite-front-62"
+    "genus": "Tadpole"
   },
   {
     "name": "Abra",
     "id": 63,
     "type": ["Psychic"],
-    "genus": "Psi",
-    "imageName": "sprite-front-63"
+    "genus": "Psi"
   },
   {
     "name": "Kadabra",
     "id": 64,
     "type": ["Psychic"],
-    "genus": "Psi",
-    "imageName": "sprite-front-64"
+    "genus": "Psi"
   },
   {
     "name": "Alakazam",
     "id": 65,
     "type": ["Psychic"],
-    "genus": "Psi",
-    "imageName": "sprite-front-65"
+    "genus": "Psi"
   },
   {
     "name": "Machop",
     "id": 66,
     "type": ["Fighting"],
-    "genus": "Superpower",
-    "imageName": "sprite-front-66"
+    "genus": "Superpower"
   },
   {
     "name": "Machoke",
     "id": 67,
     "type": ["Fighting"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-67"
+    "genus": "Mouse"
   },
   {
     "name": "Machamp",
     "id": 68,
     "type": ["Fighting"],
-    "genus": "Mouse",
-    "imageName": "sprite-front-68"
+    "genus": "Mouse"
   },
   {
     "name": "Bellsprout",
     "id": 69,
     "type": ["Poison", "Grass"],
-    "genus": "Flower",
-    "imageName": "sprite-front-69"
+    "genus": "Flower"
   },
   {
     "name": "Weepinbell",
     "id": 70,
     "type": ["Poison", "Grass"],
-    "genus": "Flycatcher",
-    "imageName": "sprite-front-70"
+    "genus": "Flycatcher"
   },
   {
     "name": "Victreebel",
     "id": 71,
     "type": ["Poison", "Grass"],
-    "genus": "Flycatcher",
-    "imageName": "sprite-front-71"
+    "genus": "Flycatcher"
   },
   {
     "name": "Tentacool",
     "id": 72,
     "type": ["Poison", "Water"],
-    "genus": "Jellyfish",
-    "imageName": "sprite-front-72"
+    "genus": "Jellyfish"
   },
   {
     "name": "Tentacruel",
     "id": 73,
     "type": ["Poison", "Water"],
-    "genus": "Jellyfish",
-    "imageName": "sprite-front-73"
+    "genus": "Jellyfish"
   },
   {
     "name": "Geodude",
     "id": 74,
     "type": ["Ground", "Rock"],
-    "genus": "Rock",
-    "imageName": "sprite-front-74"
+    "genus": "Rock"
   },
   {
     "name": "Graveler",
     "id": 75,
     "type": ["Ground", "Rock"],
-    "genus": "Rock",
-    "imageName": "sprite-front-75"
+    "genus": "Rock"
   },
   {
     "name": "Golem",
     "id": 76,
     "type": ["Ground", "Rock"],
-    "genus": "Megaton",
-    "imageName": "sprite-front-76"
+    "genus": "Megaton"
   },
   {
     "name": "Ponyta",
     "id": 77,
     "type": ["Fire"],
-    "genus": "Fire Horse",
-    "imageName": "sprite-front-77"
+    "genus": "Fire Horse"
   },
   {
     "name": "Rapidash",
     "id": 78,
     "type": ["Fire"],
-    "genus": "Fire Horse",
-    "imageName": "sprite-front-78"
+    "genus": "Fire Horse"
   },
   {
     "name": "Slowpoke",
     "id": 79,
     "type": ["Psycic", "Water"],
-    "genus": "Dopey",
-    "imageName": "sprite-front-79"
+    "genus": "Dopey"
   },
   {
     "name": "Slowbro",
     "id": 80,
     "type": ["Psycic", "Water"],
-    "genus": "Hermit Crab",
-    "imageName": "sprite-front-80"
+    "genus": "Hermit Crab"
   },
   {
     "name": "Magnemite",
     "id": 81,
     "type": ["Electric", "Steel"],
-    "genus": "Magnet",
-    "imageName": "sprite-front-81"
+    "genus": "Magnet"
   },
   {
     "name": "Magneton",
     "id": 82,
     "type": ["Electric", "Steel"],
-    "genus": "Magnet",
-    "imageName": "sprite-front-82"
+    "genus": "Magnet"
   },
   {
     "name": "Farfetch'd",
     "id": 83,
     "type": ["Flying","Normal"],
-    "genus": "Wild Duck",
-    "imageName": "sprite-front-83"
+    "genus": "Wild Duck"
   },
   {
     "name": "Doduo",
     "id": 84,
     "type": ["Flying","Normal"],
-    "genus": "Twin Bird",
-    "imageName": "sprite-front-84"
+    "genus": "Twin Bird"
   },
   {
     "name": "Dodrio",
     "id": 85,
     "type": ["Flying","Normal"],
-    "genus": "Triple Bird",
-    "imageName": "sprite-front-85"
+    "genus": "Triple Bird"
   },
   {
     "name": "Seel",
     "id": 86,
     "type": ["Water"],
-    "genus": "Sea Lion",
-    "imageName": "sprite-front-86"
+    "genus": "Sea Lion"
   },
   {
     "name": "Dewgong",
     "id": 87,
     "type": ["Ice","Water"],
-    "genus": "Sea Lion",
-    "imageName": "sprite-front-87"
+    "genus": "Sea Lion"
   },
   {
     "name": "Grimer",
     "id": 88,
     "type": ["Poison"],
-    "genus": "Sludge",
-    "imageName": "sprite-front-88"
+    "genus": "Sludge"
   },
   {
     "name": "Muk",
     "id": 89,
     "type": ["Poison"],
-    "genus": "Sludge",
-    "imageName": "sprite-front-89"
+    "genus": "Sludge"
   },
   {
     "name": "Shellder",
     "id": 90,
     "type": ["Water"],
-    "genus": "Bivalve",
-    "imageName": "sprite-front-90"
+    "genus": "Bivalve"
   },
   {
     "name": "Cloyster",
     "id": 91,
     "type": ["Ice","Water"],
-    "genus": "Bivalve",
-    "imageName": "sprite-front-91"
+    "genus": "Bivalve"
   },
   {
     "name": "Gastly",
     "id": 92,
     "type": ["Ghost","Poison"],
-    "genus": "Gas",
-    "imageName": "sprite-front-92"
+    "genus": "Gas"
   },
   {
     "name": "Haunter",
     "id": 93,
     "type": ["Ghost","Poison"],
-    "genus": "Gas",
-    "imageName": "sprite-front-93"
+    "genus": "Gas"
   },
   {
     "name": "Gengar",
     "id": 94,
     "type": ["Ghost","Poison"],
-    "genus": "Shadow",
-    "imageName": "sprite-front-94"
+    "genus": "Shadow"
   },
   {
     "name": "Onix",
     "id": 95,
     "type": ["Ground", "Rock"],
-    "genus": "Rock Snake",
-    "imageName": "sprite-front-95"
+    "genus": "Rock Snake"
   },
   {
     "name": "Drowzee",
     "id": 96,
     "type": ["Psychic"],
-    "genus": "Hypnosis",
-    "imageName": "sprite-front-96"
+    "genus": "Hypnosis"
   },
   {
     "name": "Hypno",
     "id": 97,
     "type": ["Psychic"],
-    "genus": "Hypnosis",
-    "imageName": "sprite-front-97"
+    "genus": "Hypnosis"
   },
   {
     "name": "Krabby",
     "id": 98,
     "type": ["Water"],
-    "genus": "River Crab",
-    "imageName": "sprite-front-98"
+    "genus": "River Crab"
   },
   {
     "name": "Kingler",
     "id": 99,
     "type": ["Water"],
-    "genus": "Pincer",
-    "imageName": "sprite-front-99"
+    "genus": "Pincer"
   },
   {
     "name": "Voltorb",
     "id": 100,
     "type": ["Electric"],
-    "genus": "Ball",
-    "imageName": "sprite-front-100"
+    "genus": "Ball"
   },
   {
     "name": "Electrode",
     "id": 101,
     "type": ["Electric"],
-    "genus": "Ball",
-    "imageName": "sprite-front-101"
+    "genus": "Ball"
   },
   {
     "name": "Exeggcute",
     "id": 102,
     "type": ["Psychic","Grass"],
-    "genus": "Egg",
-    "imageName": "sprite-front-102"
+    "genus": "Egg"
   },
   {
     "name": "Exeggutor",
     "id": 103,
     "type": ["Psychic","Grass"],
-    "genus": "Coconut",
-    "imageName": "sprite-front-103"
+    "genus": "Coconut"
   },
   {
     "name": "Cubone",
     "id": 104,
     "type": ["Ground"],
-    "genus": "Lonely",
-    "imageName": "sprite-front-104"
+    "genus": "Lonely"
   },
   {
     "name": "Marowak",
     "id": 105,
     "type": ["Ground"],
-    "genus": "Bone Keeper",
-    "imageName": "sprite-front-105"
+    "genus": "Bone Keeper"
   },
   {
     "name": "Hitmonlee",
     "id": 106,
     "type": ["Fighting"],
-    "genus": "Kicking",
-    "imageName": "sprite-front-106"
+    "genus": "Kicking"
   },
   {
     "name": "Hitmonchan",
     "id": 107,
     "type": ["Fighting"],
-    "genus": "Punching",
-    "imageName": "sprite-front-107"
+    "genus": "Punching"
   },
   {
     "name": "Lickitung",
     "id": 108,
     "type": ["Normal"],
-    "genus": "Licking",
-    "imageName": "sprite-front-108"
+    "genus": "Licking"
   },
   {
     "name": "Koffing",
     "id": 109,
     "type": ["Poison"],
-    "genus": "Poison Gas",
-    "imageName": "sprite-front-109"
+    "genus": "Poison Gas"
   },
   {
     "name": "Weezing",
     "id": 110,
     "type": ["Poison"],
-    "genus": "Poison Gas",
-    "imageName": "sprite-front-110"
+    "genus": "Poison Gas"
   },
   {
     "name": "Rhyhorn",
     "id": 111,
     "type": ["Ground","Rock"],
-    "genus": "Spikes",
-    "imageName": "sprite-front-111"
+    "genus": "Spikes"
   },
   {
     "name": "Rhydon",
     "id": 112,
     "type": ["Ground","Rock"],
-    "genus": "Drill",
-    "imageName": "sprite-front-112"
+    "genus": "Drill"
   },
   {
     "name": "Chansey",
     "id": 113,
     "type": ["Normal"],
-    "genus": "Egg",
-    "imageName": "sprite-front-113"
+    "genus": "Egg"
   },
   {
     "name": "Tangela",
     "id": 114,
     "type": ["Grass"],
-    "genus": "Vine",
-    "imageName": "sprite-front-114"
+    "genus": "Vine"
   },
   {
     "name": "Kangaskhan",
     "id": 115,
     "type": ["Normal"],
-    "genus": "Parent",
-    "imageName": "sprite-front-115"
+    "genus": "Parent"
   },
   {
     "name": "Horsea",
     "id": 116,
     "type": ["Water"],
-    "genus": "Dragon",
-    "imageName": "sprite-front-116"
+    "genus": "Dragon"
   },
   {
     "name": "Seadra",
     "id": 117,
     "type": ["Water"],
-    "genus": "Dragon",
-    "imageName": "sprite-front-117"
+    "genus": "Dragon"
   },
   {
     "name": "Goldeen",
     "id": 118,
     "type": ["Water"],
-    "genus": "Goldfish",
-    "imageName": "sprite-front-118"
+    "genus": "Goldfish"
   },
   {
     "name": "Seaking",
     "id": 119,
     "type": ["Water"],
-    "genus": "Goldfish",
-    "imageName": "sprite-front-119"
+    "genus": "Goldfish"
   },
   {
     "name": "Staryu",
     "id": 120,
     "type": ["Water"],
-    "genus": "Star Shape",
-    "imageName": "sprite-front-120"
+    "genus": "Star Shape"
   },
   {
     "name": "Starmie",
     "id": 121,
     "type": ["Psychic","Water"],
-    "genus": "Mysterious",
-    "imageName": "sprite-front-121"
+    "genus": "Mysterious"
   },
   {
     "name": "Mr. Mime",
     "id": 122,
     "type": ["Psychic","Fairy"],
-    "genus": "Barrier",
-    "imageName": "sprite-front-122"
+    "genus": "Barrier"
   },
   {
     "name": "Scyther",
     "id": 123,
     "type": ["Flying","Bug"],
-    "genus": "Mantis",
-    "imageName": "sprite-front-123"
+    "genus": "Mantis"
   },
   {
     "name": "Jynx",
     "id": 124,
     "type": ["Psychic", "Ice"],
-    "genus": "Human Shape",
-    "imageName": "sprite-front-124"
+    "genus": "Human Shape"
   },
   {
     "name": "Electabuzz",
     "id": 125,
     "type": ["Electric"],
-    "genus": "Electric",
-    "imageName": "sprite-front-125"
+    "genus": "Electric"
   },
   {
     "name": "Magmar",
     "id": 126,
     "type": ["Fire"],
-    "genus": "Spitfire",
-    "imageName": "sprite-front-126"
+    "genus": "Spitfire"
   },
   {
     "name": "Pinsir",
     "id": 127,
     "type": ["Bug"],
-    "genus": "Stag Beetle",
-    "imageName": "sprite-front-127"
+    "genus": "Stag Beetle"
   },
   {
     "name": "Tauros",
     "id": 128,
     "type": ["Normal"],
-    "genus": "Wild Bull",
-    "imageName": "sprite-front-128"
+    "genus": "Wild Bull"
   },
   {
     "name": "Magikarp",
     "id": 129,
     "type": ["Water"],
-    "genus": "Fish",
-    "imageName": "sprite-front-129"
+    "genus": "Fish"
   },
   {
     "name": "Gyarados",
     "id": 130,
     "type": ["Flying","Water"],
-    "genus": "Atrocious",
-    "imageName": "sprite-front-130"
+    "genus": "Atrocious"
   },
   {
     "name": "Lapras",
     "id": 131,
     "type": ["Ice","Water"],
-    "genus": "Transport",
-    "imageName": "sprite-front-131"
+    "genus": "Transport"
   },
   {
     "name": "Ditto",
     "id": 132,
     "type": ["Normal"],
-    "genus": "Transform",
-    "imageName": "sprite-front-132"
+    "genus": "Transform"
   },
   {
     "name": "Eevee",
     "id": 133,
     "type": ["Normal"],
-    "genus": "Evolution",
-    "imageName": "sprite-front-133"
+    "genus": "Evolution"
   },
   {
     "name": "Vaporeon",
     "id": 134,
     "type": ["Water"],
-    "genus": "Bubble Jet",
-    "imageName": "sprite-front-134"
+    "genus": "Bubble Jet"
   },
   {
     "name": "Jolteon",
     "id": 135,
     "type": ["Electric"],
-    "genus": "Lightning",
-    "imageName": "sprite-front-135"
+    "genus": "Lightning"
   },
   {
     "name": "Flareon",
     "id": 136,
     "type": ["Fire"],
-    "genus": "Flame",
-    "imageName": "sprite-front-136"
+    "genus": "Flame"
   },
   {
     "name": "Porygon",
     "id": 137,
     "type": ["Normal"],
-    "genus": "Virtual",
-    "imageName": "sprite-front-137"
+    "genus": "Virtual"
   },
   {
     "name": "Omanyte",
     "id": 138,
     "type": ["Rock","Water"],
-    "genus": "Spiral",
-    "imageName": "sprite-front-138"
+    "genus": "Spiral"
   },
   {
     "name": "Omastar",
     "id": 139,
     "type": ["Rock","Water"],
-    "genus": "Spiral",
-    "imageName": "sprite-front-139"
+    "genus": "Spiral"
   },
   {
     "name": "Kabuto",
     "id": 140,
     "type": ["Rock","Water"],
-    "genus": "Shellfish",
-    "imageName": "sprite-front-140"
+    "genus": "Shellfish"
   },
   {
     "name": "Kabutops",
     "id": 141,
     "type": ["Rock","Water"],
-    "genus": "Shellfish",
-    "imageName": "sprite-front-141"
+    "genus": "Shellfish"
   },
   {
     "name": "Aerodactyl",
     "id": 142,
     "type": ["Flying","Rock"],
-    "genus": "Fossil",
-    "imageName": "sprite-front-142"
+    "genus": "Fossil"
   },
   {
     "name": "Snorlax",
     "id": 143,
     "type": ["Normal"],
-    "genus": "Sleeping",
-    "imageName": "sprite-front-143"
+    "genus": "Sleeping"
   },
   {
     "name": "Articuno",
     "id": 144,
     "type": ["Flying","Ice"],
-    "genus": "Freeze",
-    "imageName": "sprite-front-144"
+    "genus": "Freeze"
   },
   {
     "name": "Zapdos",
     "id": 145,
     "type": ["Flying","Electric"],
-    "genus": "Electric",
-    "imageName": "sprite-front-145"
+    "genus": "Electric"
   },
   {
     "name": "Moltres",
     "id": 146,
     "type": ["Flying","Fire"],
-    "genus": "Flame",
-    "imageName": "sprite-front-146"
+    "genus": "Flame"
   },
   {
     "name": "Dratini",
     "id": 147,
     "type": ["Dragon"],
-    "genus": "Dragon",
-    "imageName": "sprite-front-147"
+    "genus": "Dragon"
   },
   {
     "name": "Dragonair",
     "id": 148,
     "type": ["Dragon"],
-    "genus": "Dragon",
-    "imageName": "sprite-front-148"
+    "genus": "Dragon"
   },
   {
     "name": "Dragonite",
     "id": 149,
     "type": ["Dragon","Flying"],
-    "genus": "Dragon",
-    "imageName": "sprite-front-149"
+    "genus": "Dragon"
   },
   {
     "name": "Mewtwo",
     "id": 150,
     "type": ["Psychic"],
-    "genus": "Genetic",
-    "imageName": "sprite-front-150"
+    "genus": "Genetic"
   },
   {
     "name": "Mew",
     "id": 151,
     "type": ["Normal"],
-    "genus": "New Species",
-    "imageName": "sprite-front-151"
+    "genus": "New Species"
   }
  ]
-

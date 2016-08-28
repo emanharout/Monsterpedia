@@ -3,10 +3,10 @@
     <entity name="Monster" representedClassName=".Monster" syncable="YES">
         <attribute name="genus" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="imageString2D" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageStringSprite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image2DName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCaught" attributeType="Boolean" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="spriteImageName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="moves" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Move" inverseName="monster" inverseEntity="Move" syncable="YES"/>
         <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="monsters" inverseEntity="Team" syncable="YES"/>
         <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="monster" inverseEntity="Type" syncable="YES"/>
