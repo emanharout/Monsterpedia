@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CaughtMonstersViewController: UIViewController, CoreDataComplying {
 	
@@ -14,6 +15,7 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying {
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
 	var coreDataStack: CoreDataStack!
+	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
 
 
@@ -21,6 +23,16 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying {
         super.viewDidLoad()
 		
 		setupFlowLayout()
+		
+		fetchRequest = NSFetchRequest(entityName: "Monster")
+		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
+		fetchRequest.sortDescriptors = [sortDesc]
+		
+		do {
+			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+		} catch let error as NSError {
+			print(error)
+		}
     }
 	
 	override func viewDidLayoutSubviews() {
@@ -65,20 +77,36 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
 		
 		let itemWidthDimension = ((view.frame.size.width - 36.0)/3)
-		let itemHeightDimension = itemWidthDimension + 40.0
+		let itemHeightDimension = itemWidthDimension + 10.0
 		flowLayout.minimumLineSpacing = CGFloat(20.0)
 		flowLayout.minimumInteritemSpacing = CGFloat(6.0)
 		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
 	}
 	
-	func didTapButton(sender: CollectionHeaderView) {
-		print("Delegate's Button Tapped")
+	func didSelectSegment(sender: CollectionHeaderView, selectedSegmentIndex: Int) {
+		let predicate: NSPredicate!
+		switch selectedSegmentIndex {
+		case 0:
+			predicate = nil
+			fetchRequest.predicate = predicate
+		case 1:
+			predicate = NSPredicate(format: "isCaught == %@", true)
+			fetchRequest.predicate = predicate
+		default: break
+		}
+		
+		do {
+			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+			collectionView.reloadData()
+		} catch let error as NSError {
+			print(error)
+		}
 	}
 	
 	func setupCollectionView() {
 		collectionView.alwaysBounceVertical = true
-		let verticalOffsetValue = flowLayout.headerReferenceSize.height
-		collectionView.contentOffset = CGPointMake(0, verticalOffsetValue - 20.0)
+		let verticalOffsetValue = CGFloat(66)
+		collectionView.contentOffset = CGPointMake(0, verticalOffsetValue)
 	}
 }
 	

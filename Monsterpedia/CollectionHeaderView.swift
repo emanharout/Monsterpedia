@@ -10,11 +10,10 @@ import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
 	
-	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	
-	@IBAction func blabla (sender: AnyObject) {
-		delegate?.didTapButton(self)
+	@IBAction func segmentSelected (sender: AnyObject) {
+		delegate?.didSelectSegment(self, selectedSegmentIndex: segmentedControl.selectedSegmentIndex)
 	}
 	
 	var delegate: CollectionHeaderViewDelegate?
@@ -22,7 +21,7 @@ class CollectionHeaderView: UICollectionReusableView {
 }
 
 protocol CollectionHeaderViewDelegate {
-	func didTapButton(sender: CollectionHeaderView)
+	func didSelectSegment(sender: CollectionHeaderView, selectedSegmentIndex: Int)
 }
 
 

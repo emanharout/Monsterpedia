@@ -116,19 +116,19 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezp-6Q-hea">
                                     <size key="itemSize" width="168" height="208"/>
-                                    <size key="headerReferenceSize" width="50" height="88"/>
+                                    <size key="headerReferenceSize" width="50" height="66"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonsterCell" id="P0y-1v-NaP" customClass="MonsterCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="168" height="208"/>
+                                        <rect key="frame" x="0.0" y="66" width="168" height="208"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="208"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-af-toG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-af-toG">
                                                     <rect key="frame" x="4" y="2" width="160" height="180"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Monster Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-ai-Yn2">
@@ -157,21 +157,28 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionHeaderView" id="yDp-Rd-OsS" customClass="CollectionHeaderView" customModule="Monsterpedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-gP-HPx">
-                                            <rect key="frame" x="277" y="29" width="46" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-0v-Zzi">
+                                            <rect key="frame" x="242" y="19" width="117" height="29"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Caught"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="blabla:" destination="yDp-Rd-OsS" eventType="touchUpInside" id="t0g-5w-Rdz"/>
+                                                <action selector="segmentSelected:" destination="yDp-Rd-OsS" eventType="valueChanged" id="lc0-nC-NSk"/>
                                             </connections>
-                                        </button>
+                                        </segmentedControl>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="CSy-gP-HPx" firstAttribute="centerY" secondItem="yDp-Rd-OsS" secondAttribute="centerY" id="JZ8-lv-Oiw"/>
-                                        <constraint firstItem="CSy-gP-HPx" firstAttribute="centerX" secondItem="yDp-Rd-OsS" secondAttribute="centerX" id="oiY-nk-el3"/>
+                                        <constraint firstItem="E4o-0v-Zzi" firstAttribute="centerY" secondItem="yDp-Rd-OsS" secondAttribute="centerY" id="3sK-mI-Wgr"/>
+                                        <constraint firstItem="E4o-0v-Zzi" firstAttribute="centerX" secondItem="yDp-Rd-OsS" secondAttribute="centerX" id="4Iu-yN-sos"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="segmentedControl" destination="E4o-0v-Zzi" id="37b-q2-Oeg"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="lcM-4W-MbO" id="CFB-pI-ptT"/>
