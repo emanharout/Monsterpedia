@@ -16,12 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		if NSUserDefaults.standardUserDefaults().boolForKey("hasLaunchedBefore") {
+			print("App has launched before")
+		} else {
+			print("Is First Launch")
+			importSeedData()
+			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLaunchedBefore")
+		}
 		
 		let tabBarController = window?.rootViewController as! InitialTabBarController
 		tabBarController.coreDataStack = coreDataStack
 		let tabBarRootViewControllers = tabBarController.viewControllers!
-		print(tabBarRootViewControllers)
 		if let browseViewController = tabBarRootViewControllers[0] as? BrowseViewController {
 			browseViewController.monsters = MonstersManager.sharedInstance.monsters
 		}
@@ -51,7 +57,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
-
+	func importSeedData() {
+		let seedURL = NSBundle.mainBundle().URLForResource("seed", withExtension: "json")!
+		let seedJSONData = NSData(contentsOfURL: seedURL)!
+		do {
+			let JSON = try NSJSONSerialization.JSONObjectWithData(seedJSONData, options: .AllowFragments) as! [AnyObject]
+			for monsterDict in JSON {
+				guard let name = monsterDict["name"] as? String, let id = monsterDict["id"] as? Int, let typeArray = monsterDict["type"] as? [String], let genus = monsterDict["genus"] as? String else {
+					print("Unable to retrieve Monster information from MonsterDict")
+					return
+				}
+				let image2DName = name.lowercaseString
+				let spriteImageName = "sprite-front-\(id)"
+				var typeSet: Set<Type> = Set()
+				
+				for type in typeArray {
+					let newType = Type(name: type, context: coreDataStack.context)
+					typeSet.insert(newType)
+					
+				}
+				
+				_ = Monster(name: name, id: Int16(id), type: typeSet, genus: genus, image2DName: image2DName, spriteImageName: spriteImageName, context: coreDataStack.context)
+			}
+		} catch let error as NSError {
+			print(error)
+		}
+	}
 
 }
 
