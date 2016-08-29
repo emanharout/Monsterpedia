@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataComplying {
+class BrowseViewController: UIViewController, UISearchResultsUpdating, UISearchControllerDelegate,CoreDataComplying {
 		
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var viewInTableHeader: UIView!
@@ -23,8 +23,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupSearchResultsController()
-		setupTableViewRowAttributes()
+		setupSearchController()
+		setupTableView()
+
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
@@ -50,21 +51,22 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 		filterContentForSearchText(searchController.searchBar.text!)
 	}
 	
-	func setupSearchResultsController() {
+	func setupSearchController() {
 		searchController.searchResultsUpdater = self
+		searchController.hidesNavigationBarDuringPresentation = false
 		searchController.dimsBackgroundDuringPresentation = false
 		definesPresentationContext = true
-		searchController.hidesNavigationBarDuringPresentation = false
 		
 		let searchBar = searchController.searchBar
 		searchBar.searchBarStyle = .Minimal
-		searchBar.translucent = false
+		searchBar.backgroundColor = UIColor.whiteColor()
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		tableView.tableHeaderView?.backgroundColor = UIColor.whiteColor()
+		let textField = searchBar.valueForKey("searchField") as! UITextField
+		textField.textColor = UIColor.redColor()
 		tableView.tableHeaderView = searchBar
 		
-		let searchBarHeight = searchController.searchBar.bounds.height
-		tableView.contentOffset = CGPointMake(0, searchBarHeight)
+		
 	}
 }
 
@@ -99,11 +101,13 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 	}
 	
-	func setupTableViewRowAttributes() {
+	func setupTableView() {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
+		let searchBarHeight = searchController.searchBar.bounds.height
+		tableView.contentOffset = CGPointMake(0, searchBarHeight)
 	}
-	
+
 }
 
 
