@@ -22,6 +22,39 @@ class InitialTabBarController: UITabBarController {
 			}
 		}
 		
+		for childVC in viewControllers! {
+			switch childVC {
+			case 0:
+				guard let navController = childVC as? UINavigationController else {
+					print("Could not retrieve navController that contains BrowseVC")
+					continue
+				}
+				guard let browseVC = navController.topViewController as? BrowseViewController else {
+					print("Could not inject stack into browseVC")
+					continue
+				}
+				browseVC.coreDataStack = coreDataStack
+			case 1:
+				guard let caughtMonstersVC = childVC as? CaughtMonstersViewController else {
+					print("Could not inject stack into CaughtMonstersViewController")
+					continue
+				}
+				caughtMonstersVC.coreDataStack = coreDataStack
+			case 2:
+				guard let navController = childVC as? UINavigationController else {
+					print("Could not retrieve navController that contains teamBuilderVC")
+					continue
+				}
+				guard let teamBuilderVC = navController.topViewController as? TeamBuilderViewController else {
+					print("Could not inject stack into TeamBuilderVC")
+					continue
+				}
+				teamBuilderVC.coreDataStack = coreDataStack
+			default:
+				break
+			}
+		}
+		
 		guard let navController = viewControllers?[0] as? UINavigationController else {
 			print("Could not inject stack to navController")
 			return

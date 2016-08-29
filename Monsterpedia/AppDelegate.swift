@@ -25,14 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLaunchedBefore")
 		}
 		
-		print("WINDOW: \(window)")
-		
 		guard let tabBarController = window?.rootViewController as? InitialTabBarController else {
 			print("Could not retrieve Initial Tab Bar Controller")
-			print("ROOT VC: \(window?.rootViewController)")
 			return true
 		}
-		print("ROOT VC: \(window?.rootViewController)")
+		
 		tabBarController.coreDataStack = coreDataStack
 		return true
 	}
