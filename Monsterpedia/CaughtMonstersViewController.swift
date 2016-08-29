@@ -1,3 +1,4 @@
+
 //
 //  CaughtMonstersViewController.swift
 //  Monsterpedia
@@ -17,12 +18,14 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying, UIBarPo
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		setupFlowLayout()
+		setNeedsStatusBarAppearanceUpdate()
+		// TODO: Set Status Bar Style
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
@@ -33,7 +36,7 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying, UIBarPo
 		} catch let error as NSError {
 			print(error)
 		}
-    }
+	}
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
@@ -47,9 +50,9 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying, UIBarPo
 }
 
 
-	
+
 extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionViewDataSource, CollectionHeaderViewDelegate {
-		
+	
 	// MARK: CollectionView Delegate Functions
 	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return monsters.count
@@ -113,7 +116,7 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		collectionView.contentOffset = CGPointMake(0, verticalOffsetValue)
 	}
 }
-	
+
 
 
 
