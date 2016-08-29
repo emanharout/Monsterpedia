@@ -9,11 +9,10 @@
 import UIKit
 import CoreData
 
-class BrowseViewController: UIViewController, UISearchResultsUpdating, UISearchControllerDelegate,CoreDataComplying {
-		
+class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataComplying {
+	
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var viewInTableHeader: UIView!
-
+	
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
@@ -25,12 +24,11 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, UISearchC
 		
 		setupSearchController()
 		setupTableView()
-
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
-
+		
 		do {
 			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
 		} catch let error as NSError {
@@ -61,12 +59,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, UISearchC
 		searchBar.searchBarStyle = .Minimal
 		searchBar.backgroundColor = UIColor.whiteColor()
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-		tableView.tableHeaderView?.backgroundColor = UIColor.whiteColor()
 		let textField = searchBar.valueForKey("searchField") as! UITextField
 		textField.textColor = UIColor.redColor()
 		tableView.tableHeaderView = searchBar
-		
-		
 	}
 }
 
@@ -104,10 +99,11 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func setupTableView() {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
+		
 		let searchBarHeight = searchController.searchBar.bounds.height
 		tableView.contentOffset = CGPointMake(0, searchBarHeight)
 	}
-
+	
 }
 
 

@@ -21,6 +21,16 @@ class InitialTabBarController: UITabBarController {
 				childVC.coreDataStack = coreDataStack
 			}
 		}
+		
+		guard let navController = viewControllers?[0] as? UINavigationController else {
+			print("Could not inject stack to navController")
+			return
+		}
+		guard let browseVC = navController.topViewController as? BrowseViewController else {
+			print("Could not inject stack into browseVC")
+			return
+		}
+		browseVC.coreDataStack = coreDataStack
     }
 
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */; };
 		030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */; };
-		030939AC1D4D5FE8004CC0A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030939AA1D4D5FE8004CC0A7 /* Main.storyboard */; };
 		030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */; };
 		030939B11D4D5FE8004CC0A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030939AF1D4D5FE8004CC0A7 /* LaunchScreen.storyboard */; };
 		030939BC1D4D5FE9004CC0A7 /* MonsterpediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939BB1D4D5FE9004CC0A7 /* MonsterpediaTests.swift */; };
@@ -31,6 +30,7 @@
 		030B2D8B1D7268980072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D8A1D7268980072263C /* seed.json */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
+		03FEAF941D73D6B400B455AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FEAF931D73D6B400B455AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 		030939A31D4D5FE8004CC0A7 /* Monsterpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsterpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
-		030939AB1D4D5FE8004CC0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		030939B01D4D5FE8004CC0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		030939B21D4D5FE9004CC0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		030B2D8A1D7268980072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		03FEAF931D73D6B400B455AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 				030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */,
 				033970781D566C69003A95F3 /* MonsterSpriteCell.swift */,
 				030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */,
-				030939AA1D4D5FE8004CC0A7 /* Main.storyboard */,
+				03FEAF931D73D6B400B455AC /* Main.storyboard */,
 				030939AF1D4D5FE8004CC0A7 /* LaunchScreen.storyboard */,
 				030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */,
 			);
@@ -319,7 +319,7 @@
 				030939B11D4D5FE8004CC0A7 /* LaunchScreen.storyboard in Resources */,
 				030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */,
 				030B2D8B1D7268980072263C /* seed.json in Resources */,
-				030939AC1D4D5FE8004CC0A7 /* Main.storyboard in Resources */,
+				03FEAF941D73D6B400B455AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		030939AA1D4D5FE8004CC0A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				030939AB1D4D5FE8004CC0A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		030939AF1D4D5FE8004CC0A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
