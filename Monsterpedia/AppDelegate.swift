@@ -25,12 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLaunchedBefore")
 		}
 		
-		guard let tabBarController = window?.rootViewController as? InitialTabBarController else {
-			print("Could not retrieve Initial Tab Bar Controller")
-			return true
-		}
+		injectCoreDataStack()
 		
-		tabBarController.coreDataStack = coreDataStack
 		return true
 	}
 
@@ -79,6 +75,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			print(error)
 		}
 		coreDataStack.save()
+	}
+	
+	func injectCoreDataStack() {
+		guard let tabBarController = window?.rootViewController as? UITabBarController else {
+			print("Could not retrieve Initial Tab Bar Controller")
+			return
+		}
+		
+		guard let viewControllers = tabBarController.viewControllers as? [UINavigationController] else {
+			print("Failed to retrieve reference to Navigation Controllers")
+			return
+		}
+		
+		for index in 0...2 {
+			print(index)
+			let navController = viewControllers[index]
+			switch index {
+			case 0:
+				guard let browseVC = navController.topViewController as? BrowseViewController else {
+					print("Could not inject stack into browseVC")
+					continue
+				}
+				browseVC.coreDataStack = coreDataStack
+			case 1:
+				guard let caughtMonstersVC = navController.topViewController as? CaughtMonstersViewController else {
+					print("Could not inject stack into CaughtMonstersViewController")
+					continue
+				}
+				caughtMonstersVC.coreDataStack = coreDataStack
+			case 2:
+				guard let teamBuilderVC = navController.topViewController as? TeamBuilderViewController else {
+					print("Could not inject stack into TeamBuilderVC")
+					continue
+				}
+				teamBuilderVC.coreDataStack = coreDataStack
+			default:
+				break
+			}
+		}
 	}
 
 }

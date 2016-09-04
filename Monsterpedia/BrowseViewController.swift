@@ -17,6 +17,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
+	var teamBuilding = false
+	weak var delegate: TeamBuilderViewController!
+	
 	let searchController = UISearchController(searchResultsController: nil)
 	
 	override func viewDidLoad() {
@@ -94,6 +97,14 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		let cell = tableView.cellForRowAtIndexPath(indexPath)
+		
+		if teamBuilding {
+			cell?.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+			cell?.accessoryType = cell?.accessoryType == .Checkmark ? .None : .Checkmark
+		} else {
+			// TODO: Present EncyclopediaVC
+		}
 	}
 	
 	func setupTableView() {

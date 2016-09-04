@@ -16,10 +16,21 @@ class TeamBuilderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 		
     }
+	
+	@IBAction func addTeam() {
+		guard let browseVC = storyboard?.instantiateViewControllerWithIdentifier("BrowseVC") as? BrowseViewController else {
+			print("Instantiation of BrowseVC Failed")
+			return
+		}
+		browseVC.teamBuilding = true
+		browseVC.coreDataStack = coreDataStack
+		browseVC.delegate = self
+		presentViewController(browseVC, animated: true, completion: nil)
+	}
 
+	
 }
 
 

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Encyclopedia-->
+        <!--Monsters-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="BrowseViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BrowseVC" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="BrowseViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -84,7 +84,7 @@
                             <constraint firstAttribute="trailing" secondItem="OXL-jE-xEm" secondAttribute="trailing" id="x4h-No-dmC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Encyclopedia" id="u6A-0o-eid"/>
+                    <navigationItem key="navigationItem" title="Monsters" id="u6A-0o-eid"/>
                     <connections>
                         <outlet property="tableView" destination="OXL-jE-xEm" id="7p6-gS-oZb"/>
                     </connections>
@@ -96,7 +96,7 @@
         <!--Caught-->
         <scene sceneID="HQR-w6-C4L">
             <objects>
-                <viewController id="lcM-4W-MbO" customClass="CaughtMonstersViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lcM-4W-MbO" customClass="CaughtMonstersViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3YA-wW-aig"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ek-KV-rMU"/>
@@ -105,22 +105,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fM-bd-Zyv">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Caught Monsters" id="dhe-oe-dXw"/>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="lcM-4W-MbO" id="LKo-Bz-IWI"/>
-                                </connections>
-                            </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKs-5Y-CSi">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hKs-5Y-CSi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezp-6Q-hea">
                                     <size key="itemSize" width="168" height="208"/>
@@ -197,17 +183,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6fM-bd-Zyv" firstAttribute="leading" secondItem="XZV-kg-fV4" secondAttribute="leading" id="4VX-1T-88Z"/>
                             <constraint firstAttribute="bottom" secondItem="hKs-5Y-CSi" secondAttribute="bottom" id="8g6-GC-7ps"/>
+                            <constraint firstItem="hKs-5Y-CSi" firstAttribute="top" secondItem="3YA-wW-aig" secondAttribute="bottom" id="JyE-y3-IfK"/>
                             <constraint firstAttribute="trailing" secondItem="hKs-5Y-CSi" secondAttribute="trailing" id="Mtv-KX-SRf"/>
-                            <constraint firstItem="6fM-bd-Zyv" firstAttribute="top" secondItem="3YA-wW-aig" secondAttribute="bottom" id="Uxr-Co-YrD"/>
-                            <constraint firstItem="hKs-5Y-CSi" firstAttribute="top" secondItem="6fM-bd-Zyv" secondAttribute="bottom" id="b2h-dv-UMW"/>
-                            <constraint firstAttribute="trailing" secondItem="6fM-bd-Zyv" secondAttribute="trailing" id="iBk-U0-xEr"/>
                             <constraint firstItem="hKs-5Y-CSi" firstAttribute="leading" secondItem="XZV-kg-fV4" secondAttribute="leading" id="zyU-rd-fVa"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Caught" id="Azf-rj-tb7"/>
+                    <navigationItem key="navigationItem" title="Caught" id="A7g-wE-NTK"/>
                     <connections>
                         <outlet property="collectionView" destination="hKs-5Y-CSi" id="BKs-gF-Asl"/>
                         <outlet property="flowLayout" destination="ezp-6Q-hea" id="FD5-Cu-xNQ"/>
@@ -215,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRS-ZS-GAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="865"/>
+            <point key="canvasLocation" x="1856" y="865"/>
         </scene>
         <!--Item-->
         <scene sceneID="vwF-bL-xVf">
@@ -271,6 +254,9 @@
                     <navigationItem key="navigationItem" title="Teams" id="b2e-dZ-pEW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PtZ-Jh-NCp">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addTeam" destination="swq-s4-Jbv" id="TTV-fB-dhK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -297,7 +283,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="yU8-Qw-CBg" kind="relationship" relationship="viewControllers" id="L3X-yT-3ih"/>
-                        <segue destination="lcM-4W-MbO" kind="relationship" relationship="viewControllers" id="jIV-dP-2I7"/>
+                        <segue destination="WL1-IM-OyQ" kind="relationship" relationship="viewControllers" id="jIV-dP-2I7"/>
                         <segue destination="cUh-ev-L8D" kind="relationship" relationship="viewControllers" id="Q55-UC-vee"/>
                     </connections>
                 </tabBarController>
@@ -328,6 +314,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K22-sx-pcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1044" y="81"/>
+        </scene>
+        <!--Caught-->
+        <scene sceneID="ijA-mo-6TG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WL1-IM-OyQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Caught" id="Azf-rj-tb7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHp-vB-nw3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lcM-4W-MbO" kind="relationship" relationship="rootViewController" id="GFg-8Q-V1g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SQ-a9-deW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="865"/>
         </scene>
     </scenes>
 </document>

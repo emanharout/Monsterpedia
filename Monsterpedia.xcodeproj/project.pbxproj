@@ -18,7 +18,6 @@
 		030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */; };
 		030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */; };
 		030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D611D72259D0072263C /* CoreDataStack.swift */; };
-		030B2D661D7240940072263C /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D651D7240940072263C /* InitialTabBarController.swift */; };
 		030B2D821D7263050072263C /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7A1D7263050072263C /* Team+CoreDataProperties.swift */; };
 		030B2D831D7263050072263C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7B1D7263050072263C /* Team.swift */; };
 		030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */; };
@@ -69,7 +68,6 @@
 		030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtMonstersViewController.swift; sourceTree = "<group>"; };
 		030B2D611D72259D0072263C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
-		030B2D651D7240940072263C /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
 		030B2D7A1D7263050072263C /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		030B2D7B1D7263050072263C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Move+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 		030939DB1D4DE25C004CC0A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				030B2D651D7240940072263C /* InitialTabBarController.swift */,
 				030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */,
 				030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */,
 				03E659BD1D73F13F001B6CAA /* TeamBuilderViewController.swift */,
@@ -365,7 +362,6 @@
 				030B2D891D7263050072263C /* Type.swift in Sources */,
 				030B2D851D7263050072263C /* Move.swift in Sources */,
 				030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */,
-				030B2D661D7240940072263C /* InitialTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
