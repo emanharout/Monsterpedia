@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class CaughtMonstersViewController: UIViewController, CoreDataComplying, UIBarPositioningDelegate {
+class CaughtMonstersViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -42,10 +42,6 @@ class CaughtMonstersViewController: UIViewController, CoreDataComplying, UIBarPo
 		super.viewDidLayoutSubviews()
 		
 		setupCollectionView()
-	}
-	
-	func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-		return UIBarPosition.TopAttached
 	}
 }
 

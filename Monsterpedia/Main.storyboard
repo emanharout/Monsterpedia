@@ -84,8 +84,23 @@
                             <constraint firstAttribute="trailing" secondItem="OXL-jE-xEm" secondAttribute="trailing" id="x4h-No-dmC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Monsters" id="u6A-0o-eid"/>
+                    <navigationItem key="navigationItem" title="Monsters" id="u6A-0o-eid">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="I7X-fw-Je1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancel" destination="BYZ-38-t0r" id="2AJ-bv-yAg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="rDN-ji-Ii2">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="save" destination="BYZ-38-t0r" id="1gH-r0-FdO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="leftBarItem" destination="I7X-fw-Je1" id="vjN-BE-0Lr"/>
+                        <outlet property="rightBarItem" destination="rDN-ji-Ii2" id="E3L-jd-TO5"/>
                         <outlet property="tableView" destination="OXL-jE-xEm" id="7p6-gS-oZb"/>
                     </connections>
                 </viewController>
@@ -200,11 +215,11 @@
             </objects>
             <point key="canvasLocation" x="1856" y="865"/>
         </scene>
-        <!--Item-->
+        <!--Teams-->
         <scene sceneID="vwF-bL-xVf">
             <objects>
                 <navigationController id="cUh-ev-L8D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ajV-pz-Rnu"/>
+                    <tabBarItem key="tabBarItem" title="Teams" id="ajV-pz-Rnu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5P-IV-PD7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -267,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="1750" y="1894"/>
         </scene>
-        <!--Initial Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="fxT-dy-taw">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o66-mL-sbb" customClass="InitialTabBarController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="o66-mL-sbb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="F1H-3A-lht">
                         <autoresizingMask key="autoresizingMask"/>
@@ -294,7 +309,7 @@
         <!--Browse-->
         <scene sceneID="m9u-Rg-PQC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yU8-Qw-CBg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="browseMonsterNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="yU8-Qw-CBg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" id="85g-tg-Ihw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KlK-RT-Rti">

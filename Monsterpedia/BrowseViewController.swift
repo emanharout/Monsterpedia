@@ -9,15 +9,17 @@
 import UIKit
 import CoreData
 
-class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataComplying {
+class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var leftBarItem: UIBarButtonItem!
+	@IBOutlet weak var rightBarItem: UIBarButtonItem!
 	
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
-	var teamBuilding = false
+	var isTeamBuilding = false
 	weak var delegate: TeamBuilderViewController!
 	
 	let searchController = UISearchController(searchResultsController: nil)
@@ -66,6 +68,14 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating, CoreDataC
 		textField.textColor = UIColor.redColor()
 		tableView.tableHeaderView = searchBar
 	}
+	
+	@IBAction func cancel() {
+		
+	}
+	
+	@IBAction func save() {
+		
+	}
 }
 
 
@@ -99,7 +109,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		let cell = tableView.cellForRowAtIndexPath(indexPath)
 		
-		if teamBuilding {
+		if isTeamBuilding {
 			cell?.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell?.accessoryType = cell?.accessoryType == .Checkmark ? .None : .Checkmark
 		} else {
@@ -111,8 +121,10 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
 		
-		let searchBarHeight = searchController.searchBar.bounds.height
-		tableView.contentOffset = CGPointMake(0, searchBarHeight)
+		if !isTeamBuilding {
+			let searchBarHeight = searchController.searchBar.bounds.height
+			tableView.contentOffset = CGPointMake(0, searchBarHeight)
+		}
 	}
 	
 }

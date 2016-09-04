@@ -89,7 +89,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		}
 		
 		for index in 0...2 {
-			print(index)
 			let navController = viewControllers[index]
 			switch index {
 			case 0:

@@ -20,14 +20,39 @@ class TeamBuilderViewController: UIViewController {
     }
 	
 	@IBAction func addTeam() {
-		guard let browseVC = storyboard?.instantiateViewControllerWithIdentifier("BrowseVC") as? BrowseViewController else {
+		
+		guard let browseNavController = storyboard?.instantiateViewControllerWithIdentifier("browseMonsterNavigationController") as? UINavigationController else {
 			print("Instantiation of BrowseVC Failed")
 			return
 		}
-		browseVC.teamBuilding = true
+		guard let browseVC = browseNavController.topViewController as? BrowseViewController else {
+			print("Failed to get reference to Browse View Controller")
+			return
+		}
+		browseVC.isTeamBuilding = true
 		browseVC.coreDataStack = coreDataStack
 		browseVC.delegate = self
-		presentViewController(browseVC, animated: true, completion: nil)
+		
+		let alert = UIAlertController(title: "Enter Team Name", message: nil, preferredStyle: .Alert)
+		alert.addTextFieldWithConfigurationHandler { (textField) in
+		}
+		
+		let okAction = UIAlertAction(title: "Ok", style: .Default) { (alertAction) in
+			// TODO: Dismiss alert?
+			let textField = alert.textFields![0]
+			
+			if !textField.text!.isEmpty {
+				let teamName = textField.text!
+				self.presentViewController(browseNavController, animated: true, completion: nil)
+			}
+		}
+		
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+		alert.addAction(okAction)
+		alert.addAction(cancelAction)
+		presentViewController(alert, animated: true, completion: nil)
+		
+		
 	}
 
 	
