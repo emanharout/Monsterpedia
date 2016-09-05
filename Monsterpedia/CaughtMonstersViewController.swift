@@ -24,7 +24,6 @@ class CaughtMonstersViewController: UIViewController {
 		super.viewDidLoad()
 		
 		setupFlowLayout()
-		setNeedsStatusBarAppearanceUpdate()
 		// TODO: Set Status Bar Style
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")

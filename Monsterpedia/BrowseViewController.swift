@@ -17,8 +17,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	var fetchRequest: NSFetchRequest!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
+	
 	var isTeamBuilding = false
-	weak var delegate: TeamBuilderViewController!
+	var selectedIndexPath: NSIndexPath!
 	
 	let searchController = UISearchController(searchResultsController: nil)
 	
@@ -37,6 +38,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		} catch let error as NSError {
 			print(error)
 		}
+		
+		// The following code is added because Xcode falsely thinks there is a bug when exiting BrowseVC while editing team.
+		searchController.loadViewIfNeeded()
 	}
 	
 	
@@ -97,11 +101,13 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let cell = tableView.cellForRowAtIndexPath(indexPath)
+		let cell = tableView.cellForRowAtIndexPath(indexPath) as! MonsterSpriteCell
 		
 		if isTeamBuilding {
-			cell?.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-			cell?.accessoryType = cell?.accessoryType == .Checkmark ? .None : .Checkmark
+			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+			cell.accessoryType = cell.accessoryType == .Checkmark ? .None : .Checkmark
+			selectedIndexPath = indexPath
+			self.performSegueWithIdentifier("saveToTeamBuilderTableVC", sender: cell)
 		} else {
 			// TODO: Present EncyclopediaVC
 		}

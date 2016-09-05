@@ -54,6 +54,14 @@ class TeamViewController: UIViewController {
 		
 		
 	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "addTeam" {
+			let destVC = segue.destinationViewController as! UINavigationController
+			let teamBuildingVC = destVC.topViewController as! TeamBuilderViewController
+			teamBuildingVC.coreDataStack = coreDataStack
+		}
+	}
 
 	
 }
