@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */; };
 		030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */; };
 		030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */; };
 		030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */; };
@@ -29,7 +30,7 @@
 		030B2D8B1D7268980072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D8A1D7268980072263C /* seed.json */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
-		03E659BE1D73F13F001B6CAA /* TeamBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E659BD1D73F13F001B6CAA /* TeamBuilderViewController.swift */; };
+		03E659BE1D73F13F001B6CAA /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E659BD1D73F13F001B6CAA /* TeamViewController.swift */; };
 		03FEAF941D73D6B400B455AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FEAF931D73D6B400B455AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderViewController.swift; sourceTree = "<group>"; };
 		030939A31D4D5FE8004CC0A7 /* Monsterpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsterpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +81,7 @@
 		030B2D8A1D7268980072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		03E659BD1D73F13F001B6CAA /* TeamBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderViewController.swift; sourceTree = "<group>"; };
+		03E659BD1D73F13F001B6CAA /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		03FEAF931D73D6B400B455AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +178,8 @@
 			children = (
 				030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */,
 				030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */,
-				03E659BD1D73F13F001B6CAA /* TeamBuilderViewController.swift */,
+				03E659BD1D73F13F001B6CAA /* TeamViewController.swift */,
+				03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -352,7 +355,8 @@
 				030B2D881D7263050072263C /* Type+CoreDataProperties.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
 				030B2D821D7263050072263C /* Team+CoreDataProperties.swift in Sources */,
-				03E659BE1D73F13F001B6CAA /* TeamBuilderViewController.swift in Sources */,
+				03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */,
+				03E659BE1D73F13F001B6CAA /* TeamViewController.swift in Sources */,
 				03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */,
 				030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */,
 				030B2D871D7263050072263C /* Monster.swift in Sources */,

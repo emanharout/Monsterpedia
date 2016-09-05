@@ -104,11 +104,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				}
 				caughtMonstersVC.coreDataStack = coreDataStack
 			case 2:
-				guard let teamBuilderVC = navController.topViewController as? TeamBuilderViewController else {
-					print("Could not inject stack into TeamBuilderVC")
+				guard let teamVC = navController.topViewController as? TeamViewController else {
+					print("Could not inject stack into TeamVC")
 					continue
 				}
-				teamBuilderVC.coreDataStack = coreDataStack
+				teamVC.coreDataStack = coreDataStack
 			default:
 				break
 			}

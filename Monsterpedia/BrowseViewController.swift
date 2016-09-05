@@ -12,8 +12,6 @@ import CoreData
 class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var leftBarItem: UIBarButtonItem!
-	@IBOutlet weak var rightBarItem: UIBarButtonItem!
 	
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest!
@@ -67,14 +65,6 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		let textField = searchBar.valueForKey("searchField") as! UITextField
 		textField.textColor = UIColor.redColor()
 		tableView.tableHeaderView = searchBar
-	}
-	
-	@IBAction func cancel() {
-		
-	}
-	
-	@IBAction func save() {
-		
 	}
 }
 
