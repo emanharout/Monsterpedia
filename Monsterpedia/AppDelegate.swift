@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	let coreDataStack = CoreDataStack.sharedInstance
 
-
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		
 		if NSUserDefaults.standardUserDefaults().boolForKey("hasLaunchedBefore") {

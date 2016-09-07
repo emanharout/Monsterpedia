@@ -207,7 +207,7 @@
             <objects>
                 <navigationController id="cUh-ev-L8D" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Teams" id="ajV-pz-Rnu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5P-IV-PD7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="a5P-IV-PD7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,7 +275,7 @@
         <scene sceneID="urT-L4-qWM">
             <objects>
                 <navigationController id="Oje-8Q-Bf0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ux5-4A-JVN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ux5-4A-JVN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -721,7 +721,7 @@
                 <navigationController storyboardIdentifier="browseMonsterNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="yU8-Qw-CBg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Browse" id="85g-tg-Ihw"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KlK-RT-Rti">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KlK-RT-Rti">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -746,7 +746,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WL1-IM-OyQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Caught" id="Azf-rj-tb7"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHp-vB-nw3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gHp-vB-nw3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

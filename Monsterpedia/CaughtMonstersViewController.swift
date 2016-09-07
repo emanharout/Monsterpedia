@@ -36,7 +36,7 @@ class CaughtMonstersViewController: UIViewController {
 			print(error)
 		}
 	}
-	
+
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		

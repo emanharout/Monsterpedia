@@ -14,9 +14,8 @@ class TeamBuilderViewController: UIViewController {
 	var coreDataStack: CoreDataStack!
 
     override func viewDidLoad() {
-        super.viewDidLoad()		
+        super.viewDidLoad()
     }
-	
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "embedTableVC" {
@@ -60,7 +59,7 @@ class TeamBuilderViewController: UIViewController {
 			for monster in selectedMonsters {
 				monsterSet.insert(monster!)
 			}
-			let newTeam = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
+			_ = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
 			dismissViewControllerAnimated(true, completion: nil)
 		}
 		
