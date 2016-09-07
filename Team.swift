@@ -12,6 +12,16 @@ import CoreData
 
 class Team: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+	//init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+	
+	convenience init(teamName: String, monsters: Set<Monster>, context: NSManagedObjectContext) {
+		if let entityDesc = NSEntityDescription.entityForName("Team", inManagedObjectContext: context) {
+			self.init(entity: entityDesc, insertIntoManagedObjectContext: context)
+			self.name = teamName
+			self.monsters = monsters
+		} else {
+			fatalError("Failed to create Team managed object")
+		}
+	}
 
 }
