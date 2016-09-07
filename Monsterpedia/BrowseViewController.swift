@@ -19,7 +19,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	var filteredMonsters = [Monster]()
 	
 	var isTeamBuilding = false
-	var selectedIndexPath: NSIndexPath!
+	var selectedMonster: Monster!
 	
 	let searchController = UISearchController(searchResultsController: nil)
 	
@@ -70,6 +70,18 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		textField.textColor = UIColor.redColor()
 		tableView.tableHeaderView = searchBar
 	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "saveToTeamBuilderTableVC" {
+			guard let cell = sender as? MonsterSpriteCell else {
+				print("Downcast to MonsterSpriteCell Failed")
+				return
+			}
+			if let monsterIndexPath = tableView.indexPathForCell(cell) {
+				selectedMonster = monsters[monsterIndexPath.row]
+			}
+		}
+	}
 }
 
 
@@ -106,7 +118,6 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		if isTeamBuilding {
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .Checkmark ? .None : .Checkmark
-			selectedIndexPath = indexPath
 			self.performSegueWithIdentifier("saveToTeamBuilderTableVC", sender: cell)
 		} else {
 			// TODO: Present EncyclopediaVC

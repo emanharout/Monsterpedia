@@ -13,16 +13,33 @@ class TeamBuilderTableViewController: UITableViewController {
 	
 	var coreDataStack: CoreDataStack!
 	
-	@IBOutlet weak var firstMonster: MonsterSpriteCell!
-	@IBOutlet weak var secondMonster: MonsterSpriteCell!
-	@IBOutlet weak var thirdMonster: MonsterSpriteCell!
-	@IBOutlet weak var fourthMonster: MonsterSpriteCell!
-	@IBOutlet weak var fifthMonster: MonsterSpriteCell!
-	@IBOutlet weak var sixthMonster: MonsterSpriteCell!
+	@IBOutlet weak var firstMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var secondMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var thirdMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var fourthMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var fifthMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
+	var firstMonster: Monster?
+	var secondMonster: Monster?
+	var thirdMonster: Monster?
+	var fourthMonster: Monster?
+	var fifthMonster: Monster?
+	var sixthMonster: Monster?
 	@IBOutlet weak var teamNameTextField: UITextField!
+
+	var selectedMonsters: [Monster?] {
+		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
+		return monsters
+	}
+	
+	// Comptued property returns array of each cells monster name
+	// store team name in var
+	// fetch monsters with predicate of OR's for each name. put monsters in a Set
+	// instantiate and save new team
+	// return
+	
 	var teamMonsters = [Monster]()
-	var monsters = [Monster]()
-	var selectedRow: Int!
+	var monsters: NSArray = [Monster]()
 	
 	
     override func viewDidLoad() {
@@ -47,46 +64,50 @@ class TeamBuilderTableViewController: UITableViewController {
 		if indexPath.section == 0 {
 			teamNameTextField.becomeFirstResponder()
 		} else if indexPath.section == 1 {
-			selectedRow = indexPath.row
 			let browseVC = storyboard?.instantiateViewControllerWithIdentifier("BrowseVC") as! BrowseViewController
 			browseVC.isTeamBuilding = true
 			browseVC.coreDataStack = coreDataStack
-			browseVC.selectedIndexPath = indexPath
 			navigationController?.pushViewController(browseVC, animated: true)
 		}
 	}
 	
-//	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//		
-//	}
-	
 	@IBAction func saveSelectedMonster(segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
 		if segue.sourceViewController.isKindOfClass(BrowseViewController) {
 			let browseVC = segue.sourceViewController as! BrowseViewController
-			let indexPath = browseVC.selectedIndexPath
-			let monster = monsters[indexPath.row]
+			let monster = browseVC.selectedMonster
 			
-			if let selectedRowIndex = monsterCellNumber(rawValue: selectedRow) {
-				let cell: MonsterSpriteCell!
-				switch selectedRowIndex {
-				case monsterCellNumber.FirstCell:
-					cell = firstMonster
-				case monsterCellNumber.SecondCell:
-					cell = secondMonster
-				case monsterCellNumber.ThirdCell:
-					cell = thirdMonster
-				case monsterCellNumber.FourthCell:
-					cell = fourthMonster
-				case monsterCellNumber.FifthCell:
-					cell = fifthMonster
-				case monsterCellNumber.SixthCell:
-					cell = sixthMonster
-				}
+			let cell: MonsterSpriteCell!
+			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
+				print("Could not retrieve selected row value")
+				return
+			}
+			switch selectedRowIndex {
+			case monsterCellNumber.FirstCell.rawValue:
+				cell = firstMonsterCell
+				firstMonster = monster
+			case monsterCellNumber.SecondCell.rawValue:
+				cell = secondMonsterCell
+				secondMonster = monster
+			case monsterCellNumber.ThirdCell.rawValue:
+				cell = thirdMonsterCell
+				thirdMonster = monster
+			case monsterCellNumber.FourthCell.rawValue:
+				cell = fourthMonsterCell
+				fourthMonster = monster
+			case monsterCellNumber.FifthCell.rawValue:
+				cell = fifthMonsterCell
+				fifthMonster = monster
+			case monsterCellNumber.SixthCell.rawValue:
+				cell = sixthMonsterCell
+				sixthMonster = monster
+			default:
+				cell = nil
+			}
+			if cell != nil {
 				cell.nameLabel.text = monster.name
 				cell.descriptionLabel.text = monster.genus
 				cell.spriteImageView.image = UIImage(named: monster.spriteImageName)
 			}
-			
 		}
 	}
 	

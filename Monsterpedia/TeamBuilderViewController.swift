@@ -28,6 +28,32 @@ class TeamBuilderViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func saveTeam() {
+		guard let childVC = childViewControllers.last as? TeamBuilderTableViewController else {
+			print("Could not retrieve reference to Team Builder Table View Controller")
+			return
+		}
+		let selectedMonsters = childVC.selectedMonsters
+		var monsterNotSelected = false
+		for monster in selectedMonsters {
+			if monster == nil {
+				monsterNotSelected = true
+			}
+		}
+		if monsterNotSelected {
+			let alertController = UIAlertController(title: "Missing Monsters", message: "Please make sure to select six monsters", preferredStyle: .Alert)
+			let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+			alertController.addAction(okAction)
+			presentViewController(alertController, animated: true, completion: nil)
+			return
+		} else {
+			// TODO: Create new team and dismiss VC
+		}
+		
+		
+		
+	}
+	
 	@IBAction func cancelTeamBuilding() {
 		self.dismissViewControllerAnimated(true, completion: nil)
 	}
