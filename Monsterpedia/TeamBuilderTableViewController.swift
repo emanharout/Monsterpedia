@@ -19,13 +19,14 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBOutlet weak var fourthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var fifthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
+	@IBOutlet weak var teamNameTextField: UITextField!
 	var firstMonster: Monster?
 	var secondMonster: Monster?
 	var thirdMonster: Monster?
 	var fourthMonster: Monster?
 	var fifthMonster: Monster?
 	var sixthMonster: Monster?
-	@IBOutlet weak var teamNameTextField: UITextField!
+	
 
 	var selectedMonsters: [Monster?] {
 		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]

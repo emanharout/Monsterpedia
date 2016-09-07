@@ -42,12 +42,26 @@ class TeamBuilderViewController: UIViewController {
 		}
 		if monsterNotSelected {
 			let alertController = UIAlertController(title: "Missing Monsters", message: "Please make sure to select six monsters", preferredStyle: .Alert)
-			let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+			let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
 			alertController.addAction(okAction)
 			presentViewController(alertController, animated: true, completion: nil)
 			return
 		} else {
 			// TODO: Create new team and dismiss VC
+			guard let teamName = childVC.teamNameTextField.text where !teamName.isEmpty else {
+				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .Alert)
+				let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+				alertController.addAction(okAction)
+				presentViewController(alertController, animated: true, completion: nil)
+				return
+			}
+			
+			var monsterSet: Set<Monster> = Set()
+			for monster in selectedMonsters {
+				monsterSet.insert(monster!)
+			}
+			let newTeam = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
+			dismissViewControllerAnimated(true, completion: nil)
 		}
 		
 		
