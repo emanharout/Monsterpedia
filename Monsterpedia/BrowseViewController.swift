@@ -67,8 +67,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		searchBar.backgroundColor = UIColor.whiteColor()
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		// TODO: Confirm if public api
-		let textField = searchBar.valueForKey("searchField") as! UITextField
-		textField.textColor = UIColor.redColor()
+		UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		tableView.tableHeaderView = searchBar
 	}
 	
