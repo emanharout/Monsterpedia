@@ -45,10 +45,9 @@ class CaughtMonstersViewController: UIViewController {
 }
 
 
-
+// MARK: CollectionView Delegate Functions
 extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionViewDataSource, CollectionHeaderViewDelegate {
 	
-	// MARK: CollectionView Delegate Functions
 	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return monsters.count
 	}
@@ -56,14 +55,30 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MonsterCell", forIndexPath: indexPath) as! MonsterCell
-		cell.nameLabel.text = monsters[indexPath.row].name
-		cell.imageView.image = UIImage(named: monsters[indexPath.row].image2DName)
+		let monster = monsters[indexPath.row]
+		cell.nameLabel.text = monster.name
+		cell.imageView.image = UIImage(named: monster.image2DName)
+		
+		if monster.isCaught {
+			cell.imageView.alpha = 1.0
+		} else {
+			cell.imageView.alpha = 0.4
+		}
 		
 		return cell
 	}
 	
 	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MonsterCell
+		let monster = monsters[indexPath.row]
 		
+		if monster.isCaught {
+			cell.imageView.alpha = 0.40
+			monster.isCaught = false
+		} else {
+			cell.imageView.alpha = 1.0
+			monster.isCaught = true
+		}
 	}
 	
 	func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {

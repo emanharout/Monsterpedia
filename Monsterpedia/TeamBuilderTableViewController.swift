@@ -12,6 +12,7 @@ import CoreData
 class TeamBuilderTableViewController: UITableViewController {
 	
 	// TODO: Implement TextFieldShouldReturn if needed
+	// TODO: Change TextField font color to red
 	
 	var coreDataStack: CoreDataStack!
 	
@@ -34,12 +35,6 @@ class TeamBuilderTableViewController: UITableViewController {
 		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
 		return monsters
 	}
-	
-	// Comptued property returns array of each cells monster name
-	// store team name in var
-	// fetch monsters with predicate of OR's for each name. put monsters in a Set
-	// instantiate and save new team
-	// return
 	
 	var teamMonsters = [Monster]()
 	var monsters: NSArray = [Monster]()

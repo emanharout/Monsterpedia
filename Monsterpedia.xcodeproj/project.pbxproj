@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */; };
 		03091CC81D7D036500810BEF /* TeamBuilderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CC71D7D036500810BEF /* TeamBuilderTableViewController.swift */; };
+		03091CCA1D81587800810BEF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03091CC91D81587800810BEF /* Info.plist */; };
 		030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */; };
 		030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */; };
 		030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */; };
@@ -55,12 +56,12 @@
 /* Begin PBXFileReference section */
 		03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderViewController.swift; sourceTree = "<group>"; };
 		03091CC71D7D036500810BEF /* TeamBuilderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderTableViewController.swift; sourceTree = "<group>"; };
+		03091CC91D81587800810BEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		030939A31D4D5FE8004CC0A7 /* Monsterpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsterpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		030939B01D4D5FE8004CC0A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		030939B21D4D5FE9004CC0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		030939B71D4D5FE9004CC0A7 /* MonsterpediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonsterpediaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		030939BB1D4D5FE9004CC0A7 /* MonsterpediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterpediaTests.swift; sourceTree = "<group>"; };
 		030939BD1D4D5FE9004CC0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 				030939DC1D4DE266004CC0A7 /* Model */,
 				030939DA1D4DE1EA004CC0A7 /* View */,
 				030939DB1D4DE25C004CC0A7 /* Controller */,
-				030939B21D4D5FE9004CC0A7 /* Info.plist */,
 			);
 			path = Monsterpedia;
 			sourceTree = "<group>";
@@ -183,6 +183,7 @@
 				03E659BD1D73F13F001B6CAA /* TeamViewController.swift */,
 				03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */,
 				03091CC71D7D036500810BEF /* TeamBuilderTableViewController.swift */,
+				03091CC91D81587800810BEF /* Info.plist */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -325,6 +326,7 @@
 				030939B11D4D5FE8004CC0A7 /* LaunchScreen.storyboard in Resources */,
 				030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */,
 				030B2D8B1D7268980072263C /* seed.json in Resources */,
+				03091CCA1D81587800810BEF /* Info.plist in Resources */,
 				03FEAF941D73D6B400B455AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
