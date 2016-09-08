@@ -60,6 +60,7 @@ class TeamBuilderViewController: UIViewController {
 				monsterSet.insert(monster!)
 			}
 			_ = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
+			coreDataStack.save()
 			dismissViewControllerAnimated(true, completion: nil)
 		}
 		

@@ -7,53 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class TeamViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
 	var coreDataStack: CoreDataStack!
+	var fetchRequest: NSFetchRequest!
+	var frc: NSFetchedResultsController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
+		fetchRequest = NSFetchRequest(entityName: "Team")
+		let sortDesc = NSSortDescriptor(key: "name", ascending: true)
+		fetchRequest.sortDescriptors = [sortDesc]
+		frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+		frc.delegate = self
+		do {
+			try frc.performFetch()
+		} catch let error as NSError {
+			print(error)
+		}
     }
-	
-	@IBAction func addTeam() {
-		
-//		guard let browseNavController = storyboard?.instantiateViewControllerWithIdentifier("browseMonsterNavigationController") as? UINavigationController else {
-//			print("Instantiation of BrowseVC Failed")
-//			return
-//		}
-//		guard let browseVC = browseNavController.topViewController as? BrowseViewController else {
-//			print("Failed to get reference to Browse View Controller")
-//			return
-//		}
-//		browseVC.isTeamBuilding = true
-//		browseVC.coreDataStack = coreDataStack
-//		browseVC.delegate = self
-//		
-//		let alert = UIAlertController(title: "Enter Team Name", message: nil, preferredStyle: .Alert)
-//		alert.addTextFieldWithConfigurationHandler { (textField) in
-//		}
-//		
-//		let okAction = UIAlertAction(title: "Ok", style: .Default) { (alertAction) in
-//			// TODO: Dismiss alert?
-//			let textField = alert.textFields![0]
-//			
-//			if !textField.text!.isEmpty {
-//				let teamName = textField.text!
-//				self.presentViewController(browseNavController, animated: true, completion: nil)
-//			}
-//		}
-//		
-//		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//		alert.addAction(okAction)
-//		alert.addAction(cancelAction)
-//		presentViewController(alert, animated: true, completion: nil)
-		
-		
-	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "addTeam" {
@@ -75,12 +52,45 @@ extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		return UITableViewCell()
+		let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell")!
+		let team = frc.objectAtIndexPath(indexPath) as! Team
+		cell.textLabel?.text = team.name
+		return cell
 	}
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
+		if let count = frc.sections?[section].numberOfObjects {
+			return count
+		} else {
+			return 0
+		}
+	}
+}
+
+
+
+extension TeamViewController: NSFetchedResultsControllerDelegate {
+	func controllerWillChangeContent(controller: NSFetchedResultsController) {
+		tableView.beginUpdates()
 	}
 	
+	func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+		
+		switch type {
+		case .Insert:
+			tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+		case .Delete:
+			tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+		case .Update:
+			tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+		case .Move:
+			tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+			tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+		}
+	}
+	
+	func controllerDidChangeContent(controller: NSFetchedResultsController) {
+		tableView.endUpdates()
+	}
 }
 

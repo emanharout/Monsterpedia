@@ -228,7 +228,7 @@
         <!--Teams-->
         <scene sceneID="DZ1-8s-qWQ">
             <objects>
-                <viewController id="swq-s4-Jbv" customClass="TeamViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="swq-s4-Jbv" customClass="TeamViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7e1-24-j4y"/>
                         <viewControllerLayoutGuide type="bottom" id="uFf-pP-TJc"/>
@@ -240,6 +240,25 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l1d-mn-foJ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamCell" textLabel="lgo-70-JIS" style="IBUITableViewCellStyleDefault" id="vJY-4m-ZU7">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="swq-s4-Jbv" id="bgU-dc-tfb"/>
                                     <outlet property="delegate" destination="swq-s4-Jbv" id="Xdf-nd-2jO"/>
@@ -258,7 +277,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PtZ-Jh-NCp">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="addTeam" destination="swq-s4-Jbv" id="TTV-fB-dhK"/>
                                 <segue destination="Oje-8Q-Bf0" kind="presentation" identifier="addTeam" id="8pi-ro-8xP"/>
                             </connections>
                         </barButtonItem>

@@ -133,7 +133,6 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 			tableView.contentOffset = CGPointMake(0, searchBarHeight)
 		}
 	}
-	
 }
 
 
