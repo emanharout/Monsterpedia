@@ -113,8 +113,8 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! MonsterSpriteCell
-		
 		if isTeamBuilding {
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .Checkmark ? .None : .Checkmark

@@ -48,7 +48,7 @@ class TeamViewController: UIViewController {
 extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		
+		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
