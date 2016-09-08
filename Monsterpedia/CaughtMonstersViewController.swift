@@ -94,6 +94,9 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		case 1:
 			predicate = NSPredicate(format: "isCaught == %@", true)
 			fetchRequest.predicate = predicate
+		case 2:
+			predicate = NSPredicate(format: "isCaught == %@", false)
+			fetchRequest.predicate = predicate
 		default: break
 		}
 		
