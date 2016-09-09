@@ -60,9 +60,9 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		cell.imageView.image = UIImage(named: monster.image2DName)
 		
 		if monster.isCaught {
-			cell.imageView.alpha = 1.0
+			cell.alpha = 1.0
 		} else {
-			cell.imageView.alpha = 0.4
+			cell.alpha = 0.40
 		}
 		
 		return cell
@@ -73,10 +73,10 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		let monster = monsters[indexPath.row]
 		
 		if monster.isCaught {
-			cell.imageView.alpha = 0.40
+			cell.alpha = 0.40
 			monster.isCaught = false
 		} else {
-			cell.imageView.alpha = 1.0
+			cell.alpha = 1.0
 			monster.isCaught = true
 		}
 	}
