@@ -11,9 +11,6 @@ import CoreData
 
 class TeamBuilderTableViewController: UITableViewController {
 	
-	// TODO: Implement TextFieldShouldReturn if needed
-	// TODO: Change TextField font color to red
-	
 	var coreDataStack: CoreDataStack!
 	
 	@IBOutlet weak var firstMonsterCell: MonsterSpriteCell!
@@ -120,3 +117,8 @@ class TeamBuilderTableViewController: UITableViewController {
 
 
 
+extension TeamBuilderTableViewController: UITextFieldDelegate {
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		return true
+	}
+}
