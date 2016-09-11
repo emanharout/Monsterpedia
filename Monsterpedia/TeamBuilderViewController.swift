@@ -32,7 +32,7 @@ class TeamBuilderViewController: UIViewController {
 			print("Could not retrieve reference to Team Builder Table View Controller")
 			return
 		}
-		let selectedMonsters = childVC.selectedMonsters
+		let selectedMonsters = childVC.selectedMonsters as! [Monster!]
 		var monsterNotSelected = false
 		for monster in selectedMonsters {
 			if monster == nil {
@@ -54,12 +54,8 @@ class TeamBuilderViewController: UIViewController {
 				presentViewController(alertController, animated: true, completion: nil)
 				return
 			}
-			
-			var monsterSet: Set<Monster> = Set()
-			for monster in selectedMonsters {
-				monsterSet.insert(monster!)
-			}
-			_ = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
+
+			_ = Team(teamName: teamName, monsters: selectedMonsters, context: coreDataStack.context)
 			coreDataStack.save()
 			dismissViewControllerAnimated(true, completion: nil)
 		}

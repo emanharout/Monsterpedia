@@ -32,7 +32,6 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
-		
 		do {
 			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
 		} catch let error as NSError {

@@ -94,7 +94,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="0tY-QX-D6p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1856" y="81"/>
+            <point key="canvasLocation" x="1798" y="-277"/>
         </scene>
         <!--Caught-->
         <scene sceneID="HQR-w6-C4L">
@@ -125,15 +125,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="208"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-af-toG">
-                                                    <rect key="frame" x="4" y="2" width="160" height="180"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Monster Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-ai-Yn2">
                                                     <rect key="frame" x="0.0" y="190" width="168" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Uxh-af-toG">
+                                                    <rect key="frame" x="4" y="2" width="160" height="180"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRS-ZS-GAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856" y="865"/>
+            <point key="canvasLocation" x="1808" y="395"/>
         </scene>
         <!--Teams-->
         <scene sceneID="vwF-bL-xVf">
@@ -224,7 +224,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uep-2C-ZXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="1894"/>
+            <point key="canvasLocation" x="1044" y="1142"/>
         </scene>
         <!--Teams-->
         <scene sceneID="DZ1-8s-qWQ">
@@ -284,11 +284,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="l1d-mn-foJ" id="uhe-QW-4tq"/>
+                        <segue destination="lUD-X3-adU" kind="show" identifier="viewTeamDetail" id="JWl-86-Cs8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqB-OF-NZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="1894"/>
+            <point key="canvasLocation" x="1798" y="1142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="urT-L4-qWM">
@@ -310,7 +311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-CZ-Pnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2452" y="1900"/>
+            <point key="canvasLocation" x="2530" y="1142"/>
         </scene>
         <!--Team Builder-->
         <scene sceneID="HZO-gP-v9n">
@@ -359,21 +360,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9e-kW-wlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3136" y="1900"/>
+            <point key="canvasLocation" x="3296" y="1142"/>
         </scene>
-        <!--Team Builder Table View Controller-->
+        <!--Title-->
         <scene sceneID="tj2-Hy-6kq">
             <objects>
                 <tableViewController storyboardIdentifier="bla" id="lUD-X3-adU" customClass="TeamBuilderTableViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5e3-6M-xoF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Team" id="4zu-lk-nzF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xUv-lf-uPk">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xUv-lf-uPk" id="riM-XF-Lfh">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -401,26 +402,26 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Monsters" id="S9s-r5-Trv">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="20Z-xr-iN4" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="145" width="600" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="TYL-x2-c0n" userLabel="FirstSpriteCell" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="20Z-xr-iN4" id="1oI-eD-0U0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYL-x2-c0n" id="N1v-dQ-jG5">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="Q4u-xy-lQn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="3jc-qg-I3Z">
                                                     <rect key="frame" x="11" y="9" width="71" height="71"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="nF0-wj-jI9">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-3F-UO1">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1st Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCe-W6-I9E">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKJ-QZ-Zl9">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-IG-jLw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9s-C4-fjK">
                                                             <rect key="frame" x="0.0" y="29" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -430,27 +431,27 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="nF0-wj-jI9" secondAttribute="bottom" id="8Kr-hQ-4on"/>
-                                                <constraint firstItem="nF0-wj-jI9" firstAttribute="top" secondItem="1oI-eD-0U0" secondAttribute="topMargin" id="9Pu-9g-L90"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Q4u-xy-lQn" secondAttribute="bottom" priority="250" id="B1I-YO-XJc"/>
-                                                <constraint firstItem="Q4u-xy-lQn" firstAttribute="centerY" secondItem="nF0-wj-jI9" secondAttribute="centerY" id="GND-nP-XHL"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Q4u-xy-lQn" secondAttribute="bottom" id="Ma4-0Q-kdg"/>
-                                                <constraint firstItem="nF0-wj-jI9" firstAttribute="leading" secondItem="1oI-eD-0U0" secondAttribute="leadingMargin" priority="750" id="O32-T1-fkK"/>
-                                                <constraint firstItem="Q4u-xy-lQn" firstAttribute="top" secondItem="1oI-eD-0U0" secondAttribute="topMargin" priority="250" id="Ug5-LC-WN2"/>
-                                                <constraint firstItem="Q4u-xy-lQn" firstAttribute="leading" secondItem="1oI-eD-0U0" secondAttribute="leadingMargin" constant="3" id="aVG-6w-hRL"/>
-                                                <constraint firstItem="Q4u-xy-lQn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1oI-eD-0U0" secondAttribute="topMargin" id="g2n-8m-LSD"/>
-                                                <constraint firstItem="nF0-wj-jI9" firstAttribute="leading" secondItem="Q4u-xy-lQn" secondAttribute="trailing" constant="12" id="pb6-Br-bMy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="nF0-wj-jI9" secondAttribute="trailing" id="w9P-NS-CjN"/>
+                                                <constraint firstItem="3jc-qg-I3Z" firstAttribute="top" secondItem="N1v-dQ-jG5" secondAttribute="topMargin" priority="250" id="11N-cA-Hzz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rAl-3F-UO1" secondAttribute="bottom" id="1fg-cX-DdA"/>
+                                                <constraint firstItem="3jc-qg-I3Z" firstAttribute="leading" secondItem="N1v-dQ-jG5" secondAttribute="leadingMargin" constant="3" id="Aka-W6-kJM"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="3jc-qg-I3Z" secondAttribute="bottom" id="Clr-sY-j52"/>
+                                                <constraint firstItem="rAl-3F-UO1" firstAttribute="leading" secondItem="N1v-dQ-jG5" secondAttribute="leadingMargin" priority="750" id="Da1-qC-0px"/>
+                                                <constraint firstItem="3jc-qg-I3Z" firstAttribute="centerY" secondItem="rAl-3F-UO1" secondAttribute="centerY" id="cxn-Wt-hFo"/>
+                                                <constraint firstItem="rAl-3F-UO1" firstAttribute="top" secondItem="N1v-dQ-jG5" secondAttribute="topMargin" id="jA9-Oh-uSI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3jc-qg-I3Z" secondAttribute="bottom" priority="250" id="jJS-cG-HQ0"/>
+                                                <constraint firstItem="rAl-3F-UO1" firstAttribute="leading" secondItem="3jc-qg-I3Z" secondAttribute="trailing" constant="12" id="kgo-JS-PPl"/>
+                                                <constraint firstItem="3jc-qg-I3Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="N1v-dQ-jG5" secondAttribute="topMargin" id="ldo-qt-8fA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rAl-3F-UO1" secondAttribute="trailing" id="m4N-2A-11T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="avQ-IG-jLw" id="kjR-Uz-wPn"/>
-                                            <outlet property="nameLabel" destination="VCe-W6-I9E" id="bQR-S6-fD1"/>
-                                            <outlet property="spriteImageView" destination="Q4u-xy-lQn" id="wzi-IZ-BNx"/>
+                                            <outlet property="descriptionLabel" destination="J9s-C4-fjK" id="MJB-6A-Dsj"/>
+                                            <outlet property="nameLabel" destination="tKJ-QZ-Zl9" id="nLi-tf-aku"/>
+                                            <outlet property="spriteImageView" destination="3jc-qg-I3Z" id="3uK-C2-5OH"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="oGh-4D-MdG" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="235" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="299" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGh-4D-MdG" id="udm-Yo-uZA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -462,7 +463,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-mI-y3T">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2nd Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WL-18-UbJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WL-18-UbJ">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -498,7 +499,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="Dk1-QQ-Ebh" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="325" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="389" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk1-QQ-Ebh" id="3gf-e7-lVz">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -510,7 +511,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="2MS-zB-tTa">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3rd Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-N8-9gp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-N8-9gp">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -546,7 +547,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="ul1-rc-unm" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="415" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="479" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ul1-rc-unm" id="1Ir-l6-tKR">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -558,7 +559,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="qzl-JX-W3u">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4th Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ab-na-gsr">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fourth Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ab-na-gsr">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -594,7 +595,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="tNT-Ok-WcB" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="505" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="569" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNT-Ok-WcB" id="uMQ-N5-61m">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -606,7 +607,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="O0M-rM-P8l">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5th Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPa-d1-1Mx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fifth Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPa-d1-1Mx">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -642,7 +643,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="dKp-JD-7o7" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="595" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="659" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKp-JD-7o7" id="iOM-cn-cRi">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
@@ -654,7 +655,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="5lZ-58-KMP">
                                                     <rect key="frame" x="94" y="8" width="498" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6th Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwP-5P-HKg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sixth Monster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwP-5P-HKg">
                                                             <rect key="frame" x="0.0" y="0.0" width="498" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -697,10 +698,21 @@
                             <outlet property="delegate" destination="lUD-X3-adU" id="ErG-o0-h6Z"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="PBi-fm-AC8">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="xmb-cY-aOq">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="rightBarButtonPressed" destination="lUD-X3-adU" id="WW8-vi-g7I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fifthMonsterCell" destination="tNT-Ok-WcB" id="N4g-1X-ZgH"/>
-                        <outlet property="firstMonsterCell" destination="20Z-xr-iN4" id="7p3-Su-m5f"/>
+                        <outlet property="firstMonsterCell" destination="TYL-x2-c0n" id="kTn-43-QUd"/>
                         <outlet property="fourthMonsterCell" destination="ul1-rc-unm" id="XoO-iH-otL"/>
+                        <outlet property="rightBarButtonItem" destination="xmb-cY-aOq" id="cvN-Vs-OKE"/>
                         <outlet property="secondMonsterCell" destination="oGh-4D-MdG" id="hsg-kY-yYr"/>
                         <outlet property="sixthMonsterCell" destination="dKp-JD-7o7" id="YGl-j1-Dt8"/>
                         <outlet property="teamNameTextField" destination="ufR-2d-iKl" id="mhz-45-iEF"/>
@@ -709,7 +721,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmV-P4-nKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3136" y="2604"/>
+            <point key="canvasLocation" x="3278" y="2002"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fxT-dy-taw">
@@ -758,7 +770,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K22-sx-pcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="81"/>
+            <point key="canvasLocation" x="1044" y="-277"/>
         </scene>
         <!--Caught-->
         <scene sceneID="ijA-mo-6TG">
@@ -783,7 +795,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SQ-a9-deW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="865"/>
+            <point key="canvasLocation" x="1044" y="395"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JWl-86-Cs8"/>
+    </inferredMetricsTieBreakers>
 </document>

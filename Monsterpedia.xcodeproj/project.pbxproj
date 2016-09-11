@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */; };
 		03091CC81D7D036500810BEF /* TeamBuilderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CC71D7D036500810BEF /* TeamBuilderTableViewController.swift */; };
-		03091CCA1D81587800810BEF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03091CC91D81587800810BEF /* Info.plist */; };
+		03091CCE1D84E9E300810BEF /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03091CCD1D84E9E300810BEF /* Team+CoreDataProperties.swift */; };
 		030939A71D4D5FE8004CC0A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */; };
 		030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */; };
 		030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */; };
@@ -21,7 +21,6 @@
 		030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */; };
 		030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */; };
 		030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D611D72259D0072263C /* CoreDataStack.swift */; };
-		030B2D821D7263050072263C /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7A1D7263050072263C /* Team+CoreDataProperties.swift */; };
 		030B2D831D7263050072263C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7B1D7263050072263C /* Team.swift */; };
 		030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */; };
 		030B2D851D7263050072263C /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D7D1D7263050072263C /* Move.swift */; };
@@ -57,6 +56,7 @@
 		03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderViewController.swift; sourceTree = "<group>"; };
 		03091CC71D7D036500810BEF /* TeamBuilderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamBuilderTableViewController.swift; sourceTree = "<group>"; };
 		03091CC91D81587800810BEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03091CCD1D84E9E300810BEF /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		030939A31D4D5FE8004CC0A7 /* Monsterpedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monsterpedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		030939A81D4D5FE8004CC0A7 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaughtMonstersViewController.swift; sourceTree = "<group>"; };
 		030B2D611D72259D0072263C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CoreDataStack.swift; sourceTree = "<group>"; };
-		030B2D7A1D7263050072263C /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		030B2D7B1D7263050072263C /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Move+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		030B2D7D1D7263050072263C /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
@@ -203,7 +202,7 @@
 		030B2D791D7262750072263C /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				030B2D7A1D7263050072263C /* Team+CoreDataProperties.swift */,
+				03091CCD1D84E9E300810BEF /* Team+CoreDataProperties.swift */,
 				030B2D7B1D7263050072263C /* Team.swift */,
 				030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */,
 				030B2D7D1D7263050072263C /* Move.swift */,
@@ -326,7 +325,6 @@
 				030939B11D4D5FE8004CC0A7 /* LaunchScreen.storyboard in Resources */,
 				030939AE1D4D5FE8004CC0A7 /* Assets.xcassets in Resources */,
 				030B2D8B1D7268980072263C /* seed.json in Resources */,
-				03091CCA1D81587800810BEF /* Info.plist in Resources */,
 				03FEAF941D73D6B400B455AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,13 +358,13 @@
 				033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */,
 				030B2D881D7263050072263C /* Type+CoreDataProperties.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
-				030B2D821D7263050072263C /* Team+CoreDataProperties.swift in Sources */,
 				03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */,
 				03E659BE1D73F13F001B6CAA /* TeamViewController.swift in Sources */,
 				03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */,
 				030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */,
 				030B2D871D7263050072263C /* Monster.swift in Sources */,
 				030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */,
+				03091CCE1D84E9E300810BEF /* Team+CoreDataProperties.swift in Sources */,
 				030939D51D4D63B8004CC0A7 /* PokeAPIClient.swift in Sources */,
 				030939A91D4D5FE8004CC0A7 /* BrowseViewController.swift in Sources */,
 				030B2D891D7263050072263C /* Type.swift in Sources */,
@@ -507,6 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monsterpedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emmanuoel.Monsterpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -518,6 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monsterpedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emmanuoel.Monsterpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

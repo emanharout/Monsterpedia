@@ -20,33 +20,42 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBOutlet weak var fifthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var teamNameTextField: UITextField!
+	@IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+	var monsters: NSArray = [Monster]()
 	var firstMonster: Monster?
 	var secondMonster: Monster?
 	var thirdMonster: Monster?
 	var fourthMonster: Monster?
 	var fifthMonster: Monster?
 	var sixthMonster: Monster?
-	
-
 	var selectedMonsters: [Monster?] {
 		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
 		return monsters
 	}
 	
-	var teamMonsters = [Monster]()
-	var monsters: NSArray = [Monster]()
-	
+	var isTeamDetail = false
+	var isEditingMode: Bool = false {
+		didSet {
+			if isEditingMode {
+				rightBarButtonItem.title = "Done"
+				navigationItem.setHidesBackButton(true, animated: true)
+			} else {
+				rightBarButtonItem.title = "Edit"
+				navigationItem.setHidesBackButton(false, animated: true)
+			}
+		}
+	}
+	var selectedTeam: Team!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		tableView.rowHeight = UITableViewAutomaticDimension
-		tableView.estimatedRowHeight = 88
+		setupTableView()
+		loadTeamIfNeeded()
 		
 		let fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
-
 		do {
 			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
 		} catch let error as NSError {
@@ -63,6 +72,10 @@ class TeamBuilderTableViewController: UITableViewController {
 			browseVC.isTeamBuilding = true
 			browseVC.coreDataStack = coreDataStack
 			navigationController?.pushViewController(browseVC, animated: true)
+		}
+		
+		if !isEditingMode && isTeamDetail {
+			isEditingMode = true
 		}
 	}
 	
@@ -106,8 +119,69 @@ class TeamBuilderTableViewController: UITableViewController {
 		}
 	}
 	
-	@IBAction func cancelSelectMonster(segue: UIStoryboardSegue) {
-		
+	@IBAction func rightBarButtonPressed() {
+		if !isEditingMode {
+			isEditingMode = true
+		} else {
+			guard let teamName = teamNameTextField.text where !teamName.isEmpty else {
+				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .Alert)
+				let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+				alertController.addAction(okAction)
+				presentViewController(alertController, animated: true, completion: nil)
+				return
+			}
+
+			selectedTeam.name = teamName
+			for (index, monster) in selectedMonsters.enumerate() {
+				if monster != nil {
+					switch index {
+					case 0:
+						selectedTeam.monsterSlot1 = monster
+					case 1:
+						selectedTeam.monsterSlot2 = monster
+					case 2:
+						selectedTeam.monsterSlot3 = monster
+					case 3:
+						selectedTeam.monsterSlot4 = monster
+					case 4:
+						selectedTeam.monsterSlot5 = monster
+					case 5:
+						selectedTeam.monsterSlot6 = monster
+					default:
+						continue
+					}
+				}
+			}
+			isEditingMode = false
+			coreDataStack.save()
+				
+		}
+	}
+	
+	func loadTeamIfNeeded() {
+		if isTeamDetail {
+			guard let selectedTeam = selectedTeam else {
+				print("Team is nil, could not load contents")
+				return
+			}
+			teamNameTextField.text = selectedTeam.name
+			let teamMonsters = [selectedTeam.monsterSlot1, selectedTeam.monsterSlot2, selectedTeam.monsterSlot3, selectedTeam.monsterSlot4, selectedTeam.monsterSlot5, selectedTeam.monsterSlot6]
+			let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
+			
+			for (index, cell) in monsterCells.enumerate() {
+				let monster = teamMonsters[index] 
+				cell.nameLabel.text = monster?.name
+				cell.descriptionLabel.text = monster?.genus
+				if let imageName = monster?.spriteImageName {
+					cell.spriteImageView.image = UIImage(named: imageName)
+				}
+			}
+		}
+	}
+	
+	func setupTableView() {
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 88
 	}
 
 	enum monsterCellNumber: Int {
@@ -121,4 +195,11 @@ extension TeamBuilderTableViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
 		return true
 	}
+	
+	func textFieldDidBeginEditing(textField: UITextField) {
+		if !isEditingMode && isTeamDetail {
+			isEditingMode = true
+		}
+	}
+	
 }

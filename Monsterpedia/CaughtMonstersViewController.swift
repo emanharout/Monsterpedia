@@ -12,6 +12,8 @@ import CoreData
 
 class CaughtMonstersViewController: UIViewController {
 	
+	// TODO: If segmentedcontrol segment 1 || 2 selected, reselect/refilter after toggling cell as caught/wild
+	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
@@ -73,7 +75,7 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		let monster = monsters[indexPath.row]
 		
 		if monster.isCaught {
-			cell.alpha = 0.40
+			cell.alpha = 0.4
 			monster.isCaught = false
 		} else {
 			cell.alpha = 1.0

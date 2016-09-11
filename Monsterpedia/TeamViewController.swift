@@ -16,6 +16,7 @@ class TeamViewController: UIViewController {
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest!
 	var frc: NSFetchedResultsController!
+	var selectedIndexPath: NSIndexPath!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,11 @@ class TeamViewController: UIViewController {
 			let destVC = segue.destinationViewController as! UINavigationController
 			let teamBuildingVC = destVC.topViewController as! TeamBuilderViewController
 			teamBuildingVC.coreDataStack = coreDataStack
+		} else if segue.identifier == "viewTeamDetail" {
+			let destVC = segue.destinationViewController as! TeamBuilderTableViewController
+			destVC.coreDataStack = coreDataStack
+			destVC.selectedTeam = frc.objectAtIndexPath(selectedIndexPath) as? Team
+			destVC.isTeamDetail = true
 		}
 	}
 
@@ -48,7 +54,9 @@ class TeamViewController: UIViewController {
 extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		selectedIndexPath = indexPath
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		performSegueWithIdentifier("viewTeamDetail", sender: self)
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

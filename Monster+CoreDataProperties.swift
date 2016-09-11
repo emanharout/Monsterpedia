@@ -22,6 +22,4 @@ extension Monster {
     @NSManaged var spriteImageName: String
     @NSManaged var moves: NSSet?
     @NSManaged var types: NSSet?
-    @NSManaged var teams: NSSet?
-
 }
