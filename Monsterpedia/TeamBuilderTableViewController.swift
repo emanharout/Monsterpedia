@@ -154,11 +154,15 @@ class TeamBuilderTableViewController: UITableViewController {
 					}
 				}
 			}
-			
 			teamNameTextField.resignFirstResponder()
 			isEditingMode = false
 			coreDataStack.save()
 		}
+	}
+	
+	func setupTableView() {
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 88
 	}
 	
 	func loadTeamIfNeeded() {
@@ -186,11 +190,6 @@ class TeamBuilderTableViewController: UITableViewController {
 		if !isEditingMode && isTeamDetail {
 			isEditingMode = true
 		}
-	}
-	
-	func setupTableView() {
-		tableView.rowHeight = UITableViewAutomaticDimension
-		tableView.estimatedRowHeight = 88
 	}
 
 	enum monsterCellNumber: Int {
