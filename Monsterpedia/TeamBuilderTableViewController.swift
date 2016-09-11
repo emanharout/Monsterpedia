@@ -33,6 +33,7 @@ class TeamBuilderTableViewController: UITableViewController {
 		return monsters
 	}
 	
+	// Relevant variables when viewing an existing team
 	var isTeamDetail = false
 	var isEditingMode: Bool = false {
 		didSet {
@@ -46,6 +47,8 @@ class TeamBuilderTableViewController: UITableViewController {
 		}
 	}
 	var selectedTeam: Team!
+	
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +66,6 @@ class TeamBuilderTableViewController: UITableViewController {
 		}
     }
 	
-	
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		if indexPath.section == 0 {
 			teamNameTextField.becomeFirstResponder()
@@ -74,21 +76,20 @@ class TeamBuilderTableViewController: UITableViewController {
 			navigationController?.pushViewController(browseVC, animated: true)
 		}
 		
-		if !isEditingMode && isTeamDetail {
-			isEditingMode = true
-		}
+		enableEditingModeIfNeeded()
 	}
 	
+	// Unwind Segue after selecting a monster in BrowseViewController
 	@IBAction func saveSelectedMonster(segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
 		if segue.sourceViewController.isKindOfClass(BrowseViewController) {
 			let browseVC = segue.sourceViewController as! BrowseViewController
 			let monster = browseVC.selectedMonster
-			
 			let cell: MonsterSpriteCell!
 			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
 				print("Could not retrieve selected row value")
 				return
 			}
+			
 			switch selectedRowIndex {
 			case monsterCellNumber.FirstCell.rawValue:
 				cell = firstMonsterCell
@@ -111,6 +112,7 @@ class TeamBuilderTableViewController: UITableViewController {
 			default:
 				cell = nil
 			}
+			
 			if cell != nil {
 				cell.nameLabel.text = monster.name
 				cell.descriptionLabel.text = monster.genus
@@ -152,9 +154,10 @@ class TeamBuilderTableViewController: UITableViewController {
 					}
 				}
 			}
+			
+			teamNameTextField.resignFirstResponder()
 			isEditingMode = false
 			coreDataStack.save()
-				
 		}
 	}
 	
@@ -179,6 +182,12 @@ class TeamBuilderTableViewController: UITableViewController {
 		}
 	}
 	
+	func enableEditingModeIfNeeded() {
+		if !isEditingMode && isTeamDetail {
+			isEditingMode = true
+		}
+	}
+	
 	func setupTableView() {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
@@ -197,9 +206,7 @@ extension TeamBuilderTableViewController: UITextFieldDelegate {
 	}
 	
 	func textFieldDidBeginEditing(textField: UITextField) {
-		if !isEditingMode && isTeamDetail {
-			isEditingMode = true
-		}
+		enableEditingModeIfNeeded()
 	}
 	
 }
