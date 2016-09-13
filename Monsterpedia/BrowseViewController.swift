@@ -71,14 +71,18 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "saveToTeamBuilderTableVC" {
-			guard let cell = sender as? MonsterSpriteCell else {
-				print("Downcast to MonsterSpriteCell Failed")
-				return
-			}
-			if let monsterIndexPath = tableView.indexPathForCell(cell) {
-				selectedMonster = monsters[monsterIndexPath.row]
-			}
+//		if segue.identifier == "saveToTeamBuilderTableVC" {
+//			guard let cell = sender as? MonsterSpriteCell else {
+//				print("Downcast to MonsterSpriteCell Failed")
+//				return
+//			}
+//			if let monsterIndexPath = tableView.indexPathForCell(cell) {
+//				selectedMonster = monsters[monsterIndexPath.row]
+//			}
+//		}
+		if segue.identifier == "showMonsterDetail" {
+			let destinationVC = segue.destinationViewController as! MonsterDetailViewController
+			destinationVC.selectedMonster = selectedMonster
 		}
 	}
 }
@@ -114,12 +118,14 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		let cell = tableView.cellForRowAtIndexPath(indexPath) as! MonsterSpriteCell
+		let monster = monsters[indexPath.row]
+		selectedMonster = monster
 		if isTeamBuilding {
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .Checkmark ? .None : .Checkmark
-			self.performSegueWithIdentifier("saveToTeamBuilderTableVC", sender: cell)
+			performSegueWithIdentifier("saveToTeamBuilderTableVC", sender: cell)
 		} else {
-			// TODO: Present EncyclopediaVC
+			performSegueWithIdentifier("showMonsterDetail", sender: self)
 		}
 	}
 	

@@ -89,12 +89,76 @@
                         <outlet property="tableView" destination="OXL-jE-xEm" id="7p6-gS-oZb"/>
                         <segue destination="0tY-QX-D6p" kind="unwind" identifier="cancelToTeamBuilderTableVC" unwindAction="cancelSelectMonster:" id="3eJ-PH-7uH"/>
                         <segue destination="0tY-QX-D6p" kind="unwind" identifier="saveToTeamBuilderTableVC" unwindAction="saveSelectedMonster:sender:" id="iux-OB-G9g"/>
+                        <segue destination="kJ6-LK-qP2" kind="show" identifier="showMonsterDetail" id="d30-zP-9oW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="0tY-QX-D6p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1798" y="-277"/>
+        </scene>
+        <!--Monster Name-->
+        <scene sceneID="zL5-gk-4Ws">
+            <objects>
+                <viewController id="kJ6-LK-qP2" customClass="MonsterDetailViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ggu-JZ-Cnq"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Sc-K3-tRC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f3x-d8-a1i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oqh-K6-mWm">
+                                <rect key="frame" x="20" y="85" width="220" height="218"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monster Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ">
+                                <rect key="frame" x="287" y="90" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-rh-7gP">
+                                <rect key="frame" x="287" y="119" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Width" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-nT-vEt">
+                                <rect key="frame" x="287" y="148" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monsterpedia Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igc-5w-NX2">
+                                <rect key="frame" x="20" y="339" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Ig-2yd">
+                                <rect key="frame" x="287" y="177" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Monster Name" id="3M4-kM-biU"/>
+                    <connections>
+                        <outlet property="heightLabel" destination="AYj-rh-7gP" id="EiP-OL-vD3"/>
+                        <outlet property="monsterImage" destination="Oqh-K6-mWm" id="QIg-Be-eRr"/>
+                        <outlet property="monsterNameLabel" destination="fv5-Qu-hRJ" id="t62-qa-AFb"/>
+                        <outlet property="navItem" destination="3M4-kM-biU" id="2TH-yh-bgC"/>
+                        <outlet property="pediaEntry" destination="Igc-5w-NX2" id="fIw-Gw-e7P"/>
+                        <outlet property="typeLabel" destination="umf-Ig-2yd" id="drZ-jw-sWt"/>
+                        <outlet property="widthLabel" destination="1HK-nT-vEt" id="7t3-dJ-ftA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8Z-C5-uWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2597" y="-277"/>
         </scene>
         <!--Caught-->
         <scene sceneID="HQR-w6-C4L">
