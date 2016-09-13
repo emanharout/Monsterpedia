@@ -6,6 +6,8 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
+// TODO: Setup new model where Monsters become MonsterSpecies, and a new entity Monsters are instantiated multiple times in order to be included in Team Sets. Values are passed from each MonsterSpecies selection to create a Monster object, which is then all added to a Team.
+
 import UIKit
 import CoreData
 
