@@ -17,25 +17,19 @@ class PokeAPIClient {
 		let session = NSURLSession.sharedSession()
 		let task = session.dataTaskWithRequest(request) { (data, response, error) in
 			
-			guard error != nil else {
+			guard error == nil else {
 				completionHandlerForGETMethod(result: nil, error: error)
 				return
 			}
 			
 			guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
 				let error = NSError(domain: "taskForGETMethod", code: 9, userInfo: [NSLocalizedDescriptionKey: "Status Code from server is non-2xx"])
-				if let response = response as? NSHTTPURLResponse {
-					let status = response.statusCode
-					print(status)
-				}
 				completionHandlerForGETMethod(result: nil, error: error)
-				print("STATUS CODE: \(response)")
 				return
 			}
 			
 			guard let data = data else {
 				let error = NSError(domain: "taskForGETMethod", code: 10, userInfo: [NSLocalizedDescriptionKey: "Data returned from server is nil"])
-				print(error)
 				completionHandlerForGETMethod(result: nil, error: error)
 				return
 			}
@@ -69,14 +63,10 @@ extension PokeAPIClient {
 	}
 	
 	func parseData(data: NSData, completionHandler: (result: AnyObject?, error: NSError?)->Void) {
-		print("Hello")
 		do {
 			let result = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-			print("RESULTS: \(result)")
-			print("Is it me")
 			completionHandler(result: result, error: nil)
 		} catch let error as NSError {
-			print("You're looking for?")
 			completionHandler(result: nil, error: error)
 		}
 	}
@@ -103,14 +93,6 @@ extension PokeAPIClient {
 		let url = buildURLFromComponents(Constants.Scheme, host: Constants.Host, path: path, query: nil)
 		print(url)
 		taskForGETMethod(url) { (result, error) in
-			if let result = result {
-				print("Result exists")
-			} else {
-				print("Result be nil")
-			}
-			if let error = error {
-				print(error)
-			}
 			completionHandler(result: result, error: error)
 		}
 	}

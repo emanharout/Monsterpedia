@@ -71,15 +71,6 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//		if segue.identifier == "saveToTeamBuilderTableVC" {
-//			guard let cell = sender as? MonsterSpriteCell else {
-//				print("Downcast to MonsterSpriteCell Failed")
-//				return
-//			}
-//			if let monsterIndexPath = tableView.indexPathForCell(cell) {
-//				selectedMonster = monsters[monsterIndexPath.row]
-//			}
-//		}
 		if segue.identifier == "showMonsterDetail" {
 			let destinationVC = segue.destinationViewController as! MonsterDetailViewController
 			destinationVC.selectedMonster = selectedMonster
