@@ -17,6 +17,7 @@ class MonsterDetailViewController: UIViewController {
 	@IBOutlet weak var widthLabel: UILabel!
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var pediaEntry: UILabel!
+	let pokeClient = PokeAPIClient.sharedInstance
 	
 	var selectedMonster: Monster!
 
@@ -24,6 +25,15 @@ class MonsterDetailViewController: UIViewController {
         super.viewDidLoad()
 
 		navItem.title = selectedMonster.name
+		// Retrieve data
+		// Store data into appropriate outlets
+		pokeClient.getPokemonData(selectedMonster) { (result, error) in
+			guard let resultDict = result as? [String: AnyObject] else {
+				print("Could not retrieve top-level dict from JSON results")
+				return
+			}
+			print(resultDict)
+		}
     }
 
     override func didReceiveMemoryWarning() {

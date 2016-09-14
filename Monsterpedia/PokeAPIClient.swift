@@ -55,6 +55,7 @@ extension PokeAPIClient {
 		urlComponents.path = path
 		urlComponents.queryItems = [NSURLQueryItem]()
 		
+		print("scheme: \(scheme), host: \(host), path: \(path)")
 		if let query = query {
 			for (key, value) in query {
 				let query = NSURLQueryItem(name: key, value: "\(value)")
@@ -73,5 +74,29 @@ extension PokeAPIClient {
 		}
 	}
 	
+	func substituteValueInString(string: String, value: String, withValue newValue: String) -> String? {
+		if string.rangeOfString(value) != nil {
+			let newString = string.stringByReplacingOccurrencesOfString(value, withString: newValue)
+			return newString
+		} else {
+			return nil
+		}
+	}
 	
+	// Create URL
+	// Pass into taskForGET
+	// return entire JSON to completion handler
+	
+	func getPokemonData(monster: Monster, completionHandler: (result: AnyObject?, error: NSError?)->Void) {
+		guard let path = substituteValueInString(Constants.MonsterPath, value: "{id}", withValue: "\(monster.id)") else {
+			print("Failed to build URL Path")
+			return
+		}
+
+		let url = buildURLFromComponents(Constants.Scheme, host: Constants.Host, path: path, query: nil)
+		print(url)
+		taskForGETMethod(url) { (result, error) in
+			completionHandler(result: result, error: error)
+		}
+	}
 }
