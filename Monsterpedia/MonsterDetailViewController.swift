@@ -28,6 +28,23 @@ class MonsterDetailViewController: UIViewController {
 		// Retrieve data
 		// Store data into appropriate outlets
 		pokeClient.getPokemonData(selectedMonster) { (result, error) in
+			guard error == nil else {
+				print(error)
+				return
+			}
+			
+			if let error = error {
+				print("Error exists")
+			} else {
+				print("Error is nil")
+			}
+			
+			if let result = result {
+				print(result)
+			} else {
+				print("Result is nil")
+			}
+			
 			guard let resultDict = result as? [String: AnyObject] else {
 				print("Could not retrieve top-level dict from JSON results")
 				return
