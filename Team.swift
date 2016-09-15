@@ -14,9 +14,9 @@ class Team: NSManagedObject {
 
 	// TODO: Explore storing Array to store monsters instead of 6 MonsterSlots attributes
 	
-	convenience init(teamName: String, monsters: [Monster!], context: NSManagedObjectContext) {
-		if let entityDesc = NSEntityDescription.entityForName("Team", inManagedObjectContext: context) {
-			self.init(entity: entityDesc, insertIntoManagedObjectContext: context)
+	convenience init(teamName: String, monsters: [Monster?], context: NSManagedObjectContext) {
+		if let entityDesc = NSEntityDescription.entity(forEntityName: "Team", in: context) {
+			self.init(entity: entityDesc, insertInto: context)
 			self.name = teamName
 			self.monsterSlot1 = monsters[0]
 			self.monsterSlot2 = monsters[1]

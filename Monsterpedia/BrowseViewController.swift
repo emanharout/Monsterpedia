@@ -14,7 +14,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var coreDataStack: CoreDataStack!
-	var fetchRequest: NSFetchRequest!
+	var fetchRequest: NSFetchRequest<Monster>!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
 	
@@ -33,7 +33,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
 		do {
-			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+			monsters = try coreDataStack.context.fetch(fetchRequest)
 		} catch let error as NSError {
 			print(error)
 		}
@@ -44,14 +44,14 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	
 	
 	// MARK: SearchResultsController Functions
-	func filterContentForSearchText(searchText: String, scope: String = "All") {
+	func filterContentForSearchText(_ searchText: String, scope: String = "All") {
 		filteredMonsters = monsters.filter{ (monster) -> Bool in
-			return monster.name.lowercaseString.containsString(searchText.lowercaseString)
+			return monster.name.lowercased().contains(searchText.lowercased())
 		}
 		tableView.reloadData()
 	}
 	
-	func updateSearchResultsForSearchController(searchController: UISearchController) {
+	func updateSearchResults(for searchController: UISearchController) {
 		filterContentForSearchText(searchController.searchBar.text!)
 	}
 	
@@ -62,17 +62,16 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		definesPresentationContext = true
 		
 		let searchBar = searchController.searchBar
-		searchBar.searchBarStyle = .Minimal
-		searchBar.backgroundColor = UIColor.whiteColor()
+		searchBar.searchBarStyle = .minimal
+		searchBar.backgroundColor = UIColor.white
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-		// TODO: Confirm if public api
-		UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		tableView.tableHeaderView = searchBar
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showMonsterDetail" {
-			let destinationVC = segue.destinationViewController as! MonsterDetailViewController
+			let destinationVC = segue.destination as! MonsterDetailViewController
 			destinationVC.selectedMonster = selectedMonster
 		}
 	}
@@ -82,22 +81,23 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if searchController.active && searchController.searchBar.text != "" {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if searchController.isActive && searchController.searchBar.text != "" {
 			return filteredMonsters.count
 		}
 		return monsters.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCellWithIdentifier("MonsterSpriteCell", forIndexPath: indexPath) as! MonsterSpriteCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterSpriteCell", for: indexPath) as! MonsterSpriteCell
 		
+		// TODO: Test and see if can drop casting to NSIndexPath
 		let monster: Monster
-		if searchController.active && searchController.searchBar.text != "" {
-			monster = filteredMonsters[indexPath.row]
+		if searchController.isActive && searchController.searchBar.text != "" {
+			monster = filteredMonsters[(indexPath as NSIndexPath).row]
 		} else {
-			monster = monsters[indexPath.row]
+			monster = monsters[(indexPath as NSIndexPath).row]
 		}
 		
 		cell.nameLabel.text = monster.name
@@ -106,17 +106,17 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		return cell
 	}
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		tableView.deselectRowAtIndexPath(indexPath, animated: true)
-		let cell = tableView.cellForRowAtIndexPath(indexPath) as! MonsterSpriteCell
-		let monster = monsters[indexPath.row]
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		let cell = tableView.cellForRow(at: indexPath) as! MonsterSpriteCell
+		let monster = monsters[(indexPath as NSIndexPath).row]
 		selectedMonster = monster
 		if isTeamBuilding {
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-			cell.accessoryType = cell.accessoryType == .Checkmark ? .None : .Checkmark
-			performSegueWithIdentifier("saveToTeamBuilderTableVC", sender: cell)
+			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
+			performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
 		} else {
-			performSegueWithIdentifier("showMonsterDetail", sender: self)
+			performSegue(withIdentifier: "showMonsterDetail", sender: self)
 		}
 	}
 	
@@ -126,7 +126,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		if !isTeamBuilding {
 			let searchBarHeight = searchController.searchBar.bounds.height
-			tableView.contentOffset = CGPointMake(0, searchBarHeight)
+			tableView.contentOffset = CGPoint(x: 0, y: searchBarHeight)
 		}
 	}
 }

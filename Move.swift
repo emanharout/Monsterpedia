@@ -13,8 +13,8 @@ import CoreData
 class Move: NSManagedObject {
 
 	convenience init(name: String, context: NSManagedObjectContext){
-		if let monsterEntity = NSEntityDescription.entityForName("Move", inManagedObjectContext: context) {
-			self.init(entity: monsterEntity, insertIntoManagedObjectContext: context)
+		if let monsterEntity = NSEntityDescription.entity(forEntityName: "Move", in: context) {
+			self.init(entity: monsterEntity, insertInto: context)
 			self.name = name
 		} else {
 			fatalError("Could not initialize Monster Managed Object")

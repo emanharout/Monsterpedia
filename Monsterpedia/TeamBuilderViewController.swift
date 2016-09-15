@@ -17,9 +17,9 @@ class TeamBuilderViewController: UIViewController {
         super.viewDidLoad()
     }
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "embedTableVC" {
-			guard let teamBuilderVC = segue.destinationViewController as? TeamBuilderTableViewController else {
+			guard let teamBuilderVC = segue.destination as? TeamBuilderTableViewController else {
 				print("Failed to inject Core Data Stack into Team Builder Table View Controller")
 				return
 			}
@@ -32,7 +32,7 @@ class TeamBuilderViewController: UIViewController {
 			print("Could not retrieve reference to Team Builder Table View Controller")
 			return
 		}
-		let selectedMonsters = childVC.selectedMonsters as! [Monster!]
+		let selectedMonsters = childVC.selectedMonsters as [Monster?]
 		var monsterNotSelected = false
 		for monster in selectedMonsters {
 			if monster == nil {
@@ -40,23 +40,23 @@ class TeamBuilderViewController: UIViewController {
 			}
 		}
 		if monsterNotSelected {
-			let alertController = UIAlertController(title: "Missing Monsters", message: "Please make sure to select six monsters for your team", preferredStyle: .Alert)
-			let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+			let alertController = UIAlertController(title: "Missing Monsters", message: "Please make sure to select six monsters for your team", preferredStyle: .alert)
+			let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 			alertController.addAction(okAction)
-			presentViewController(alertController, animated: true, completion: nil)
+			present(alertController, animated: true, completion: nil)
 			return
 		} else {
-			guard let teamName = childVC.teamNameTextField.text where !teamName.isEmpty else {
-				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .Alert)
-				let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+			guard let teamName = childVC.teamNameTextField.text , !teamName.isEmpty else {
+				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
+				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 				alertController.addAction(okAction)
-				presentViewController(alertController, animated: true, completion: nil)
+				present(alertController, animated: true, completion: nil)
 				return
 			}
 
 			_ = Team(teamName: teamName, monsters: selectedMonsters, context: coreDataStack.context)
 			coreDataStack.save()
-			dismissViewControllerAnimated(true, completion: nil)
+			dismiss(animated: true, completion: nil)
 		}
 		
 		
@@ -64,7 +64,7 @@ class TeamBuilderViewController: UIViewController {
 	}
 	
 	@IBAction func cancelTeamBuilding() {
-		self.dismissViewControllerAnimated(true, completion: nil)
+		self.dismiss(animated: true, completion: nil)
 	}
 	
 }

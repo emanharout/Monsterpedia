@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	let coreDataStack = CoreDataStack.sharedInstance
 
-	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
-		if NSUserDefaults.standardUserDefaults().boolForKey("hasLaunchedBefore") {
+		if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
 			print("App has launched before")
 		} else {
 			print("Is First Launch")
 			importSeedData()
-			NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLaunchedBefore")
+			UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
 		}
 		
 		injectCoreDataStack()
@@ -29,37 +29,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 
-	func applicationWillResignActive(application: UIApplication) {
+	func applicationWillResignActive(_ application: UIApplication) {
 		coreDataStack.save()
 	}
 
-	func applicationDidEnterBackground(application: UIApplication) {
+	func applicationDidEnterBackground(_ application: UIApplication) {
 		coreDataStack.save()
 	}
 
-	func applicationWillEnterForeground(application: UIApplication) {
+	func applicationWillEnterForeground(_ application: UIApplication) {
 		// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 	}
 
-	func applicationDidBecomeActive(application: UIApplication) {
+	func applicationDidBecomeActive(_ application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 	}
 
-	func applicationWillTerminate(application: UIApplication) {
+	func applicationWillTerminate(_ application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
 	func importSeedData() {
-		let seedURL = NSBundle.mainBundle().URLForResource("seed", withExtension: "json")!
-		let seedJSONData = NSData(contentsOfURL: seedURL)!
+		let seedURL = Bundle.main.url(forResource: "seed", withExtension: "json")!
+		// Place below into do-catch
+		let seedJSONData = try! Data(contentsOf: seedURL)
 		do {
-			let JSON = try NSJSONSerialization.JSONObjectWithData(seedJSONData, options: .AllowFragments) as! [AnyObject]
+			let JSON = try JSONSerialization.jsonObject(with: seedJSONData, options: .allowFragments) as! [AnyObject]
 			for monsterDict in JSON {
 				guard let name = monsterDict["name"] as? String, let id = monsterDict["id"] as? Int, let typeArray = monsterDict["type"] as? [String], let genus = monsterDict["genus"] as? String else {
 					print("Unable to retrieve Monster information from MonsterDict")
 					return
 				}
-				let image2DName = name.lowercaseString
+				let image2DName = name.lowercased()
 				let spriteImageName = "sprite-front-\(id)"
 				
 				var typeSet: Set<Type> = Set()

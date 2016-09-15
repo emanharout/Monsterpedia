@@ -23,7 +23,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var teamNameTextField: UITextField!
 	@IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
-	var monsters: NSArray = [Monster]()
+	var monsters = [Monster]()
 	var firstMonster: Monster?
 	var secondMonster: Monster?
 	var thirdMonster: Monster?
@@ -58,21 +58,21 @@ class TeamBuilderTableViewController: UITableViewController {
 		setupTableView()
 		loadTeamIfNeeded()
 		
-		let fetchRequest = NSFetchRequest(entityName: "Monster")
+		let fetchRequest: NSFetchRequest<Monster>! = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
 		do {
-			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+			monsters = try coreDataStack.context.fetch(fetchRequest)
 		} catch let error as NSError {
 			print(error)
 		}
     }
 	
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		if indexPath.section == 0 {
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if (indexPath as NSIndexPath).section == 0 {
 			teamNameTextField.becomeFirstResponder()
-		} else if indexPath.section == 1 {
-			let browseVC = storyboard?.instantiateViewControllerWithIdentifier("BrowseVC") as! BrowseViewController
+		} else if (indexPath as NSIndexPath).section == 1 {
+			let browseVC = storyboard?.instantiateViewController(withIdentifier: "BrowseVC") as! BrowseViewController
 			browseVC.isTeamBuilding = true
 			browseVC.coreDataStack = coreDataStack
 			navigationController?.pushViewController(browseVC, animated: true)
@@ -82,33 +82,33 @@ class TeamBuilderTableViewController: UITableViewController {
 	}
 	
 	// Unwind Segue after selecting a monster in BrowseViewController
-	@IBAction func saveSelectedMonster(segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
-		if segue.sourceViewController.isKindOfClass(BrowseViewController) {
-			let browseVC = segue.sourceViewController as! BrowseViewController
+	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
+		if segue.source.isKind(of: BrowseViewController.self) {
+			let browseVC = segue.source as! BrowseViewController
 			let monster = browseVC.selectedMonster
 			let cell: MonsterSpriteCell!
-			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
+			guard let selectedRowIndex = (tableView.indexPathForSelectedRow as NSIndexPath?)?.row else {
 				print("Could not retrieve selected row value")
 				return
 			}
 			
 			switch selectedRowIndex {
-			case monsterCellNumber.FirstCell.rawValue:
+			case monsterCellNumber.firstCell.rawValue:
 				cell = firstMonsterCell
 				firstMonster = monster
-			case monsterCellNumber.SecondCell.rawValue:
+			case monsterCellNumber.secondCell.rawValue:
 				cell = secondMonsterCell
 				secondMonster = monster
-			case monsterCellNumber.ThirdCell.rawValue:
+			case monsterCellNumber.thirdCell.rawValue:
 				cell = thirdMonsterCell
 				thirdMonster = monster
-			case monsterCellNumber.FourthCell.rawValue:
+			case monsterCellNumber.fourthCell.rawValue:
 				cell = fourthMonsterCell
 				fourthMonster = monster
-			case monsterCellNumber.FifthCell.rawValue:
+			case monsterCellNumber.fifthCell.rawValue:
 				cell = fifthMonsterCell
 				fifthMonster = monster
-			case monsterCellNumber.SixthCell.rawValue:
+			case monsterCellNumber.sixthCell.rawValue:
 				cell = sixthMonsterCell
 				sixthMonster = monster
 			default:
@@ -116,9 +116,9 @@ class TeamBuilderTableViewController: UITableViewController {
 			}
 			
 			if cell != nil {
-				cell.nameLabel.text = monster.name
-				cell.descriptionLabel.text = monster.genus
-				cell.spriteImageView.image = UIImage(named: monster.spriteImageName)
+				cell.nameLabel.text = monster?.name
+				cell.descriptionLabel.text = monster?.genus
+				cell.spriteImageView.image = UIImage(named: (monster?.spriteImageName)!)
 			}
 		}
 	}
@@ -127,16 +127,16 @@ class TeamBuilderTableViewController: UITableViewController {
 		if !isEditingMode {
 			isEditingMode = true
 		} else {
-			guard let teamName = teamNameTextField.text where !teamName.isEmpty else {
-				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .Alert)
-				let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+			guard let teamName = teamNameTextField.text , !teamName.isEmpty else {
+				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
+				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 				alertController.addAction(okAction)
-				presentViewController(alertController, animated: true, completion: nil)
+				present(alertController, animated: true, completion: nil)
 				return
 			}
 
 			selectedTeam.name = teamName
-			for (index, monster) in selectedMonsters.enumerate() {
+			for (index, monster) in selectedMonsters.enumerated() {
 				if monster != nil {
 					switch index {
 					case 0:
@@ -177,12 +177,12 @@ class TeamBuilderTableViewController: UITableViewController {
 			let teamMonsters = [selectedTeam.monsterSlot1, selectedTeam.monsterSlot2, selectedTeam.monsterSlot3, selectedTeam.monsterSlot4, selectedTeam.monsterSlot5, selectedTeam.monsterSlot6]
 			let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
 			
-			for (index, cell) in monsterCells.enumerate() {
+			for (index, cell) in monsterCells.enumerated() {
 				let monster = teamMonsters[index] 
-				cell.nameLabel.text = monster?.name
-				cell.descriptionLabel.text = monster?.genus
+				cell?.nameLabel.text = monster?.name
+				cell?.descriptionLabel.text = monster?.genus
 				if let imageName = monster?.spriteImageName {
-					cell.spriteImageView.image = UIImage(named: imageName)
+					cell?.spriteImageView.image = UIImage(named: imageName)
 				}
 			}
 		}
@@ -195,18 +195,18 @@ class TeamBuilderTableViewController: UITableViewController {
 	}
 
 	enum monsterCellNumber: Int {
-		case FirstCell = 0, SecondCell, ThirdCell, FourthCell, FifthCell, SixthCell
+		case firstCell = 0, secondCell, thirdCell, fourthCell, fifthCell, sixthCell
 	}
 }
 
 
 
 extension TeamBuilderTableViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(textField: UITextField) -> Bool {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		return true
 	}
 	
-	func textFieldDidBeginEditing(textField: UITextField) {
+	func textFieldDidBeginEditing(_ textField: UITextField) {
 		enableEditingModeIfNeeded()
 	}
 	

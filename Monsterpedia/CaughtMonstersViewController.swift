@@ -18,7 +18,7 @@ class CaughtMonstersViewController: UIViewController {
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
 	var coreDataStack: CoreDataStack!
-	var fetchRequest: NSFetchRequest!
+	var fetchRequest: NSFetchRequest<Monster>!
 	var monsters = [Monster]()
 	
 	
@@ -33,7 +33,7 @@ class CaughtMonstersViewController: UIViewController {
 		fetchRequest.sortDescriptors = [sortDesc]
 		
 		do {
-			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+			monsters = try coreDataStack.context.fetch(fetchRequest)
 		} catch let error as NSError {
 			print(error)
 		}
@@ -50,14 +50,14 @@ class CaughtMonstersViewController: UIViewController {
 // MARK: CollectionView Delegate Functions
 extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionViewDataSource, CollectionHeaderViewDelegate {
 	
-	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return monsters.count
 	}
 	
-	func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MonsterCell", forIndexPath: indexPath) as! MonsterCell
-		let monster = monsters[indexPath.row]
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonsterCell", for: indexPath) as! MonsterCell
+		let monster = monsters[(indexPath as NSIndexPath).row]
 		cell.nameLabel.text = monster.name
 		cell.imageView.image = UIImage(named: monster.image2DName)
 		
@@ -70,9 +70,9 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		return cell
 	}
 	
-	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-		let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MonsterCell
-		let monster = monsters[indexPath.row]
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let cell = collectionView.cellForItem(at: indexPath) as! MonsterCell
+		let monster = monsters[(indexPath as NSIndexPath).row]
 		
 		if monster.isCaught {
 			cell.alpha = 0.4
@@ -83,8 +83,8 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		}
 	}
 	
-	func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-		let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "CollectionHeaderView", forIndexPath: indexPath) as! CollectionHeaderView
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionHeaderView", for: indexPath) as! CollectionHeaderView
 		headerView.delegate = self
 		return headerView
 	}
@@ -102,23 +102,23 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 		flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
 	}
 	
-	func didSelectSegment(sender: CollectionHeaderView, selectedSegmentIndex: Int) {
+	func didSelectSegment(_ sender: CollectionHeaderView, selectedSegmentIndex: Int) {
 		let predicate: NSPredicate!
 		switch selectedSegmentIndex {
 		case 0:
 			predicate = nil
 			fetchRequest.predicate = predicate
 		case 1:
-			predicate = NSPredicate(format: "isCaught == %@", true)
+			predicate = NSPredicate(format: "isCaught == %@", true as CVarArg)
 			fetchRequest.predicate = predicate
 		case 2:
-			predicate = NSPredicate(format: "isCaught == %@", false)
+			predicate = NSPredicate(format: "isCaught == %@", false as CVarArg)
 			fetchRequest.predicate = predicate
 		default: break
 		}
 		
 		do {
-			monsters = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Monster]
+			monsters = try coreDataStack.context.fetch(fetchRequest) 
 			collectionView.reloadData()
 		} catch let error as NSError {
 			print(error)
@@ -128,7 +128,7 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 	func setupCollectionView() {
 		collectionView.alwaysBounceVertical = true
 		let verticalOffsetValue = CGFloat(66)
-		collectionView.contentOffset = CGPointMake(0, verticalOffsetValue)
+		collectionView.contentOffset = CGPoint(x: 0, y: verticalOffsetValue)
 	}
 }
 

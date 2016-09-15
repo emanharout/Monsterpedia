@@ -14,9 +14,9 @@ class TeamViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var coreDataStack: CoreDataStack!
-	var fetchRequest: NSFetchRequest!
-	var frc: NSFetchedResultsController!
-	var selectedIndexPath: NSIndexPath!
+	var fetchRequest: NSFetchRequest<Team>!
+	var frc: NSFetchedResultsController<Team>!
+	var selectedIndexPath: IndexPath!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +33,15 @@ class TeamViewController: UIViewController {
 		}
     }
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "addTeam" {
-			let destVC = segue.destinationViewController as! UINavigationController
+			let destVC = segue.destination as! UINavigationController
 			let teamBuildingVC = destVC.topViewController as! TeamBuilderViewController
 			teamBuildingVC.coreDataStack = coreDataStack
 		} else if segue.identifier == "viewTeamDetail" {
-			let destVC = segue.destinationViewController as! TeamBuilderTableViewController
+			let destVC = segue.destination as! TeamBuilderTableViewController
 			destVC.coreDataStack = coreDataStack
-			destVC.selectedTeam = frc.objectAtIndexPath(selectedIndexPath) as? Team
+			destVC.selectedTeam = frc.object(at: selectedIndexPath)
 			destVC.isTeamDetail = true
 		}
 	}
@@ -53,20 +53,20 @@ class TeamViewController: UIViewController {
 
 extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	
-	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selectedIndexPath = indexPath
-		tableView.deselectRowAtIndexPath(indexPath, animated: true)
-		performSegueWithIdentifier("viewTeamDetail", sender: self)
+		tableView.deselectRow(at: indexPath, animated: true)
+		performSegue(withIdentifier: "viewTeamDetail", sender: self)
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell")!
-		let team = frc.objectAtIndexPath(indexPath) as! Team
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell")!
+		let team = frc.object(at: indexPath) as Team
 		cell.textLabel?.text = team.name
 		return cell
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let count = frc.sections?[section].numberOfObjects {
 			return count
 		} else {
@@ -78,26 +78,26 @@ extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 
 
 extension TeamViewController: NSFetchedResultsControllerDelegate {
-	func controllerWillChangeContent(controller: NSFetchedResultsController) {
+	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.beginUpdates()
 	}
 	
-	func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+	func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
 		
 		switch type {
-		case .Insert:
-			tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-		case .Delete:
-			tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-		case .Update:
-			tableView.reloadRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-		case .Move:
-			tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-			tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+		case .insert:
+			tableView.insertRows(at: [newIndexPath!], with: .fade)
+		case .delete:
+			tableView.deleteRows(at: [indexPath!], with: .fade)
+		case .update:
+			tableView.reloadRows(at: [indexPath!], with: .fade)
+		case .move:
+			tableView.deleteRows(at: [indexPath!], with: .fade)
+			tableView.insertRows(at: [newIndexPath!], with: .fade)
 		}
 	}
 	
-	func controllerDidChangeContent(controller: NSFetchedResultsController) {
+	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.endUpdates()
 	}
 }

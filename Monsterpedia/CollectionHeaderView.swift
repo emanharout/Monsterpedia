@@ -12,7 +12,7 @@ class CollectionHeaderView: UICollectionReusableView {
 	
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	
-	@IBAction func segmentSelected (sender: AnyObject) {
+	@IBAction func segmentSelected (_ sender: AnyObject) {
 		delegate?.didSelectSegment(self, selectedSegmentIndex: segmentedControl.selectedSegmentIndex)
 	}
 	
@@ -21,7 +21,7 @@ class CollectionHeaderView: UICollectionReusableView {
 }
 
 protocol CollectionHeaderViewDelegate {
-	func didSelectSegment(sender: CollectionHeaderView, selectedSegmentIndex: Int)
+	func didSelectSegment(_ sender: CollectionHeaderView, selectedSegmentIndex: Int)
 }
 
 
