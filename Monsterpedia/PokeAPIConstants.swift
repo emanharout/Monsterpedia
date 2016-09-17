@@ -14,6 +14,7 @@ extension PokeAPIClient {
 		static let Host = "pokeapi.co"
 		static let Path = "/api/v2/"
 		static let MonsterPath = "/api/v2/pokemon/{id}"
+		static let TypePath = "/api/v2/pokemon-species/{id}"
 	}
 	
 	struct ParameterKeys {

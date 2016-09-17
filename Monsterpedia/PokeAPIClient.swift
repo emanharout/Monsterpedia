@@ -83,9 +83,10 @@ extension PokeAPIClient {
 	// Pass into taskForGET
 	// return entire JSON to completion handler
 	
-	func getPokemonData(_ monster: Monster, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
+	func getMonsterData(_ monster: Monster, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
 		guard let path = substituteValueInString(Constants.MonsterPath, value: "{id}", withValue: "\(monster.id)") else {
-			print("Failed to build URL Path")
+			let error = NSError(domain: "getMonsterData", code: 9, userInfo: [NSLocalizedDescriptionKey: "Failed to build URL with MonsterPath"])
+			completionHandler(nil, error)
 			return
 		}
 
@@ -94,5 +95,20 @@ extension PokeAPIClient {
 		taskForGETMethod(url) { (result, error) in
 			completionHandler(result, error)
 		}
+	}
+	
+	func getMonsterFlavorText(_ monster: Monster, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
+		guard let path = substituteValueInString(Constants.TypePath, value: "{id}", withValue: "\(monster.id)") else {
+			let error = NSError(domain: "getMonsterFlavorText", code: 9, userInfo: [NSLocalizedDescriptionKey: "Failed to build URL with TypePath"])
+			completionHandler(nil, error)
+			return
+		}
+		
+		let url = buildURLFromComponents(Constants.Scheme, host: Constants.Host, path: path, query: nil)
+		print(url)
+		taskForGETMethod(url) { (result, error) in
+			completionHandler(result, error)
+		}
+		
 	}
 }
