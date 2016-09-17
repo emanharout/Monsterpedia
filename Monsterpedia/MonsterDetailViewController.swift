@@ -17,6 +17,7 @@ class MonsterDetailViewController: UIViewController {
 	@IBOutlet weak var widthLabel: UILabel!
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var pediaEntry: UILabel!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	let pokeClient = PokeAPIClient.sharedInstance
 	
 	var selectedMonster: Monster!

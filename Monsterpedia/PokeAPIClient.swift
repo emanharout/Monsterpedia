@@ -12,7 +12,7 @@ class PokeAPIClient {
 	
 	static let sharedInstance = PokeAPIClient()
 	
-	func taskForGETMethod(_ url: URL, completionHandlerForGETMethod: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) -> URLSessionTask {
+	func taskForGETMethod(_ url: URL, completionHandlerForGETMethod: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
 		let request = URLRequest(url: url)
 		let session = URLSession.shared
 		let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
@@ -36,7 +36,6 @@ class PokeAPIClient {
 			self.parseData(data, completionHandler: completionHandlerForGETMethod)
 		}) 
 		task.resume()
-		return task
 	}
 	
 	fileprivate init(){}
