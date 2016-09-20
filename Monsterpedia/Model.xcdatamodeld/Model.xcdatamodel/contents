@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15F34" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Monster" representedClassName=".Monster" syncable="YES">
         <attribute name="genus" attributeType="String" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="image2DName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isCaught" attributeType="Boolean" indexed="YES" syncable="YES"/>
+        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="spriteImageName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="moves" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Move" inverseName="monster" inverseEntity="Move" syncable="YES"/>
         <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="monster" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="MonsterInstance" representedClassName=".MonsterInstance" syncable="YES">
+        <attribute name="genus" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="image2DName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="positionID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="spriteImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="monsterInstances" inverseEntity="Team" syncable="YES"/>
     </entity>
     <entity name="Move" representedClassName=".Move" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -17,12 +27,7 @@
     </entity>
     <entity name="Team" representedClassName=".Team" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="monsterSlot1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
-        <relationship name="monsterSlot2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
-        <relationship name="monsterSlot3" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
-        <relationship name="monsterSlot4" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
-        <relationship name="monsterSlot5" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
-        <relationship name="monsterSlot6" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Monster" syncable="YES"/>
+        <relationship name="monsterInstances" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MonsterInstance" inverseName="team" inverseEntity="MonsterInstance" syncable="YES"/>
     </entity>
     <entity name="Type" representedClassName=".Type" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,7 +37,8 @@
     <elements>
         <element name="Monster" positionX="-432" positionY="234" width="128" height="165"/>
         <element name="Move" positionX="-414" positionY="-72" width="128" height="90"/>
-        <element name="Team" positionX="34" positionY="225" width="128" height="150"/>
+        <element name="Team" positionX="34" positionY="225" width="128" height="75"/>
         <element name="Type" positionX="-200" positionY="-72" width="128" height="90"/>
+        <element name="MonsterInstance" positionX="-207" positionY="99" width="128" height="165"/>
     </elements>
 </model>

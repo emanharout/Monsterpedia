@@ -17,9 +17,9 @@ class TeamViewController: UIViewController {
 	var fetchRequest: NSFetchRequest<Team>!
 	var frc: NSFetchedResultsController<Team>!
 	var selectedIndexPath: IndexPath!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		fetchRequest = NSFetchRequest(entityName: "Team")
 		let sortDesc = NSSortDescriptor(key: "name", ascending: true)
@@ -31,7 +31,7 @@ class TeamViewController: UIViewController {
 		} catch let error as NSError {
 			print(error)
 		}
-    }
+	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "addTeam" {
@@ -45,7 +45,7 @@ class TeamViewController: UIViewController {
 			destVC.isTeamDetail = true
 		}
 	}
-
+	
 	
 }
 

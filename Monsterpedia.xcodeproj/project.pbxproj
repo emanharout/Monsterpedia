@@ -33,6 +33,8 @@
 		030B2D8B1D7268980072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D8A1D7268980072263C /* seed.json */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
+		03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */; };
+		03D547021D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */; };
 		03E659BE1D73F13F001B6CAA /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E659BD1D73F13F001B6CAA /* TeamViewController.swift */; };
 		03F98D831D8D1C5D0077368C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F98D821D8D1C5D0077368C /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,8 @@
 		030B2D8A1D7268980072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterInstance.swift; sourceTree = "<group>"; };
+		03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonsterInstance+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		03E659BD1D73F13F001B6CAA /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		03F98D821D8D1C5D0077368C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +212,8 @@
 		030B2D791D7262750072263C /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
+				03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */,
+				03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */,
 				03091CCD1D84E9E300810BEF /* Team+CoreDataProperties.swift */,
 				030B2D7B1D7263050072263C /* Team.swift */,
 				030B2D7C1D7263050072263C /* Move+CoreDataProperties.swift */,
@@ -362,6 +368,7 @@
 				03091CC81D7D036500810BEF /* TeamBuilderTableViewController.swift in Sources */,
 				030B2D861D7263050072263C /* Monster+CoreDataProperties.swift in Sources */,
 				030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */,
+				03D547021D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift in Sources */,
 				030939D71D4D9AEA004CC0A7 /* MonsterCell.swift in Sources */,
 				030B2D831D7263050072263C /* Team.swift in Sources */,
 				033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */,
@@ -372,6 +379,7 @@
 				03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */,
 				03E659BE1D73F13F001B6CAA /* TeamViewController.swift in Sources */,
 				03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */,
+				03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */,
 				030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */,
 				030B2D871D7263050072263C /* Monster.swift in Sources */,
 				030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */,

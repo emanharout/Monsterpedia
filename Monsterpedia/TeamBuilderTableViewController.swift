@@ -23,14 +23,15 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var teamNameTextField: UITextField!
 	@IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+	// TODO: Look into removing below 'monsters' array and core data fetch.
 	var monsters = [Monster]()
-	var firstMonster: Monster?
-	var secondMonster: Monster?
-	var thirdMonster: Monster?
-	var fourthMonster: Monster?
-	var fifthMonster: Monster?
-	var sixthMonster: Monster?
-	var selectedMonsters: [Monster?] {
+	var firstMonster: MonsterInstance?
+	var secondMonster: MonsterInstance?
+	var thirdMonster: MonsterInstance?
+	var fourthMonster: MonsterInstance?
+	var fifthMonster: MonsterInstance?
+	var sixthMonster: MonsterInstance?
+	var selectedMonsters: [MonsterInstance?] {
 		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
 		return monsters
 	}
@@ -52,8 +53,8 @@ class TeamBuilderTableViewController: UITableViewController {
 	
 	
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		setupTableView()
 		loadTeamIfNeeded()
@@ -66,7 +67,7 @@ class TeamBuilderTableViewController: UITableViewController {
 		} catch let error as NSError {
 			print(error)
 		}
-    }
+	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if (indexPath as NSIndexPath).section == 0 {
@@ -85,9 +86,15 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
 		if segue.source.isKind(of: BrowseViewController.self) {
 			let browseVC = segue.source as! BrowseViewController
-			let monster = browseVC.selectedMonster
+			guard let monster = browseVC.selectedMonster else {
+				print("Monster returned from Browse View Controller was nil")
+				return
+			}
+			let int = monster.id
+			print("INT IS: \(int)")
+			let monsterInstance = MonsterInstance(name: monster.name, id: int, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
 			let cell: MonsterSpriteCell!
-			guard let selectedRowIndex = (tableView.indexPathForSelectedRow as NSIndexPath?)?.row else {
+			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
 				print("Could not retrieve selected row value")
 				return
 			}
@@ -95,30 +102,36 @@ class TeamBuilderTableViewController: UITableViewController {
 			switch selectedRowIndex {
 			case monsterCellNumber.firstCell.rawValue:
 				cell = firstMonsterCell
-				firstMonster = monster
+				monsterInstance.positionID = Int16(1)
+				firstMonster = monsterInstance
 			case monsterCellNumber.secondCell.rawValue:
+				monsterInstance.positionID = Int16(2)
 				cell = secondMonsterCell
-				secondMonster = monster
+				secondMonster = monsterInstance
 			case monsterCellNumber.thirdCell.rawValue:
+				monsterInstance.positionID = Int16(3)
 				cell = thirdMonsterCell
-				thirdMonster = monster
+				thirdMonster = monsterInstance
 			case monsterCellNumber.fourthCell.rawValue:
+				monsterInstance.positionID = Int16(4)
 				cell = fourthMonsterCell
-				fourthMonster = monster
+				fourthMonster = monsterInstance
 			case monsterCellNumber.fifthCell.rawValue:
+				monsterInstance.positionID = Int16(5)
 				cell = fifthMonsterCell
-				fifthMonster = monster
+				fifthMonster = monsterInstance
 			case monsterCellNumber.sixthCell.rawValue:
+				monsterInstance.positionID = Int16(6)
 				cell = sixthMonsterCell
-				sixthMonster = monster
+				sixthMonster = monsterInstance
 			default:
 				cell = nil
 			}
 			
 			if cell != nil {
-				cell.nameLabel.text = monster?.name
-				cell.descriptionLabel.text = monster?.genus
-				cell.spriteImageView.image = UIImage(named: (monster?.spriteImageName)!)
+				cell.nameLabel.text = monsterInstance.name
+				cell.descriptionLabel.text = monsterInstance.genus
+				cell.spriteImageView.image = UIImage(named: monsterInstance.spriteImageName)
 			}
 		}
 	}
@@ -134,26 +147,31 @@ class TeamBuilderTableViewController: UITableViewController {
 				present(alertController, animated: true, completion: nil)
 				return
 			}
-
+			
 			selectedTeam.name = teamName
-			for (index, monster) in selectedMonsters.enumerated() {
-				if monster != nil {
-					switch index {
-					case 0:
-						selectedTeam.monsterSlot1 = monster
-					case 1:
-						selectedTeam.monsterSlot2 = monster
-					case 2:
-						selectedTeam.monsterSlot3 = monster
-					case 3:
-						selectedTeam.monsterSlot4 = monster
-					case 4:
-						selectedTeam.monsterSlot5 = monster
-					case 5:
-						selectedTeam.monsterSlot6 = monster
-					default:
-						continue
-					}
+			selectedTeam.monsterInstances = nil
+			for monster in selectedMonsters {
+				if let monster = monster {
+					monster.team = selectedTeam
+					//					selectedTeam.addToMonsters(monster)
+					
+					
+					//					switch index {
+					//					case 0:
+					//						selectedTeam.monsterSlot1 = monster
+					//					case 1:
+					//						selectedTeam.monsterSlot2 = monster
+					//					case 2:
+					//						selectedTeam.monsterSlot3 = monster
+					//					case 3:
+					//						selectedTeam.monsterSlot4 = monster
+					//					case 4:
+					//						selectedTeam.monsterSlot5 = monster
+					//					case 5:
+					//						selectedTeam.monsterSlot6 = monster
+					//					default:
+					//						continue
+					//					}
 				}
 			}
 			teamNameTextField.resignFirstResponder()
@@ -174,16 +192,19 @@ class TeamBuilderTableViewController: UITableViewController {
 				return
 			}
 			teamNameTextField.text = selectedTeam.name
-			let teamMonsters = [selectedTeam.monsterSlot1, selectedTeam.monsterSlot2, selectedTeam.monsterSlot3, selectedTeam.monsterSlot4, selectedTeam.monsterSlot5, selectedTeam.monsterSlot6]
+			//			let teamMonsters = [selectedTeam.monsterSlot1, selectedTeam.monsterSlot2, selectedTeam.monsterSlot3, selectedTeam.monsterSlot4, selectedTeam.monsterSlot5, selectedTeam.monsterSlot6]
+			guard let teamMonsters = selectedTeam.monsterInstances else {
+				print("The selected team has a monsters property that is nil")
+				return
+			}
 			let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
 			
 			for (index, cell) in monsterCells.enumerated() {
-				let monster = teamMonsters[index] 
-				cell?.nameLabel.text = monster?.name
-				cell?.descriptionLabel.text = monster?.genus
-				if let imageName = monster?.spriteImageName {
-					cell?.spriteImageView.image = UIImage(named: imageName)
-				}
+				let monster = teamMonsters[index] as! MonsterInstance
+				cell?.nameLabel.text = monster.name
+				cell?.descriptionLabel.text = monster.genus
+				let imageName = monster.spriteImageName
+				cell?.spriteImageView.image = UIImage(named: imageName)
 			}
 		}
 	}
@@ -193,7 +214,7 @@ class TeamBuilderTableViewController: UITableViewController {
 			isEditingMode = true
 		}
 	}
-
+	
 	enum monsterCellNumber: Int {
 		case firstCell = 0, secondCell, thirdCell, fourthCell, fifthCell, sixthCell
 	}

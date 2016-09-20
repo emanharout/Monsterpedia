@@ -6,16 +6,18 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import CoreData
 
 class TeamBuilderViewController: UIViewController {
 	
 	@IBOutlet weak var containerView: UIView!
 	var coreDataStack: CoreDataStack!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "embedTableVC" {
@@ -32,7 +34,7 @@ class TeamBuilderViewController: UIViewController {
 			print("Could not retrieve reference to Team Builder Table View Controller")
 			return
 		}
-		let selectedMonsters = childVC.selectedMonsters as [Monster?]
+		let selectedMonsters = childVC.selectedMonsters as [MonsterInstance?]
 		var monsterNotSelected = false
 		for monster in selectedMonsters {
 			if monster == nil {
@@ -53,8 +55,12 @@ class TeamBuilderViewController: UIViewController {
 				present(alertController, animated: true, completion: nil)
 				return
 			}
-
-			_ = Team(teamName: teamName, monsters: selectedMonsters, context: coreDataStack.context)
+			
+			let monsterSet = NSOrderedSet(array: selectedMonsters)
+			print("SELECTED SET: \(monsterSet)")
+			let newTeam = Team(teamName: teamName, monsters: nil, context: coreDataStack.context)
+			newTeam.monsterInstances = monsterSet
+			//			newTeam.addToMonsters(monsterSet)
 			coreDataStack.save()
 			dismiss(animated: true, completion: nil)
 		}
@@ -68,6 +74,3 @@ class TeamBuilderViewController: UIViewController {
 	}
 	
 }
-
-
-
