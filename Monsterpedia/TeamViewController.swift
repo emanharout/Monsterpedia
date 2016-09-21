@@ -94,4 +94,4 @@ extension TeamViewController: NSFetchedResultsControllerDelegate {
 	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.endUpdates()
 	}
-}V
+}

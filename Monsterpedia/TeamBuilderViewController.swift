@@ -48,7 +48,7 @@ class TeamBuilderViewController: UIViewController {
 			present(alertController, animated: true, completion: nil)
 			return
 		} else {
-			guard let teamName = childVC.teamNameTextField.text , !teamName.isEmpty else {
+			guard let teamName = childVC.teamNameTextField.text, !teamName.isEmpty else {
 				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
 				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 				alertController.addAction(okAction)
@@ -67,13 +67,9 @@ class TeamBuilderViewController: UIViewController {
 			coreDataStack.save()
 			dismiss(animated: true, completion: nil)
 		}
-		
-		
-		
 	}
 	
 	@IBAction func cancelTeamBuilding() {
 		self.dismiss(animated: true, completion: nil)
 	}
-	
 }
