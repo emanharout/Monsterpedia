@@ -17,18 +17,18 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 	var fetchRequest: NSFetchRequest<Monster>!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
+	let searchController = UISearchController(searchResultsController: nil)
 	
+	// Vars only utilized when modifying team members
 	var isTeamBuilding = false
 	var selectedMonster: Monster!
-	
-	let searchController = UISearchController(searchResultsController: nil)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		setupSearchController()
 		setupTableView()
-		
+
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
@@ -38,10 +38,16 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 			print(error)
 		}
 		
-		// The following code is added because Xcode falsely thinks there is a bug when exiting BrowseVC while editing team.
+		// The following code is added because Xcode falsely thinks there is a bug when exiting BrowseVC while editing team members
 		searchController.loadViewIfNeeded()
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "showMonsterDetail" {
+			let destinationVC = segue.destination as! MonsterDetailViewController
+			destinationVC.selectedMonster = selectedMonster
+		}
+	}
 	
 	// MARK: SearchResultsController Functions
 	func filterContentForSearchText(_ searchText: String, scope: String = "All") {
@@ -68,17 +74,9 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		tableView.tableHeaderView = searchBar
 	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "showMonsterDetail" {
-			let destinationVC = segue.destination as! MonsterDetailViewController
-			destinationVC.selectedMonster = selectedMonster
-		}
-	}
 }
 
-
-
+// MARK: Table View Functions
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,15 +87,12 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterSpriteCell", for: indexPath) as! MonsterSpriteCell
-		
-		// TODO: Test and see if can drop casting to NSIndexPath
 		let monster: Monster
 		if searchController.isActive && searchController.searchBar.text != "" {
-			monster = filteredMonsters[(indexPath as NSIndexPath).row]
+			monster = filteredMonsters[indexPath.row]
 		} else {
-			monster = monsters[(indexPath as NSIndexPath).row]
+			monster = monsters[indexPath.row]
 		}
 		
 		cell.nameLabel.text = monster.name
@@ -130,7 +125,3 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 	}
 }
-
-
-
-
