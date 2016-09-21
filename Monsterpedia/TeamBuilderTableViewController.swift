@@ -6,8 +6,6 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
-// TODO: Setup new model where Monsters become MonsterSpecies, and a new entity Monsters are instantiated multiple times in order to be included in Team Sets. Values are passed from each MonsterSpecies selection to create a Monster object, which is then all added to a Team.
-
 import UIKit
 import CoreData
 
@@ -23,8 +21,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
 	@IBOutlet weak var teamNameTextField: UITextField!
 	@IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
-	// TODO: Look into removing below 'monsters' array and core data fetch.
-	var monsters = [Monster]()
+
 	var firstMonster: MonsterInstance?
 	var secondMonster: MonsterInstance?
 	var thirdMonster: MonsterInstance?
@@ -38,6 +35,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	
 	// Relevant variables when viewing an existing team
 	var isTeamDetail = false
+	var selectedTeam: Team!
 	var isEditingMode: Bool = false {
 		didSet {
 			if isEditingMode {
@@ -49,46 +47,23 @@ class TeamBuilderTableViewController: UITableViewController {
 			}
 		}
 	}
-	var selectedTeam: Team!
-	
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		// Test
-		if let selectedTeam = selectedTeam {
-			for monster in selectedTeam.monsterInstances! {
-				print(monster.positionID)
-				print(monster.name)
-			}
-		} else {
-			print("NO TEAM PASSED")
-		}
-		
 		setupTableView()
 		loadTeamIfNeeded()
-		
-		let fetchRequest: NSFetchRequest<Monster>! = NSFetchRequest(entityName: "Monster")
-		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
-		fetchRequest.sortDescriptors = [sortDesc]
-		do {
-			monsters = try coreDataStack.context.fetch(fetchRequest)
-		} catch let error as NSError {
-			print(error)
-		}
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if (indexPath as NSIndexPath).section == 0 {
+		if indexPath.section == 0 {
 			teamNameTextField.becomeFirstResponder()
-		} else if (indexPath as NSIndexPath).section == 1 {
+		} else if indexPath.section == 1 {
 			let browseVC = storyboard?.instantiateViewController(withIdentifier: "BrowseVC") as! BrowseViewController
 			browseVC.isTeamBuilding = true
 			browseVC.coreDataStack = coreDataStack
 			navigationController?.pushViewController(browseVC, animated: true)
 		}
-		
 		enableEditingModeIfNeeded()
 	}
 	
@@ -144,11 +119,12 @@ class TeamBuilderTableViewController: UITableViewController {
 		}
 	}
 	
+	// If Edit/Done Button Pressed
 	@IBAction func rightBarButtonPressed() {
 		if !isEditingMode {
 			isEditingMode = true
 		} else {
-			guard let teamName = teamNameTextField.text , !teamName.isEmpty else {
+			guard let teamName = teamNameTextField.text, !teamName.isEmpty else {
 				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
 				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 				alertController.addAction(okAction)
@@ -157,45 +133,17 @@ class TeamBuilderTableViewController: UITableViewController {
 			}
 			
 			selectedTeam.name = teamName
-			if let selectedTeam = selectedTeam {
-				print("Count Before Save: \(selectedTeam.monsterInstances!.count)")
-			} else {
-				print("No team members")
-			}
-			
 			var newTeamMembers = [MonsterInstance]()
 			for monster in selectedMonsters {
 				if let monster = monster {
 					print("We are here")
 					newTeamMembers.append(monster)
-//					monster.team = selectedTeam
-//					switch index {
-//					case 0:
-//						selectedTeam.monsterSlot1 = monster
-//					case 1:
-//						selectedTeam.monsterSlot2 = monster
-//					case 2:
-//						selectedTeam.monsterSlot3 = monster
-//					case 3:
-//						selectedTeam.monsterSlot4 = monster
-//					case 4:
-//						selectedTeam.monsterSlot5 = monster
-//					case 5:
-//						selectedTeam.monsterSlot6 = monster
-//					default:
-//						continue
-//					}
 				}
 				selectedTeam.monsterInstances = Set(newTeamMembers)
 			}
 			teamNameTextField.resignFirstResponder()
 			isEditingMode = false
 			coreDataStack.save()
-			if let selectedTeam = selectedTeam {
-				print("Count after save: \(selectedTeam.monsterInstances!.count)")
-			} else {
-				print("No team members")
-			}
 		}
 	}
 	
@@ -240,7 +188,6 @@ class TeamBuilderTableViewController: UITableViewController {
 					continue
 				}
 				
-				
 				let monster = sortedTeamArray[index]
 				cell?.nameLabel.text = monster.name
 				cell?.descriptionLabel.text = monster.genus
@@ -261,8 +208,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	}
 }
 
-
-
+// MARK: Textfield Methods
 extension TeamBuilderTableViewController: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		return true
