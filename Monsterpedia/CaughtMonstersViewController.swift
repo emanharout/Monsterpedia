@@ -12,8 +12,6 @@ import CoreData
 
 class CaughtMonstersViewController: UIViewController {
 	
-	// TODO: If segmentedcontrol segment 1 || 2 selected, reselect/refilter after toggling cell as caught/wild
-	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 	
@@ -26,12 +24,10 @@ class CaughtMonstersViewController: UIViewController {
 		super.viewDidLoad()
 		
 		setupFlowLayout()
-		// TODO: Set Status Bar Style
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
-		
 		do {
 			monsters = try coreDataStack.context.fetch(fetchRequest)
 		} catch let error as NSError {
@@ -57,7 +53,7 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MonsterCell", for: indexPath) as! MonsterCell
-		let monster = monsters[(indexPath as NSIndexPath).row]
+		let monster = monsters[indexPath.row]
 		cell.nameLabel.text = monster.name
 		cell.imageView.image = UIImage(named: monster.image2DName)
 		
