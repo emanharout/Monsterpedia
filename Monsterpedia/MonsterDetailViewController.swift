@@ -18,8 +18,8 @@ class MonsterDetailViewController: UIViewController {
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var pediaEntry: UILabel!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-	let pokeClient = PokeAPIClient.sharedInstance
 	
+	let pokeClient = PokeAPIClient.sharedInstance
 	var selectedMonster: Monster!
 
     override func viewDidLoad() {
@@ -27,11 +27,6 @@ class MonsterDetailViewController: UIViewController {
 
 		navItem.title = selectedMonster.name
 		loadMonsterData(selectedMonster: selectedMonster)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-		
     }
 	
 	func loadMonsterData(selectedMonster: Monster) {
@@ -58,6 +53,7 @@ class MonsterDetailViewController: UIViewController {
 					group.leave()
 					return
 				}
+				
 				for typeDict in typeArray {
 					guard let type = typeDict["type"] as? [String: AnyObject], let typeName = type["name"] as? String else {
 						print("Could not retrieve type name")
@@ -99,11 +95,11 @@ class MonsterDetailViewController: UIViewController {
 						break
 					}
 				}
-				
 			}
 			group.leave()
 		}
 		
+		// Assign values to UI once data from both requests are downloaded
 		group.notify(queue: .main) {
 			self.monsterNameLabel.text = selectedMonster.name
 			self.monsterImage.image = UIImage(named: selectedMonster.image2DName)
@@ -116,8 +112,7 @@ class MonsterDetailViewController: UIViewController {
 				type.append(" \(formattedTypeName),")
 			}
 			self.typeLabel.text = type.trimmingCharacters(in: CharacterSet.punctuationCharacters)
-			
-			// TODO: Find a way to remove all line breaks
+			// Removes line breaks from downloaded text
 			self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\n", with: " ")
 			
 			self.monsterNameLabel.isHidden = false
@@ -127,6 +122,5 @@ class MonsterDetailViewController: UIViewController {
 			
 			self.activityIndicator.stopAnimating()
 		}
-		
 	}
 }
