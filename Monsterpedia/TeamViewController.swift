@@ -12,7 +12,7 @@ import CoreData
 class TeamViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
-	
+
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest<Team>!
 	var frc: NSFetchedResultsController<Team>!
@@ -45,11 +45,7 @@ class TeamViewController: UIViewController {
 			destVC.isTeamDetail = true
 		}
 	}
-	
-	
 }
-
-
 
 extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	
@@ -75,8 +71,6 @@ extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
-
-
 extension TeamViewController: NSFetchedResultsControllerDelegate {
 	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.beginUpdates()
@@ -100,5 +94,4 @@ extension TeamViewController: NSFetchedResultsControllerDelegate {
 	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.endUpdates()
 	}
-}
-
+}V
