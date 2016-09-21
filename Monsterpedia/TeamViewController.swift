@@ -94,4 +94,6 @@ extension TeamViewController: NSFetchedResultsControllerDelegate {
 	func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.endUpdates()
 	}
+	
+	// TODO: Swipe to Delete Feature
 }

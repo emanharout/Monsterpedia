@@ -47,7 +47,10 @@ class MonsterDetailViewController: UIViewController {
 				self.present(alert, animated: true, completion: nil)
 			} else if let result = result as? [String: AnyObject] {
 				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int else {
-					print("Could not retrieve monster height/width")
+					let alert = UIAlertController(title: "Error", message: "Failed to retrieve results from server", preferredStyle: .alert)
+					let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+					alert.addAction(action)
+					self.present(alert, animated: true, completion: nil)
 					group.leave()
 					return
 				}
