@@ -23,13 +23,13 @@ class PokeAPIClient {
 			}
 			
 			guard let statusCode = (response as? HTTPURLResponse)?.statusCode , statusCode >= 200 && statusCode <= 299 else {
-				let error = NSError(domain: "taskForGETMethod", code: 9, userInfo: [NSLocalizedDescriptionKey: "Status Code from server is non-2xx"])
+				let error = NSError(domain: "taskForGETMethod", code: 9, userInfo: [NSLocalizedDescriptionKey: "Could not reach server. Please try again once you have better network connectivity."])
 				completionHandlerForGETMethod(nil, error)
 				return
 			}
 			
 			guard let data = data else {
-				let error = NSError(domain: "taskForGETMethod", code: 10, userInfo: [NSLocalizedDescriptionKey: "Data returned from server is nil"])
+				let error = NSError(domain: "taskForGETMethod", code: 10, userInfo: [NSLocalizedDescriptionKey: "Currently experiencing problems with the server. Pleae try again later."])
 				completionHandlerForGETMethod(nil, error)
 				return
 			}

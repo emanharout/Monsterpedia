@@ -41,7 +41,10 @@ class MonsterDetailViewController: UIViewController {
 		group.enter()
 		pokeClient.getMonsterData(selectedMonster) { (result, error) in
 			if let error = error {
-				print(error)
+				let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+				let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+				alert.addAction(action)
+				self.present(alert, animated: true, completion: nil)
 			} else if let result = result as? [String: AnyObject] {
 				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int else {
 					print("Could not retrieve monster height/width")

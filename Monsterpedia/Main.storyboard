@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="146" translatesAutoresizingMaskIntoConstraints="NO" id="Oqh-K6-mWm" userLabel="Image"/>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-za-yYr">
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-za-yYr">
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ" userLabel="Name" colorLabel="IBBuiltInLabel-Red">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -143,8 +143,8 @@
                         <constraints>
                             <constraint firstItem="Oqh-K6-mWm" firstAttribute="top" secondItem="Ggu-JZ-Cnq" secondAttribute="bottom" constant="8" id="588-IR-mP2"/>
                             <constraint firstItem="hsU-mj-wW4" firstAttribute="centerY" secondItem="f3x-d8-a1i" secondAttribute="centerY" id="EYS-go-XHB"/>
+                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" secondItem="Oqh-K6-mWm" secondAttribute="bottom" constant="16" id="EyB-cP-9du"/>
                             <constraint firstItem="L2c-za-yYr" firstAttribute="centerY" secondItem="Oqh-K6-mWm" secondAttribute="centerY" id="F3s-yB-Jvf"/>
-                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" secondItem="Oqh-K6-mWm" secondAttribute="bottom" constant="22" id="LZf-mM-j0z"/>
                             <constraint firstItem="Oqh-K6-mWm" firstAttribute="leading" secondItem="f3x-d8-a1i" secondAttribute="leadingMargin" id="MTV-zk-dUD"/>
                             <constraint firstItem="Igc-5w-NX2" firstAttribute="leading" secondItem="f3x-d8-a1i" secondAttribute="leadingMargin" constant="4" id="NIZ-at-3bX"/>
                             <constraint firstItem="L2c-za-yYr" firstAttribute="leading" secondItem="Oqh-K6-mWm" secondAttribute="trailing" constant="16" id="TcH-2v-jz4"/>
