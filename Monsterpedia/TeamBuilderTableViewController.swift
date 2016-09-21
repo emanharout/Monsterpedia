@@ -56,6 +56,16 @@ class TeamBuilderTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// Test
+		if let selectedTeam = selectedTeam {
+			for monster in selectedTeam.monsterInstances! {
+				print(monster.positionID)
+				print(monster.name)
+			}
+		} else {
+			print("NO TEAM PASSED")
+		}
+		
 		setupTableView()
 		loadTeamIfNeeded()
 		
@@ -90,9 +100,7 @@ class TeamBuilderTableViewController: UITableViewController {
 				print("Monster returned from Browse View Controller was nil")
 				return
 			}
-			let int = monster.id
-			print("INT IS: \(int)")
-			let monsterInstance = MonsterInstance(name: monster.name, id: int, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
+			let monsterInstance = MonsterInstance(name: monster.name, id: monster.id, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
 			let cell: MonsterSpriteCell!
 			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
 				print("Could not retrieve selected row value")
@@ -149,34 +157,45 @@ class TeamBuilderTableViewController: UITableViewController {
 			}
 			
 			selectedTeam.name = teamName
-			selectedTeam.monsterInstances = nil
+			if let selectedTeam = selectedTeam {
+				print("Count Before Save: \(selectedTeam.monsterInstances!.count)")
+			} else {
+				print("No team members")
+			}
+			
+			var newTeamMembers = [MonsterInstance]()
 			for monster in selectedMonsters {
 				if let monster = monster {
-					monster.team = selectedTeam
-					//					selectedTeam.addToMonsters(monster)
-					
-					
-					//					switch index {
-					//					case 0:
-					//						selectedTeam.monsterSlot1 = monster
-					//					case 1:
-					//						selectedTeam.monsterSlot2 = monster
-					//					case 2:
-					//						selectedTeam.monsterSlot3 = monster
-					//					case 3:
-					//						selectedTeam.monsterSlot4 = monster
-					//					case 4:
-					//						selectedTeam.monsterSlot5 = monster
-					//					case 5:
-					//						selectedTeam.monsterSlot6 = monster
-					//					default:
-					//						continue
-					//					}
+					print("We are here")
+					newTeamMembers.append(monster)
+//					monster.team = selectedTeam
+//					switch index {
+//					case 0:
+//						selectedTeam.monsterSlot1 = monster
+//					case 1:
+//						selectedTeam.monsterSlot2 = monster
+//					case 2:
+//						selectedTeam.monsterSlot3 = monster
+//					case 3:
+//						selectedTeam.monsterSlot4 = monster
+//					case 4:
+//						selectedTeam.monsterSlot5 = monster
+//					case 5:
+//						selectedTeam.monsterSlot6 = monster
+//					default:
+//						continue
+//					}
 				}
+				selectedTeam.monsterInstances = Set(newTeamMembers)
 			}
 			teamNameTextField.resignFirstResponder()
 			isEditingMode = false
 			coreDataStack.save()
+			if let selectedTeam = selectedTeam {
+				print("Count after save: \(selectedTeam.monsterInstances!.count)")
+			} else {
+				print("No team members")
+			}
 		}
 	}
 	
@@ -192,7 +211,6 @@ class TeamBuilderTableViewController: UITableViewController {
 				return
 			}
 			teamNameTextField.text = selectedTeam.name
-			//			let teamMonsters = [selectedTeam.monsterSlot1, selectedTeam.monsterSlot2, selectedTeam.monsterSlot3, selectedTeam.monsterSlot4, selectedTeam.monsterSlot5, selectedTeam.monsterSlot6]
 			guard let teamMonsters = selectedTeam.monsterInstances else {
 				print("The selected team has a monsters property that is nil")
 				return
@@ -200,7 +218,30 @@ class TeamBuilderTableViewController: UITableViewController {
 			let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
 			
 			for (index, cell) in monsterCells.enumerated() {
-				let monster = teamMonsters[index] as! MonsterInstance
+				let teamArray = Array(teamMonsters)
+				let sortedTeamArray = teamArray.sorted(by: { (monsterA, monsterB) -> Bool in
+					monsterA.positionID < monsterB.positionID
+				})
+				
+				switch index {
+				case 0:
+					firstMonster = sortedTeamArray[index]
+				case 1:
+					secondMonster = sortedTeamArray[index]
+				case 2:
+					thirdMonster = sortedTeamArray[index]
+				case 3:
+					fourthMonster = sortedTeamArray[index]
+				case 4:
+					fifthMonster = sortedTeamArray[index]
+				case 5:
+					sixthMonster = sortedTeamArray[index]
+				default:
+					continue
+				}
+				
+				
+				let monster = sortedTeamArray[index]
 				cell?.nameLabel.text = monster.name
 				cell?.descriptionLabel.text = monster.genus
 				let imageName = monster.spriteImageName

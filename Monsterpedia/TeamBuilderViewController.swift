@@ -56,11 +56,14 @@ class TeamBuilderViewController: UIViewController {
 				return
 			}
 			
-			let monsterSet = NSOrderedSet(array: selectedMonsters)
-			print("SELECTED SET: \(monsterSet)")
-			let newTeam = Team(teamName: teamName, monsters: nil, context: coreDataStack.context)
-			newTeam.monsterInstances = monsterSet
-			//			newTeam.addToMonsters(monsterSet)
+			var monsterSet: Set<MonsterInstance> = Set()
+			for monster in selectedMonsters {
+				if let monster = monster {
+					monsterSet.insert(monster)
+				}
+			}
+			
+			_ = Team(teamName: teamName, monsters: monsterSet, context: coreDataStack.context)
 			coreDataStack.save()
 			dismiss(animated: true, completion: nil)
 		}
