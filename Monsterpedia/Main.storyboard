@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o66-mL-sbb">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o66-mL-sbb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjT-2a-AkK" id="gNN-gg-hgs">
-                                            <frame key="frameInset" width="375" height="89"/>
+                                            <frame key="frameInset" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-65-Rr7"/>
@@ -143,7 +143,7 @@
                         <constraints>
                             <constraint firstItem="Oqh-K6-mWm" firstAttribute="top" secondItem="Ggu-JZ-Cnq" secondAttribute="bottom" constant="8" id="588-IR-mP2"/>
                             <constraint firstItem="hsU-mj-wW4" firstAttribute="centerY" secondItem="f3x-d8-a1i" secondAttribute="centerY" id="EYS-go-XHB"/>
-                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" secondItem="Oqh-K6-mWm" secondAttribute="bottom" constant="16" id="EyB-cP-9du"/>
+                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oqh-K6-mWm" secondAttribute="bottom" constant="16" id="EyB-cP-9du"/>
                             <constraint firstItem="L2c-za-yYr" firstAttribute="centerY" secondItem="Oqh-K6-mWm" secondAttribute="centerY" id="F3s-yB-Jvf"/>
                             <constraint firstItem="Oqh-K6-mWm" firstAttribute="leading" secondItem="f3x-d8-a1i" secondAttribute="leadingMargin" id="MTV-zk-dUD"/>
                             <constraint firstItem="Igc-5w-NX2" firstAttribute="leading" secondItem="f3x-d8-a1i" secondAttribute="leadingMargin" constant="4" id="NIZ-at-3bX"/>
@@ -152,6 +152,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="L2c-za-yYr" secondAttribute="trailing" id="gaw-Wl-3rm"/>
                             <constraint firstItem="L2c-za-yYr" firstAttribute="width" secondItem="Oqh-K6-mWm" secondAttribute="width" id="ppv-zO-mtS"/>
                             <constraint firstItem="hsU-mj-wW4" firstAttribute="centerX" secondItem="f3x-d8-a1i" secondAttribute="centerX" id="qCp-QD-7PT"/>
+                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" secondItem="Oqh-K6-mWm" secondAttribute="bottom" priority="750" constant="16" id="va7-pt-9n2"/>
+                            <constraint firstItem="Igc-5w-NX2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="L2c-za-yYr" secondAttribute="bottom" constant="16" id="zt5-g9-AVM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3M4-kM-biU"/>
@@ -313,11 +315,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,7 +442,7 @@
                             <tableViewSection headerTitle="Team" id="4zu-lk-nzF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xUv-lf-uPk">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="100" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xUv-lf-uPk" id="riM-XF-Lfh">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -469,7 +471,7 @@
                             <tableViewSection headerTitle="Monsters" id="S9s-r5-Trv">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="TYL-x2-c0n" userLabel="FirstSpriteCell" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="157" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="200" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYL-x2-c0n" id="N1v-dQ-jG5">
                                             <frame key="frameInset" width="375" height="89"/>
@@ -512,7 +514,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="oGh-4D-MdG" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="247" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="290" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGh-4D-MdG" id="udm-Yo-uZA">
                                             <frame key="frameInset" width="375" height="89"/>
@@ -555,7 +557,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="Dk1-QQ-Ebh" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="337" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="380" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk1-QQ-Ebh" id="3gf-e7-lVz">
                                             <frame key="frameInset" width="375" height="89"/>
@@ -598,7 +600,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="ul1-rc-unm" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="427" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="470" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ul1-rc-unm" id="1Ir-l6-tKR">
                                             <frame key="frameInset" width="375" height="89"/>
@@ -641,7 +643,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="tNT-Ok-WcB" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="517" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="560" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNT-Ok-WcB" id="uMQ-N5-61m">
                                             <frame key="frameInset" width="375" height="89"/>
@@ -684,7 +686,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="dKp-JD-7o7" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="607" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="650" width="1000" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKp-JD-7o7" id="iOM-cn-cRi">
                                             <frame key="frameInset" width="375" height="89"/>
