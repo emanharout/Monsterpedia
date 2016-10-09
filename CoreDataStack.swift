@@ -3,10 +3,8 @@
 
 import CoreData
 
-
 // MARK:  - Main
 struct CoreDataStack {
-	
 	
 	// MARK:  - Properties
 	fileprivate let model : NSManagedObjectModel
@@ -16,7 +14,6 @@ struct CoreDataStack {
 	fileprivate let persistingContext : NSManagedObjectContext
 	fileprivate let backgroundContext : NSManagedObjectContext
 	let context : NSManagedObjectContext
-	
 	static let sharedInstance = CoreDataStack(modelName: "Model")!
 	
 	// MARK:  - Initializers
@@ -26,7 +23,6 @@ struct CoreDataStack {
 		guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else {
 			print("Unable to find \(modelName)in the main bundle")
 			return nil}
-		
 		self.modelURL = modelURL
 		
 		// Try to create the model from the URL
@@ -35,8 +31,6 @@ struct CoreDataStack {
 			return nil
 		}
 		self.model = model
-		
-		
 		
 		// Create the store coordinator
 		coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
@@ -56,10 +50,8 @@ struct CoreDataStack {
 		backgroundContext.parent = context
 		backgroundContext.name = "Background"
 		
-		
 		// Add a SQLite store located in the documents folder
 		let fm = FileManager.default
-		
 		guard let  docUrl = fm.urls(for: .documentDirectory, in: .userDomainMask).first else{
 			print("Unable to reach the documents folder")
 			return nil
@@ -68,7 +60,6 @@ struct CoreDataStack {
 		self.dbURL = docUrl.appendingPathComponent("model.sqlite")
 		
 		let options = [NSInferMappingModelAutomaticallyOption: true, NSMigratePersistentStoresAutomaticallyOption : true]
-		
 		do{
 			try addStoreTo(coordinator: coordinator,
 			               storeType: NSSQLiteStoreType,
@@ -79,7 +70,6 @@ struct CoreDataStack {
 		}catch{
 			print("unable to add store at \(dbURL)")
 		}
-		
 	}
 	
 	// MARK:  - Utils
@@ -116,8 +106,5 @@ extension CoreDataStack {
 				}
 			}
 		}
-		
-		
-		
 	}
 }
