@@ -39,13 +39,18 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 		}
 		
 		// The following code is added because Xcode falsely thinks there is a bug when exiting BrowseVC while editing team members
-		searchController.loadViewIfNeeded()
+		//searchController.loadViewIfNeeded()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "showMonsterDetail" {
+			print("Selected Monster in ShowMonsterDetail: \(selectedMonster)")
 			let destinationVC = segue.destination as! MonsterDetailViewController
 			destinationVC.selectedMonster = selectedMonster
+		}
+		// TODO: Determine if needed depending on whether bug with unwind segue is fixed
+		else if segue.identifier == "saveToTeamBuilderTableVC" {
+			
 		}
 	}
 	
@@ -104,14 +109,25 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		let cell = tableView.cellForRow(at: indexPath) as! MonsterSpriteCell
-		let monster = monsters[(indexPath as NSIndexPath).row]
-		selectedMonster = monster
 		if isTeamBuilding {
+			if searchController.isActive && searchController.searchBar.text != "" {
+				selectedMonster = filteredMonsters[indexPath.row]
+				searchController.isActive = false
+			} else {
+				selectedMonster = monsters[indexPath.row]
+			}
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
 			performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
-		} else {
+		} else if !isTeamBuilding {
+			if searchController.isActive && searchController.searchBar.text != "" {
+				selectedMonster = filteredMonsters[indexPath.row]
+			} else {
+				selectedMonster = monsters[indexPath.row]
+			}
+			print("Before unwind call")
 			performSegue(withIdentifier: "showMonsterDetail", sender: self)
+			print("After unwind call")
 		}
 	}
 	

@@ -69,6 +69,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	
 	// Unwind Segue after selecting a monster in BrowseViewController
 	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
+		print("Unwind Segue Action called")
 		if segue.source.isKind(of: BrowseViewController.self) {
 			let browseVC = segue.source as! BrowseViewController
 			guard let monster = browseVC.selectedMonster else {
@@ -117,6 +118,7 @@ class TeamBuilderTableViewController: UITableViewController {
 				cell.spriteImageView.image = UIImage(named: monsterInstance.spriteImageName)
 			}
 		}
+		print("Unwind Action Call Finished")
 	}
 	
 	// If Edit/Done Button Pressed
