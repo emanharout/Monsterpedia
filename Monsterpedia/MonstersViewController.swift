@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MonstersViewController: UIViewController, UISearchResultsUpdating {
+class MonstersViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -26,9 +26,6 @@ class MonstersViewController: UIViewController, UISearchResultsUpdating {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		setupSearchController()
-		setupTableView()
-
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
 		fetchRequest.sortDescriptors = [sortDesc]
@@ -38,8 +35,13 @@ class MonstersViewController: UIViewController, UISearchResultsUpdating {
 			print(error)
 		}
 		
-		// The following code is added because Xcode falsely thinks there is a bug when exiting MonstersVC while editing team members
-		//searchController.loadViewIfNeeded()
+		setupSearchController()
+		setupTableView()
+
+		
+		
+//		The following code is added because Xcode falsely thinks there is a bug when exiting MonstersVC while editing team members
+//		searchController.loadViewIfNeeded()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,11 +55,17 @@ class MonstersViewController: UIViewController, UISearchResultsUpdating {
 			
 		}
 	}
-	
-	// MARK: SearchResultsController Functions
+}
+
+// MARK: SearchResultsController Functions
+extension MonstersViewController: UISearchBarDelegate, UISearchResultsUpdating {
 	func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-		filteredMonsters = monsters.filter{ (monster) -> Bool in
-			return monster.name.lowercased().contains(searchText.lowercased())
+		if searchController.searchBar.text != "" {
+			filteredMonsters = monsters.filter{ (monster) -> Bool in
+				return monster.name.lowercased().contains(searchText.lowercased())
+			}
+		} else {
+			filteredMonsters = monsters
 		}
 		tableView.reloadData()
 	}
@@ -76,7 +84,10 @@ class MonstersViewController: UIViewController, UISearchResultsUpdating {
 		searchBar.searchBarStyle = .minimal
 		searchBar.backgroundColor = UIColor.white
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+		searchBar.delegate = self
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+		filteredMonsters = monsters
+		
 		tableView.tableHeaderView = searchBar
 	}
 }
@@ -85,20 +96,12 @@ class MonstersViewController: UIViewController, UISearchResultsUpdating {
 extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if searchController.isActive && searchController.searchBar.text != "" {
-			return filteredMonsters.count
-		}
-		return monsters.count
+		return filteredMonsters.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MonsterSpriteCell", for: indexPath) as! MonsterSpriteCell
-		let monster: Monster
-		if searchController.isActive && searchController.searchBar.text != "" {
-			monster = filteredMonsters[indexPath.row]
-		} else {
-			monster = monsters[indexPath.row]
-		}
+		let monster = filteredMonsters[indexPath.row]
 		
 		cell.nameLabel.text = monster.name
 		cell.descriptionLabel.text = "\(monster.genus) Pokémon"
@@ -109,25 +112,18 @@ extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		let cell = tableView.cellForRow(at: indexPath) as! MonsterSpriteCell
+		selectedMonster = filteredMonsters[indexPath.row]
 		if isTeamBuilding {
-			if searchController.isActive && searchController.searchBar.text != "" {
-				selectedMonster = filteredMonsters[indexPath.row]
+			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
+			if searchController.isActive {
 				searchController.dismiss(animated: true) {
 					self.performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
 				}
 			} else {
-				selectedMonster = monsters[indexPath.row]
+				performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
 			}
-			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
-			
-			performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
 		} else if !isTeamBuilding {
-			if searchController.isActive && searchController.searchBar.text != "" {
-				selectedMonster = filteredMonsters[indexPath.row]
-			} else {
-				selectedMonster = monsters[indexPath.row]
-			}
 			performSegue(withIdentifier: "showMonsterDetail", sender: self)
 		}
 	}
