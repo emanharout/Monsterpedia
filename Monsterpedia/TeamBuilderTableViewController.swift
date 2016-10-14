@@ -6,6 +6,8 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
+// TODO: Replace SearchController with SearchBar, Refactor Browse and TeamBuilderVC, Remove container view, combine filter array to single
+
 import UIKit
 import CoreData
 
@@ -69,17 +71,14 @@ class TeamBuilderTableViewController: UITableViewController {
 	
 	// Unwind Segue after selecting a monster in BrowseViewController
 	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
-		print("Unwind Segue Action called")
 		if segue.source.isKind(of: BrowseViewController.self) {
 			let browseVC = segue.source as! BrowseViewController
 			guard let monster = browseVC.selectedMonster else {
-				print("Monster returned from Browse View Controller was nil")
 				return
 			}
 			let monsterInstance = MonsterInstance(name: monster.name, id: monster.id, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
 			let cell: MonsterSpriteCell!
 			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
-				print("Could not retrieve selected row value")
 				return
 			}
 			
@@ -118,7 +117,6 @@ class TeamBuilderTableViewController: UITableViewController {
 				cell.spriteImageView.image = UIImage(named: monsterInstance.spriteImageName)
 			}
 		}
-		print("Unwind Action Call Finished")
 	}
 	
 	// If Edit/Done Button Pressed

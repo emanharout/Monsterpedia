@@ -112,12 +112,15 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 		if isTeamBuilding {
 			if searchController.isActive && searchController.searchBar.text != "" {
 				selectedMonster = filteredMonsters[indexPath.row]
-				searchController.isActive = false
+				searchController.dismiss(animated: true) {
+					self.performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
+				}
 			} else {
 				selectedMonster = monsters[indexPath.row]
 			}
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
+			
 			performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
 		} else if !isTeamBuilding {
 			if searchController.isActive && searchController.searchBar.text != "" {
@@ -125,9 +128,7 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
 			} else {
 				selectedMonster = monsters[indexPath.row]
 			}
-			print("Before unwind call")
 			performSegue(withIdentifier: "showMonsterDetail", sender: self)
-			print("After unwind call")
 		}
 	}
 	
