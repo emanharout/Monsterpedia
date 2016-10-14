@@ -92,11 +92,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let navController = viewControllers[index]
 			switch index {
 			case 0:
-				guard let browseVC = navController.topViewController as? BrowseViewController else {
-					print("Could not inject stack into browseVC")
+				guard let MonstersVC = navController.topViewController as? MonstersViewController else {
+					print("Could not inject stack into MonstersVC")
 					continue
 				}
-				browseVC.coreDataStack = coreDataStack
+				MonstersVC.coreDataStack = coreDataStack
 			case 1:
 				guard let caughtMonstersVC = navController.topViewController as? CaughtMonstersViewController else {
 					print("Could not inject stack into CaughtMonstersViewController")
@@ -104,11 +104,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				}
 				caughtMonstersVC.coreDataStack = coreDataStack
 			case 2:
-				guard let teamVC = navController.topViewController as? TeamViewController else {
-					print("Could not inject stack into TeamVC")
+				guard let teamsVC = navController.topViewController as? TeamsViewController else {
+					print("Could not inject stack into TeamsVC")
 					continue
 				}
-				teamVC.coreDataStack = coreDataStack
+				teamsVC.coreDataStack = coreDataStack
 			default:
 				break
 			}

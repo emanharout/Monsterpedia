@@ -1,5 +1,5 @@
 //
-//  TeamViewController.swift
+//  TeamsViewController.swift
 //  Monsterpedia
 //
 //  Created by Emmanuoel Eldridge on 8/28/16.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TeamViewController: UIViewController {
+class TeamsViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 
@@ -47,7 +47,7 @@ class TeamViewController: UIViewController {
 	}
 }
 
-extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
+extension TeamsViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selectedIndexPath = indexPath
@@ -71,7 +71,7 @@ extension TeamViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 }
 
-extension TeamViewController: NSFetchedResultsControllerDelegate {
+extension TeamsViewController: NSFetchedResultsControllerDelegate {
 	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.beginUpdates()
 	}

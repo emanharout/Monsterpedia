@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class BrowseViewController: UIViewController, UISearchResultsUpdating {
+class MonstersViewController: UIViewController, UISearchResultsUpdating {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -38,7 +38,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 			print(error)
 		}
 		
-		// The following code is added because Xcode falsely thinks there is a bug when exiting BrowseVC while editing team members
+		// The following code is added because Xcode falsely thinks there is a bug when exiting MonstersVC while editing team members
 		//searchController.loadViewIfNeeded()
 	}
 	
@@ -82,7 +82,7 @@ class BrowseViewController: UIViewController, UISearchResultsUpdating {
 }
 
 // MARK: Table View Functions
-extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
+extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if searchController.isActive && searchController.searchBar.text != "" {

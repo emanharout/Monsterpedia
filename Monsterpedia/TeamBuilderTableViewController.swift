@@ -61,19 +61,19 @@ class TeamBuilderTableViewController: UITableViewController {
 		if indexPath.section == 0 {
 			teamNameTextField.becomeFirstResponder()
 		} else if indexPath.section == 1 {
-			let browseVC = storyboard?.instantiateViewController(withIdentifier: "BrowseVC") as! BrowseViewController
-			browseVC.isTeamBuilding = true
-			browseVC.coreDataStack = coreDataStack
-			navigationController?.pushViewController(browseVC, animated: true)
+			let MonstersVC = storyboard?.instantiateViewController(withIdentifier: "MonstersVC") as! MonstersViewController
+			MonstersVC.isTeamBuilding = true
+			MonstersVC.coreDataStack = coreDataStack
+			navigationController?.pushViewController(MonstersVC, animated: true)
 		}
 		enableEditingModeIfNeeded()
 	}
 	
-	// Unwind Segue after selecting a monster in BrowseViewController
+	// Unwind Segue after selecting a monster in MonstersViewController
 	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
-		if segue.source.isKind(of: BrowseViewController.self) {
-			let browseVC = segue.source as! BrowseViewController
-			guard let monster = browseVC.selectedMonster else {
+		if segue.source.isKind(of: MonstersViewController.self) {
+			let MonstersVC = segue.source as! MonstersViewController
+			guard let monster = MonstersVC.selectedMonster else {
 				return
 			}
 			let monsterInstance = MonsterInstance(name: monster.name, id: monster.id, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
@@ -136,11 +136,11 @@ class TeamBuilderTableViewController: UITableViewController {
 			var newTeamMembers = [MonsterInstance]()
 			for monster in selectedMonsters {
 				if let monster = monster {
-					print("We are here")
 					newTeamMembers.append(monster)
 				}
 				selectedTeam.monsterInstances = Set(newTeamMembers)
 			}
+			
 			teamNameTextField.resignFirstResponder()
 			isEditingMode = false
 			coreDataStack.save()
@@ -217,5 +217,4 @@ extension TeamBuilderTableViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		enableEditingModeIfNeeded()
 	}
-	
 }

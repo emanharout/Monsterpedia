@@ -10,7 +10,7 @@
         <!--Monsters-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="BrowseVC" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="BrowseViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MonstersVC" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="MonstersViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -89,7 +89,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="0tY-QX-D6p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="-278"/>
+            <point key="canvasLocation" x="1584" y="-488"/>
         </scene>
         <!--Monster Detail View Controller-->
         <scene sceneID="zL5-gk-4Ws">
@@ -109,22 +109,26 @@
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-za-yYr">
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ" userLabel="Name" colorLabel="IBBuiltInLabel-Red">
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ" userLabel="Name" colorLabel="IBBuiltInLabel-Red">
+                                                        <frame key="frameInset" minX="-198" minY="-73" width="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-rh-7gP" userLabel="Height">
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-rh-7gP" userLabel="Height">
+                                                        <frame key="frameInset" minX="-198" minY="-73" width="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-nT-vEt" userLabel="Width">
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-nT-vEt" userLabel="Width">
+                                                        <frame key="frameInset" minX="-198" minY="-73" width="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Ig-2yd" userLabel="Type">
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Ig-2yd" userLabel="Type">
+                                                        <frame key="frameInset" minX="-198" minY="-73" width="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -194,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8Z-C5-uWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2553.75" y="-278.87323943661971"/>
+            <point key="canvasLocation" x="2131" y="-489"/>
         </scene>
         <!--Caught-->
         <scene sceneID="HQR-w6-C4L">
@@ -250,7 +254,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionHeaderView" id="yDp-Rd-OsS" customClass="CollectionHeaderView" customModule="Monsterpedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-0v-Zzi">
@@ -295,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRS-ZS-GAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="395"/>
+            <point key="canvasLocation" x="1584" y="394"/>
         </scene>
         <!--Teams-->
         <scene sceneID="vwF-bL-xVf">
@@ -318,12 +322,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uep-2C-ZXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="1142"/>
+            <point key="canvasLocation" x="1044" y="1246"/>
         </scene>
         <!--Teams-->
         <scene sceneID="DZ1-8s-qWQ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="swq-s4-Jbv" customClass="TeamViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="swq-s4-Jbv" customClass="TeamsViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7e1-24-j4y"/>
                         <viewControllerLayoutGuide type="bottom" id="uFf-pP-TJc"/>
@@ -336,14 +340,14 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamCell" textLabel="lgo-70-JIS" style="IBUITableViewCellStyleDefault" id="vJY-4m-ZU7">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1000" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="1000" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
-                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                                    <frame key="frameInset" minX="164" width="672" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -382,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PqB-OF-NZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="1142"/>
+            <point key="canvasLocation" x="1584" y="1246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="urT-L4-qWM">
@@ -404,7 +408,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esF-CZ-Pnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="1142"/>
+            <point key="canvasLocation" x="2131" y="1246"/>
         </scene>
         <!--Team Builder-->
         <scene sceneID="HZO-gP-v9n">
@@ -452,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9e-kW-wlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3296" y="1142"/>
+            <point key="canvasLocation" x="2683" y="1246"/>
         </scene>
         <!--Title-->
         <scene sceneID="tj2-Hy-6kq">
@@ -466,7 +470,7 @@
                             <tableViewSection headerTitle="Team" id="4zu-lk-nzF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xUv-lf-uPk">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xUv-lf-uPk" id="riM-XF-Lfh">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -783,7 +787,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmV-P4-nKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3294" y="1964"/>
+            <point key="canvasLocation" x="2683" y="2155"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fxT-dy-taw">
@@ -810,11 +814,11 @@
             </objects>
             <point key="canvasLocation" x="-71" y="394"/>
         </scene>
-        <!--Browse-->
+        <!--Monsters-->
         <scene sceneID="m9u-Rg-PQC">
             <objects>
-                <navigationController storyboardIdentifier="browseMonsterNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="yU8-Qw-CBg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Browse" id="85g-tg-Ihw"/>
+                <navigationController storyboardIdentifier="MonstersNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="yU8-Qw-CBg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Monsters" id="85g-tg-Ihw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KlK-RT-Rti">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -834,7 +838,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K22-sx-pcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-277"/>
+            <point key="canvasLocation" x="1044" y="-486"/>
         </scene>
         <!--Caught-->
         <scene sceneID="ijA-mo-6TG">
