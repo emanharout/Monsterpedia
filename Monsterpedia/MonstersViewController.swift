@@ -58,7 +58,7 @@ class MonstersViewController: UIViewController {
 }
 
 // MARK: SearchResultsController Functions
-extension MonstersViewController: UISearchBarDelegate, UISearchResultsUpdating {
+extension MonstersViewController: UISearchResultsUpdating {
 	func filterContentForSearchText(_ searchText: String, scope: String = "All") {
 		if searchController.searchBar.text != "" {
 			filteredMonsters = monsters.filter{ (monster) -> Bool in
@@ -84,7 +84,6 @@ extension MonstersViewController: UISearchBarDelegate, UISearchResultsUpdating {
 		searchBar.searchBarStyle = .minimal
 		searchBar.backgroundColor = UIColor.white
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-		searchBar.delegate = self
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		filteredMonsters = monsters
 		
