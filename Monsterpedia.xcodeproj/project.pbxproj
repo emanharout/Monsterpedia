@@ -124,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				030939A51D4D5FE8004CC0A7 /* Monsterpedia */,
+				030939DA1D4DE1EA004CC0A7 /* View */,
+				030939DC1D4DE266004CC0A7 /* Model */,
 				030939BA1D4D5FE9004CC0A7 /* MonsterpediaTests */,
 				030939C51D4D5FE9004CC0A7 /* MonsterpediaUITests */,
 				030939A41D4D5FE8004CC0A7 /* Products */,
@@ -145,8 +147,6 @@
 			children = (
 				03091CC91D81587800810BEF /* Info.plist */,
 				030939A61D4D5FE8004CC0A7 /* AppDelegate.swift */,
-				030939DC1D4DE266004CC0A7 /* Model */,
-				030939DA1D4DE1EA004CC0A7 /* View */,
 				030939DB1D4DE25C004CC0A7 /* Controller */,
 			);
 			path = Monsterpedia;
@@ -181,6 +181,7 @@
 				030939AD1D4D5FE8004CC0A7 /* Assets.xcassets */,
 			);
 			name = View;
+			path = Monsterpedia;
 			sourceTree = "<group>";
 		};
 		030939DB1D4DE25C004CC0A7 /* Controller */ = {
@@ -207,6 +208,7 @@
 				03091CCF1D85F1EC00810BEF /* PokeAPIConstants.swift */,
 			);
 			name = Model;
+			path = Monsterpedia;
 			sourceTree = "<group>";
 		};
 		030B2D791D7262750072263C /* Managed Objects */ = {

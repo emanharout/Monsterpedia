@@ -12,6 +12,7 @@ import CoreData
 class MonstersViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
+	@IBOutlet weak var searchBar: UISearchBar!
 	
 	var coreDataStack: CoreDataStack!
 	var fetchRequest: NSFetchRequest<Monster>!
@@ -37,11 +38,6 @@ class MonstersViewController: UIViewController {
 		
 		setupSearchController()
 		setupTableView()
-
-		
-		
-//		The following code is added because Xcode falsely thinks there is a bug when exiting MonstersVC while editing team members
-//		searchController.loadViewIfNeeded()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,10 +53,10 @@ class MonstersViewController: UIViewController {
 	}
 }
 
-// MARK: SearchResultsController Functions
-extension MonstersViewController: UISearchResultsUpdating {
-	func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-		if searchController.searchBar.text != "" {
+// MARK: SearchBar Functions
+extension MonstersViewController: UISearchBarDelegate {
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		if searchBar.text != "" {
 			filteredMonsters = monsters.filter{ (monster) -> Bool in
 				return monster.name.lowercased().contains(searchText.lowercased())
 			}
@@ -69,25 +65,13 @@ extension MonstersViewController: UISearchResultsUpdating {
 		}
 		tableView.reloadData()
 	}
-	
-	func updateSearchResults(for searchController: UISearchController) {
-		filterContentForSearchText(searchController.searchBar.text!)
-	}
-	
+
 	func setupSearchController() {
-		searchController.searchResultsUpdater = self
-		searchController.hidesNavigationBarDuringPresentation = false
-		searchController.dimsBackgroundDuringPresentation = false
-		definesPresentationContext = true
-		
-		let searchBar = searchController.searchBar
 		searchBar.searchBarStyle = .minimal
 		searchBar.backgroundColor = UIColor.white
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 		filteredMonsters = monsters
-		
-		tableView.tableHeaderView = searchBar
 	}
 }
 
