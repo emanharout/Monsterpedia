@@ -6,8 +6,6 @@
 //  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
 //
 
-// TODO: Replace SearchController with SearchBar, Refactor Browse and TeamBuilderVC, Remove container view, combine filter array to single
-
 import UIKit
 import CoreData
 

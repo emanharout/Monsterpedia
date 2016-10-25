@@ -18,7 +18,6 @@ class MonstersViewController: UIViewController {
 	var fetchRequest: NSFetchRequest<Monster>!
 	var monsters = [Monster]()
 	var filteredMonsters = [Monster]()
-	let searchController = UISearchController(searchResultsController: nil)
 	
 	// Vars only utilized when modifying team members
 	var isTeamBuilding = false
@@ -36,7 +35,7 @@ class MonstersViewController: UIViewController {
 			print(error)
 		}
 		
-		setupSearchController()
+		setupSearchBar()
 		setupTableView()
 	}
 	
@@ -45,10 +44,6 @@ class MonstersViewController: UIViewController {
 			print("Selected Monster in ShowMonsterDetail: \(selectedMonster)")
 			let destinationVC = segue.destination as! MonsterDetailViewController
 			destinationVC.selectedMonster = selectedMonster
-		}
-		// TODO: Determine if needed depending on whether bug with unwind segue is fixed
-		else if segue.identifier == "saveToTeamBuilderTableVC" {
-			
 		}
 	}
 }
@@ -66,7 +61,7 @@ extension MonstersViewController: UISearchBarDelegate {
 		tableView.reloadData()
 	}
 
-	func setupSearchController() {
+	func setupSearchBar() {
 		searchBar.searchBarStyle = .minimal
 		searchBar.backgroundColor = UIColor.white
 		searchBar.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
@@ -99,14 +94,8 @@ extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
 		if isTeamBuilding {
 			cell.tintColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
 			cell.accessoryType = cell.accessoryType == .checkmark ? .none : .checkmark
-			if searchController.isActive {
-				searchController.dismiss(animated: true) {
-					self.performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
-				}
-			} else {
-				performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
-			}
-		} else if !isTeamBuilding {
+			self.performSegue(withIdentifier: "saveToTeamBuilderTableVC", sender: cell)
+		} else {
 			performSegue(withIdentifier: "showMonsterDetail", sender: self)
 		}
 	}
@@ -116,7 +105,7 @@ extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
 		tableView.estimatedRowHeight = 88
 		
 		if !isTeamBuilding {
-			let searchBarHeight = searchController.searchBar.bounds.height
+			let searchBarHeight = searchBar.bounds.height
 			tableView.contentOffset = CGPoint(x: 0, y: searchBarHeight)
 		}
 	}
