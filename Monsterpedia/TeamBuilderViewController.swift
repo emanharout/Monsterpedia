@@ -20,7 +20,7 @@ class TeamBuilderViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "embedTableVC" {
+		if segue.identifier == "embedTableViewController" {
 			guard let teamBuilderVC = segue.destination as? TeamBuilderTableViewController else {
 				print("Failed to inject Core Data Stack into Team Builder Table View Controller")
 				return
