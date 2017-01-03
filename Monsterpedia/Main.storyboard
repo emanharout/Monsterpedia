@@ -942,10 +942,10 @@
             </objects>
             <point key="canvasLocation" x="841" y="394"/>
         </scene>
-        <!--View Controller-->
+        <!--Dex Selection View Controller-->
         <scene sceneID="vKA-Ra-ccc">
             <objects>
-                <viewController id="Jr1-iH-QUz" sceneMemberID="viewController">
+                <viewController id="Jr1-iH-QUz" customClass="DexSelectionViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xdr-VN-c16"/>
                         <viewControllerLayoutGuide type="bottom" id="myj-TK-Kea"/>
