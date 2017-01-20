@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjT-2a-AkK" id="gNN-gg-hgs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-65-Rr7">
@@ -132,28 +132,28 @@
                                                 <rect key="frame" x="20" y="0.0" width="159.5" height="146"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-za-yYr">
-                                                <rect key="frame" x="195.5" y="23" width="159.5" height="100"/>
+                                                <rect key="frame" x="195.5" y="73" width="159.5" height="0.0"/>
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ" userLabel="Name" colorLabel="IBBuiltInLabel-Red">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159.5" height="25"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv5-Qu-hRJ" userLabel="Name" colorLabel="IBBuiltInLabel-Red">
+                                                        <rect key="frame" x="-195.5" y="-73" width="60" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-rh-7gP" userLabel="Height">
-                                                        <rect key="frame" x="0.0" y="25" width="159.5" height="25"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYj-rh-7gP" userLabel="Height">
+                                                        <rect key="frame" x="-195.5" y="-73" width="60" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-nT-vEt" userLabel="Width">
-                                                        <rect key="frame" x="0.0" y="50" width="159.5" height="25"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-nT-vEt" userLabel="Width">
+                                                        <rect key="frame" x="-195.5" y="-73" width="60" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.96078431372549022" green="0.16470588235294117" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Ig-2yd" userLabel="Type">
-                                                        <rect key="frame" x="0.0" y="75" width="159.5" height="25"/>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="25" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Ig-2yd" userLabel="Type">
+                                                        <rect key="frame" x="-195.5" y="-73" width="60" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -387,7 +387,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
@@ -515,10 +515,10 @@
                             <tableViewSection headerTitle="Team" id="4zu-lk-nzF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="xUv-lf-uPk">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xUv-lf-uPk" id="riM-XF-Lfh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Team Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufR-2d-iKl">
@@ -545,10 +545,10 @@
                             <tableViewSection headerTitle="Monsters" id="S9s-r5-Trv">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="TYL-x2-c0n" userLabel="FirstSpriteCell" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYL-x2-c0n" id="N1v-dQ-jG5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="3jc-qg-I3Z">
@@ -593,10 +593,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="oGh-4D-MdG" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="246" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="245.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGh-4D-MdG" id="udm-Yo-uZA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="8oC-bp-Qve">
@@ -641,10 +641,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="Dk1-QQ-Ebh" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="336" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="335.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk1-QQ-Ebh" id="3gf-e7-lVz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-ln-99I">
@@ -689,10 +689,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="ul1-rc-unm" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="426" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="425.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ul1-rc-unm" id="1Ir-l6-tKR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="85r-D3-7Ck">
@@ -737,10 +737,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="tNT-Ok-WcB" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="516" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="515.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNT-Ok-WcB" id="uMQ-N5-61m">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="IsW-f2-foU">
@@ -785,10 +785,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="dKp-JD-7o7" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="606" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="605.5" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKp-JD-7o7" id="iOM-cn-cRi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-Sl-j9f">
@@ -950,25 +950,25 @@
                         <viewControllerLayoutGuide type="bottom" id="myj-TK-Kea"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vQT-Pb-qMI" userLabel="Embedded View Controller">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="118"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="118"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2N-Yi-RBX">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="118"/>
+                                <rect key="frame" x="0.0" y="0.0" width="800" height="118"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3A7-Mv-THk" userLabel="Dex Collection Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="530" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="750" height="128"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-jE-Khj">
-                                                <rect key="frame" x="0.0" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="0.0" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="29K-WP-sVb"/>
-                                                    <constraint firstAttribute="width" constant="55" id="5Q7-lX-isy"/>
+                                                    <constraint firstAttribute="width" constant="100" id="5Q7-lX-isy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-408" minY="54" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-408" minY="58" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Kanto" image="Pokedex Kanto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -977,15 +977,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Rx-Nhd">
-                                                <rect key="frame" x="95" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="130" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="60O-su-hH8"/>
-                                                    <constraint firstAttribute="width" constant="55" id="CAz-Jj-Z7o"/>
+                                                    <constraint firstAttribute="width" constant="100" id="CAz-Jj-Z7o"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-373" minY="54" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-373" minY="58" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Johto" image="Pokedex Johto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -994,15 +994,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-jg-zlB">
-                                                <rect key="frame" x="190" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="260" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="MB7-Cb-055"/>
-                                                    <constraint firstAttribute="width" constant="55" id="oU8-2M-Y7q"/>
+                                                    <constraint firstAttribute="width" constant="100" id="oU8-2M-Y7q"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-402" minY="57" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-402" minY="58" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Hoenn" image="Pokedex Hoenn">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1011,15 +1011,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zph-RF-JRv">
-                                                <rect key="frame" x="285" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="390" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="JCz-0s-QPl"/>
-                                                    <constraint firstAttribute="width" constant="55" id="sbM-W5-AWZ"/>
+                                                    <constraint firstAttribute="width" constant="100" id="sbM-W5-AWZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-456" minY="57" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-456" minY="58" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Sinnoh" image="Pokedex Sinnoh">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1028,15 +1028,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIX-wU-JZq">
-                                                <rect key="frame" x="380" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="520" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="UNB-Y0-XwB"/>
-                                                    <constraint firstAttribute="width" constant="55" id="bCv-GX-YxI"/>
+                                                    <constraint firstAttribute="width" constant="100" id="bCv-GX-YxI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-299" minY="57" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-299" minY="58" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Unova" image="Pokedex Unova">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1045,15 +1045,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq">
-                                                <rect key="frame" x="475" y="12" width="55" height="85"/>
+                                                <rect key="frame" x="650" y="12" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="55" id="1yL-gX-WWV"/>
+                                                    <constraint firstAttribute="width" constant="100" id="1yL-gX-WWV"/>
                                                     <constraint firstAttribute="height" constant="85" id="JZW-sa-Xba"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <inset key="titleEdgeInsets" minX="-250" minY="54" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="30"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
                                                 <state key="normal" title="Kalos" image="Pokedex Kalos">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1063,17 +1063,17 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="hTe-jg-zlB" firstAttribute="leading" secondItem="lxq-Rx-Nhd" secondAttribute="trailing" constant="40" id="02M-sb-qOD"/>
+                                            <constraint firstItem="hTe-jg-zlB" firstAttribute="leading" secondItem="lxq-Rx-Nhd" secondAttribute="trailing" constant="30" id="02M-sb-qOD"/>
                                             <constraint firstItem="zph-RF-JRv" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="9Qu-YS-bKQ"/>
                                             <constraint firstItem="REB-nW-pUq" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="AsU-nD-pEo"/>
-                                            <constraint firstItem="aIX-wU-JZq" firstAttribute="leading" secondItem="zph-RF-JRv" secondAttribute="trailing" constant="40" id="FKV-an-qgO"/>
+                                            <constraint firstItem="aIX-wU-JZq" firstAttribute="leading" secondItem="zph-RF-JRv" secondAttribute="trailing" constant="30" id="FKV-an-qgO"/>
                                             <constraint firstItem="hTe-jg-zlB" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="JnJ-S5-2GD"/>
                                             <constraint firstAttribute="trailing" secondItem="REB-nW-pUq" secondAttribute="trailing" id="LFg-WW-lzs"/>
-                                            <constraint firstItem="zph-RF-JRv" firstAttribute="leading" secondItem="hTe-jg-zlB" secondAttribute="trailing" constant="40" id="V4A-B0-gsU"/>
+                                            <constraint firstItem="zph-RF-JRv" firstAttribute="leading" secondItem="hTe-jg-zlB" secondAttribute="trailing" constant="30" id="V4A-B0-gsU"/>
                                             <constraint firstItem="JbY-jE-Khj" firstAttribute="leading" secondItem="3A7-Mv-THk" secondAttribute="leading" id="dPK-5P-6ks"/>
                                             <constraint firstItem="JbY-jE-Khj" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="dZq-qq-6RE"/>
-                                            <constraint firstItem="lxq-Rx-Nhd" firstAttribute="leading" secondItem="JbY-jE-Khj" secondAttribute="trailing" constant="40" id="dkq-UK-W7a"/>
-                                            <constraint firstItem="REB-nW-pUq" firstAttribute="leading" secondItem="aIX-wU-JZq" secondAttribute="trailing" constant="40" id="eMK-HL-CfC"/>
+                                            <constraint firstItem="lxq-Rx-Nhd" firstAttribute="leading" secondItem="JbY-jE-Khj" secondAttribute="trailing" constant="30" id="dkq-UK-W7a"/>
+                                            <constraint firstItem="REB-nW-pUq" firstAttribute="leading" secondItem="aIX-wU-JZq" secondAttribute="trailing" constant="30" id="eMK-HL-CfC"/>
                                             <constraint firstItem="lxq-Rx-Nhd" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="krQ-HO-nEu"/>
                                             <constraint firstItem="aIX-wU-JZq" firstAttribute="top" secondItem="3A7-Mv-THk" secondAttribute="top" constant="12" id="m64-sr-1se"/>
                                             <constraint firstAttribute="bottom" secondItem="REB-nW-pUq" secondAttribute="bottom" constant="31" id="ml2-0S-ewA"/>
@@ -1096,7 +1096,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="540" height="118"/>
+                    <size key="freeformSize" width="800" height="118"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kV-sr-bWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
