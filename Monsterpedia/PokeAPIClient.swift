@@ -97,7 +97,7 @@ extension PokeAPIClient {
 		}
 	}
 	
-  func getMonsterFlavorText(_ monster: Monster, dex: Dex, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
+  func getFlavorTextJSON(for monster: Monster, dex: Dex, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
 		guard let path = substituteValueInString(Constants.TypePath, value: "{id}", withValue: "\(monster.id)") else {
 			let error = NSError(domain: "getMonsterFlavorText", code: 9, userInfo: [NSLocalizedDescriptionKey: "Failed to build URL with TypePath"])
 			completionHandler(nil, error)
