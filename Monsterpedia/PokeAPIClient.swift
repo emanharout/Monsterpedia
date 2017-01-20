@@ -113,6 +113,6 @@ extension PokeAPIClient {
   
 }
 
-enum Dex {
-  case kanto, johto, hoenn, sinnoh, unova, kalos
+enum Dex: String {
+  case kanto = "red", johto = "gold", hoenn = "ruby", sinnoh = "diamond", unova = "black", kalos = "x"
 }
