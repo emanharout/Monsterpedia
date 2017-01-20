@@ -75,7 +75,7 @@ class MonsterDetailViewController: UIViewController {
 		}
 		
 		group.enter()
-		pokeClient.getMonsterFlavorText(selectedMonster) { (result, error) in
+		pokeClient.getFlavorTextJSON(for: selectedMonster, dex: .kanto) { (result, error) in
 			if let error = error {
 				print(error)
 			} else if let result = result as? [String: AnyObject] {
@@ -91,7 +91,13 @@ class MonsterDetailViewController: UIViewController {
 						group.leave()
 						return
 					}
-					if languageName == "en" {
+          guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
+            print("Could not retrieve game version name")
+            group.leave()
+            return
+          }
+          
+					if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
 						guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
 							print("Could not retrieve flavor text")
 							group.leave()
