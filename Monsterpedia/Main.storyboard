@@ -976,7 +976,7 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="vyj-eQ-rPG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Rx-Nhd">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Rx-Nhd">
                                                 <rect key="frame" x="130" y="0.0" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -993,7 +993,7 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="V2U-FI-Dlo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-jg-zlB">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-jg-zlB">
                                                 <rect key="frame" x="260" y="0.0" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1010,7 +1010,7 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="qXh-Dr-671"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zph-RF-JRv">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zph-RF-JRv">
                                                 <rect key="frame" x="390" y="0.0" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1027,7 +1027,7 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="q1K-XE-W0u"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIX-wU-JZq">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIX-wU-JZq">
                                                 <rect key="frame" x="520" y="0.0" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1044,7 +1044,7 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="ItC-K3-ahM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq">
                                                 <rect key="frame" x="650" y="0.0" width="100" height="85"/>
                                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
