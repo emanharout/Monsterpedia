@@ -135,4 +135,54 @@ class MonsterDetailViewController: UIViewController {
 			self.activityIndicator.stopAnimating()
 		}
 	}
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "embedDexSelectionViewController" {
+      guard let dexSelectionViewController = segue.destination as? DexSelectionViewController else {
+        print("Could not cast destinationVC to DexSelectionVC")
+        return
+      }
+      dexSelectionViewController.delegate = self
+      
+    }
+  }
+}
+
+extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
+  func userDidSelect(_ dex: Dex) {
+    pokeClient.getFlavorTextJSON(for: selectedMonster, dex: dex) { (result, error) in
+      if let error = error {
+        print(error)
+      }
+      else if let result = result as? [String: AnyObject] {
+        guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
+          print("Could not retrieve monster's flavor text")
+          return
+        }
+        
+        for flavorTextEntry in flavorTextArrays {
+          guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
+            print("Could not retrieve language name")
+            return
+          }
+          guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
+            print("Could not retrieve game version name")
+            return
+          }
+          
+          if languageName == "en" && gameVersionName == dex.rawValue {
+            guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
+              print("Could not retrieve flavor text")
+              return
+            }
+            
+            DispatchQueue.main.async {
+              self.pediaEntry.text = flavorText.replacingOccurrences(of: "\n", with: " ")
+            }
+            break
+          }
+        }
+      }
+    }
+  }
 }
