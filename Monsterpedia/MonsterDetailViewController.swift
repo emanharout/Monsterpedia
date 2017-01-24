@@ -11,6 +11,7 @@ import UIKit
 class MonsterDetailViewController: UIViewController {
 	
 	@IBOutlet weak var navItem: UINavigationItem!
+  @IBOutlet weak var dexContainerView: UIView!
 	@IBOutlet weak var monsterImage: UIImageView!
 	@IBOutlet weak var monsterNameLabel: UILabel!
 	@IBOutlet weak var heightLabel: UILabel!
@@ -131,6 +132,7 @@ class MonsterDetailViewController: UIViewController {
 			self.heightLabel.isHidden = false
 			self.weightLabel.isHidden = false
 			self.typeLabel.isHidden = false
+      self.dexContainerView.isHidden = false
 			
 			self.activityIndicator.stopAnimating()
 		}
