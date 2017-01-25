@@ -10,9 +10,8 @@ import UIKit
 
 class DexSelectionViewController: UIViewController {
   
-  @IBOutlet weak var kantoDexButton: UIDexButton!
-  var delegate: DexSelectionViewControllerDelegate?
   @IBOutlet var dexSelectionButtons: [UIDexButton]!
+  var delegate: DexSelectionViewControllerDelegate?
   
   override func viewDidLoad() {
       super.viewDidLoad()
