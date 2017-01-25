@@ -32,11 +32,12 @@
 		030B2D891D7263050072263C /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D811D7263050072263C /* Type.swift */; };
 		030B2D8B1D7268980072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D8A1D7268980072263C /* seed.json */; };
 		031608A11E38232D00CD1F9A /* UIDexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031608A01E38232D00CD1F9A /* UIDexButton.swift */; };
+		031608A31E38810300CD1F9A /* InstantHighlightScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 		03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */; };
 		03D547021D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */; };
-		03D8486B1E1B685000EE637F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8486A1E1B685000EE637F /* UIViewController.swift */; };
+		03D8486B1E1B685000EE637F /* DexSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D8486A1E1B685000EE637F /* DexSelectionViewController.swift */; };
 		03E659BE1D73F13F001B6CAA /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E659BD1D73F13F001B6CAA /* TeamsViewController.swift */; };
 		03F98D831D8D1C5D0077368C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F98D821D8D1C5D0077368C /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -90,11 +91,12 @@
 		030B2D811D7263050072263C /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		030B2D8A1D7268980072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		031608A01E38232D00CD1F9A /* UIDexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDexButton.swift; sourceTree = "<group>"; };
+		031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantHighlightScrollView.swift; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterInstance.swift; sourceTree = "<group>"; };
 		03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonsterInstance+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		03D8486A1E1B685000EE637F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		03D8486A1E1B685000EE637F /* DexSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DexSelectionViewController.swift; sourceTree = "<group>"; };
 		03E659BD1D73F13F001B6CAA /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		03F98D821D8D1C5D0077368C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 			children = (
 				030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */,
 				031608A01E38232D00CD1F9A /* UIDexButton.swift */,
+				031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */,
 				033970781D566C69003A95F3 /* MonsterSpriteCell.swift */,
 				030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */,
 				03F98D821D8D1C5D0077368C /* Main.storyboard */,
@@ -193,7 +196,7 @@
 			children = (
 				030939A81D4D5FE8004CC0A7 /* MonstersViewController.swift */,
 				03091CD31D87B37300810BEF /* MonsterDetailViewController.swift */,
-				03D8486A1E1B685000EE637F /* UIViewController.swift */,
+				03D8486A1E1B685000EE637F /* DexSelectionViewController.swift */,
 				030B2D5F1D6D68110072263C /* CaughtMonstersViewController.swift */,
 				03E659BD1D73F13F001B6CAA /* TeamsViewController.swift */,
 				03091CC51D7CEBEE00810BEF /* TeamBuilderViewController.swift */,
@@ -375,12 +378,13 @@
 				030B2D861D7263050072263C /* Monster+CoreDataProperties.swift in Sources */,
 				030B2D601D6D68110072263C /* CaughtMonstersViewController.swift in Sources */,
 				03D547021D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift in Sources */,
-				03D8486B1E1B685000EE637F /* UIViewController.swift in Sources */,
+				03D8486B1E1B685000EE637F /* DexSelectionViewController.swift in Sources */,
 				030939D71D4D9AEA004CC0A7 /* MonsterCell.swift in Sources */,
 				030B2D831D7263050072263C /* Team.swift in Sources */,
 				033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */,
 				03091CD01D85F1ED00810BEF /* PokeAPIConstants.swift in Sources */,
 				030B2D881D7263050072263C /* Type+CoreDataProperties.swift in Sources */,
+				031608A31E38810300CD1F9A /* InstantHighlightScrollView.swift in Sources */,
 				03091CD41D87B37300810BEF /* MonsterDetailViewController.swift in Sources */,
 				030939D91D4DBA0E004CC0A7 /* CollectionHeaderView.swift in Sources */,
 				03091CC61D7CEBEE00810BEF /* TeamBuilderViewController.swift in Sources */,
