@@ -18,20 +18,22 @@ class MonsterDetailViewController: UIViewController {
 	@IBOutlet weak var weightLabel: UILabel!
 	@IBOutlet weak var typeLabel: UILabel!
 	@IBOutlet weak var pediaEntry: UILabel!
-	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var initialLoadActivityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var pediaEntryActivityIndicator: UIActivityIndicatorView!
 	
 	let pokeClient = PokeAPIClient.sharedInstance
 	var selectedMonster: Monster!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+      super.viewDidLoad()
 
-		navItem.title = selectedMonster.name
-		loadMonsterData(selectedMonster: selectedMonster)
-    }
+    navItem.title = selectedMonster.name
+    pediaEntryActivityIndicator.stopAnimating()
+    loadMonsterData(selectedMonster: selectedMonster)
+  }
 	
 	func loadMonsterData(selectedMonster: Monster) {
-		activityIndicator.startAnimating()
+		initialLoadActivityIndicator.startAnimating()
 		
 		let group = DispatchGroup()
 		var monsterHeight = Int()
@@ -134,7 +136,7 @@ class MonsterDetailViewController: UIViewController {
 			self.typeLabel.isHidden = false
       self.dexContainerView.isHidden = false
 			
-			self.activityIndicator.stopAnimating()
+			self.initialLoadActivityIndicator.stopAnimating()
 		}
 	}
   
@@ -150,45 +152,63 @@ class MonsterDetailViewController: UIViewController {
   }
 }
 
+// TODO: Make pediaEntry blank/grey during load time.
 extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
   func userDidSelect(_ dex: Dex) {
+    self.pediaEntryActivityIndicator.startAnimating()
     pokeClient.getFlavorTextJSON(for: selectedMonster, dex: dex) { (result, error) in
+      
       guard error == nil else {
         print(error!)
+        self.stopAnimatingActivityOnMainQueue()
         return
       }
       
       guard let result = result as? [String: AnyObject] else {
+        self.stopAnimatingActivityOnMainQueue()
         return
       }
       
       guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
         print("Could not retrieve monster's flavor text")
+        self.stopAnimatingActivityOnMainQueue()
         return
       }
       
       for flavorTextEntry in flavorTextArrays {
         guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
           print("Could not retrieve language name")
+          self.stopAnimatingActivityOnMainQueue()
           return
         }
         guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
           print("Could not retrieve game version name")
+          self.stopAnimatingActivityOnMainQueue()
           return
         }
         
         if languageName == "en" && gameVersionName == dex.rawValue {
           guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
             print("Could not retrieve flavor text")
+            self.stopAnimatingActivityOnMainQueue()
             return
           }
           
           DispatchQueue.main.async {
             self.pediaEntry.text = flavorText.replacingOccurrences(of: "\n", with: " ")
+            self.pediaEntryActivityIndicator.stopAnimating()
           }
           break
         }
       }
     }
   }
+  
+  func stopAnimatingActivityOnMainQueue() {
+    let mainQueue = DispatchQueue.main
+    mainQueue.async {
+      self.pediaEntryActivityIndicator.stopAnimating()
+    }
+  }
+  
 }
