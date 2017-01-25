@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjT-2a-AkK" id="gNN-gg-hgs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-65-Rr7">
@@ -184,9 +184,9 @@
                                         </constraints>
                                     </view>
                                     <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bv8-hO-nDN" userLabel="Monster Dex Entry Info View">
-                                        <rect key="frame" x="20" y="184.5" width="335" height="85"/>
+                                        <rect key="frame" x="20" y="184.5" width="335" height="103"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="85" id="tpG-2c-EoA"/>
+                                            <constraint firstAttribute="height" constant="103" id="tpG-2c-EoA"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="Jr1-iH-QUz" kind="embed" identifier="embedDexSelectionViewController" id="noR-k7-Nr2"/>
@@ -388,11 +388,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -546,7 +546,7 @@
                             <tableViewSection headerTitle="Monsters" id="S9s-r5-Trv">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="TYL-x2-c0n" userLabel="FirstSpriteCell" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="157" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="156" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYL-x2-c0n" id="N1v-dQ-jG5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -594,7 +594,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="oGh-4D-MdG" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="247" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="246" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGh-4D-MdG" id="udm-Yo-uZA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -642,7 +642,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="Dk1-QQ-Ebh" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="337" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="336" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk1-QQ-Ebh" id="3gf-e7-lVz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -690,7 +690,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="ul1-rc-unm" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="427" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="426" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ul1-rc-unm" id="1Ir-l6-tKR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -738,7 +738,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="tNT-Ok-WcB" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="517" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="516" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNT-Ok-WcB" id="uMQ-N5-61m">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -786,7 +786,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonsterSpriteCell" rowHeight="90" id="dKp-JD-7o7" customClass="MonsterSpriteCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="607" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="606" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKp-JD-7o7" id="iOM-cn-cRi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
@@ -951,25 +951,24 @@
                         <viewControllerLayoutGuide type="bottom" id="myj-TK-Kea"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vQT-Pb-qMI" userLabel="Embedded View Controller">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="85"/>
+                        <rect key="frame" x="0.0" y="0.0" width="642" height="114"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2N-Yi-RBX">
-                                <rect key="frame" x="0.0" y="0.0" width="800" height="85"/>
+                                <rect key="frame" x="0.0" y="0.0" width="642" height="114"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3A7-Mv-THk" userLabel="Dex Collection Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="640" height="85"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="103"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-jE-Khj">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-jE-Khj" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="103"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="29K-WP-sVb"/>
+                                                    <constraint firstAttribute="height" constant="103" id="29K-WP-sVb"/>
                                                     <constraint firstAttribute="width" constant="100" id="5Q7-lX-isy"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-408" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-408" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Kanto" image="Pokedex Kanto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -977,16 +976,15 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="vyj-eQ-rPG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Rx-Nhd">
-                                                <rect key="frame" x="108" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-Rx-Nhd" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="108" y="0.0" width="100" height="103"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="60O-su-hH8"/>
+                                                    <constraint firstAttribute="height" constant="103" id="60O-su-hH8"/>
                                                     <constraint firstAttribute="width" constant="100" id="CAz-Jj-Z7o"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-373" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-373" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Johto" image="Pokedex Johto">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -994,16 +992,15 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="V2U-FI-Dlo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-jg-zlB">
-                                                <rect key="frame" x="216" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-jg-zlB" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="216" y="0.0" width="100" height="103"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="MB7-Cb-055"/>
+                                                    <constraint firstAttribute="height" constant="103" id="MB7-Cb-055"/>
                                                     <constraint firstAttribute="width" constant="100" id="oU8-2M-Y7q"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-402" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-402" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Hoenn" image="Pokedex Hoenn">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1011,16 +1008,15 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="qXh-Dr-671"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zph-RF-JRv">
-                                                <rect key="frame" x="324" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zph-RF-JRv" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="324" y="0.0" width="100" height="103"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="JCz-0s-QPl"/>
+                                                    <constraint firstAttribute="height" constant="103" id="JCz-0s-QPl"/>
                                                     <constraint firstAttribute="width" constant="100" id="sbM-W5-AWZ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-456" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-456" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Sinnoh" image="Pokedex Sinnoh">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1028,16 +1024,15 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="q1K-XE-W0u"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIX-wU-JZq">
-                                                <rect key="frame" x="432" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIX-wU-JZq" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="432" y="0.0" width="100" height="103"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="UNB-Y0-XwB"/>
+                                                    <constraint firstAttribute="height" constant="103" id="UNB-Y0-XwB"/>
                                                     <constraint firstAttribute="width" constant="100" id="bCv-GX-YxI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-299" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-299" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Unova" image="Pokedex Unova">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1045,16 +1040,15 @@
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="ItC-K3-ahM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq">
-                                                <rect key="frame" x="540" y="0.0" width="100" height="85"/>
-                                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                                <rect key="frame" x="540" y="0.0" width="100" height="103"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="1yL-gX-WWV"/>
-                                                    <constraint firstAttribute="height" constant="85" id="JZW-sa-Xba"/>
+                                                    <constraint firstAttribute="height" constant="103" id="JZW-sa-Xba"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <inset key="titleEdgeInsets" minX="-250" minY="58" maxX="0.0" maxY="0.0"/>
-                                                <inset key="imageEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="30"/>
+                                                <inset key="titleEdgeInsets" minX="-250" minY="71" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Kalos" image="Pokedex Kalos">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -1097,7 +1091,15 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="800" height="85"/>
+                    <size key="freeformSize" width="642" height="114"/>
+                    <connections>
+                        <outletCollection property="dexSelectionButtons" destination="hTe-jg-zlB" collectionClass="NSMutableArray" id="UfZ-Is-Ivv"/>
+                        <outletCollection property="dexSelectionButtons" destination="JbY-jE-Khj" collectionClass="NSMutableArray" id="Jto-HH-g30"/>
+                        <outletCollection property="dexSelectionButtons" destination="lxq-Rx-Nhd" collectionClass="NSMutableArray" id="Wyj-ho-7sD"/>
+                        <outletCollection property="dexSelectionButtons" destination="zph-RF-JRv" collectionClass="NSMutableArray" id="hqT-dh-ICW"/>
+                        <outletCollection property="dexSelectionButtons" destination="aIX-wU-JZq" collectionClass="NSMutableArray" id="coR-nJ-Vml"/>
+                        <outletCollection property="dexSelectionButtons" destination="REB-nW-pUq" collectionClass="NSMutableArray" id="sbh-zd-SkY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4kV-sr-bWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

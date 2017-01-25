@@ -31,6 +31,7 @@
 		030B2D881D7263050072263C /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D801D7263050072263C /* Type+CoreDataProperties.swift */; };
 		030B2D891D7263050072263C /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030B2D811D7263050072263C /* Type.swift */; };
 		030B2D8B1D7268980072263C /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 030B2D8A1D7268980072263C /* seed.json */; };
+		031608A11E38232D00CD1F9A /* UIDexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031608A01E38232D00CD1F9A /* UIDexButton.swift */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 		03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */; };
@@ -88,6 +89,7 @@
 		030B2D801D7263050072263C /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		030B2D811D7263050072263C /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		030B2D8A1D7268980072263C /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
+		031608A01E38232D00CD1F9A /* UIDexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDexButton.swift; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterInstance.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */,
+				031608A01E38232D00CD1F9A /* UIDexButton.swift */,
 				033970781D566C69003A95F3 /* MonsterSpriteCell.swift */,
 				030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */,
 				03F98D821D8D1C5D0077368C /* Main.storyboard */,
@@ -389,6 +392,7 @@
 				030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */,
 				03091CCE1D84E9E300810BEF /* Team+CoreDataProperties.swift in Sources */,
 				030939D51D4D63B8004CC0A7 /* PokeAPIClient.swift in Sources */,
+				031608A11E38232D00CD1F9A /* UIDexButton.swift in Sources */,
 				030939A91D4D5FE8004CC0A7 /* MonstersViewController.swift in Sources */,
 				030B2D891D7263050072263C /* Type.swift in Sources */,
 				030B2D851D7263050072263C /* Move.swift in Sources */,

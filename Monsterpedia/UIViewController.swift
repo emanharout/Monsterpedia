@@ -10,10 +10,16 @@ import UIKit
 
 class DexSelectionViewController: UIViewController {
   
+  @IBOutlet weak var kantoDexButton: UIDexButton!
   var delegate: DexSelectionViewControllerDelegate?
-
+  @IBOutlet var dexSelectionButtons: [UIDexButton]!
+  
   override func viewDidLoad() {
       super.viewDidLoad()
+    
+    for button in dexSelectionButtons {
+      button.layer.cornerRadius = 10
+    }
   }
 
   @IBAction func selectDex(_ sender: UIButton) {
