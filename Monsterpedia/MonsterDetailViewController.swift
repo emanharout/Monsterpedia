@@ -88,7 +88,7 @@ class MonsterDetailViewController: UIViewController {
 					return
 				}
 				
-				for flavorTextEntry in flavorTextArrays {
+        flavorTextLoop: for flavorTextEntry in flavorTextArrays {
 					guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
 						print("Could not retrieve language name")
 						group.leave()
@@ -107,7 +107,7 @@ class MonsterDetailViewController: UIViewController {
 							return
 						}
 						monsterFlavorText = flavorText
-						break
+						break flavorTextLoop
 					}
 				}
 			}
@@ -152,63 +152,71 @@ class MonsterDetailViewController: UIViewController {
   }
 }
 
-// TODO: Make pediaEntry blank/grey during load time.
 extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
   func userDidSelect(_ dex: Dex) {
+    self.pediaEntry.textColor = UIColor.clear
     self.pediaEntryActivityIndicator.startAnimating()
     pokeClient.getFlavorTextJSON(for: selectedMonster, dex: dex) { (result, error) in
       
       guard error == nil else {
         print(error!)
-        self.stopAnimatingActivityOnMainQueue()
+        self.stopLoadingAnimation()
+        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
       guard let result = result as? [String: AnyObject] else {
-        self.stopAnimatingActivityOnMainQueue()
+        self.stopLoadingAnimation()
+        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
       guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
         print("Could not retrieve monster's flavor text")
-        self.stopAnimatingActivityOnMainQueue()
+        self.stopLoadingAnimation()
+        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
-      for flavorTextEntry in flavorTextArrays {
+      flavorTextLoop: for flavorTextEntry in flavorTextArrays {
         guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
           print("Could not retrieve language name")
-          self.stopAnimatingActivityOnMainQueue()
+          self.stopLoadingAnimation()
+          self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
           return
         }
         guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
           print("Could not retrieve game version name")
-          self.stopAnimatingActivityOnMainQueue()
+          self.stopLoadingAnimation()
+          self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
           return
         }
         
         if languageName == "en" && gameVersionName == dex.rawValue {
           guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
             print("Could not retrieve flavor text")
-            self.stopAnimatingActivityOnMainQueue()
+            self.stopLoadingAnimation()
+            self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
             return
           }
           
           DispatchQueue.main.async {
             self.pediaEntry.text = flavorText.replacingOccurrences(of: "\n", with: " ")
             self.pediaEntryActivityIndicator.stopAnimating()
+            self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
+            print(self.pediaEntry.text)
           }
-          break
+          break flavorTextLoop
         }
       }
     }
   }
   
-  func stopAnimatingActivityOnMainQueue() {
+  func stopLoadingAnimation() {
     let mainQueue = DispatchQueue.main
     mainQueue.async {
       self.pediaEntryActivityIndicator.stopAnimating()
+      self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
     }
   }
-  
 }

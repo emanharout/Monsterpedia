@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjT-2a-AkK" id="gNN-gg-hgs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="zZz-65-Rr7">
@@ -168,7 +168,7 @@
                                             </label>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-qP-uEM">
                                                 <rect key="frame" x="177" y="159" width="20" height="20"/>
-                                                <color key="color" red="0.96078431372549022" green="0.16470588235294117" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="color" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -180,7 +180,6 @@
                                             <constraint firstItem="4x4-qP-uEM" firstAttribute="centerY" secondItem="Igc-5w-NX2" secondAttribute="centerY" id="DgG-jF-eas"/>
                                             <constraint firstItem="L2c-za-yYr" firstAttribute="width" secondItem="Oqh-K6-mWm" secondAttribute="width" id="IX8-ZF-US9"/>
                                             <constraint firstItem="Igc-5w-NX2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="L2c-za-yYr" secondAttribute="bottom" constant="16" id="L14-81-E1a"/>
-                                            <constraint firstItem="4x4-qP-uEM" firstAttribute="centerX" secondItem="Igc-5w-NX2" secondAttribute="centerX" id="LcO-p2-TAY"/>
                                             <constraint firstItem="L2c-za-yYr" firstAttribute="centerY" secondItem="Oqh-K6-mWm" secondAttribute="centerY" id="MaX-DO-FcY"/>
                                             <constraint firstItem="L2c-za-yYr" firstAttribute="leading" secondItem="Oqh-K6-mWm" secondAttribute="trailing" constant="16" id="McM-Fl-t2S"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Igc-5w-NX2" secondAttribute="trailing" constant="12" id="P4h-fA-fd3"/>
@@ -212,7 +211,7 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hsU-mj-wW4">
                                 <rect key="frame" x="178" y="299" width="20" height="20"/>
                                 <color key="tintColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="color" red="0.96078431372549022" green="0.16285938024520874" blue="0.24567398428916931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,6 +220,7 @@
                             <constraint firstAttribute="trailing" secondItem="Jtd-g7-mQb" secondAttribute="trailing" id="Ane-O5-0BN"/>
                             <constraint firstItem="hsU-mj-wW4" firstAttribute="centerY" secondItem="f3x-d8-a1i" secondAttribute="centerY" id="EYS-go-XHB"/>
                             <constraint firstItem="d5t-Wq-XJL" firstAttribute="width" secondItem="f3x-d8-a1i" secondAttribute="width" id="TOo-Pv-DOq"/>
+                            <constraint firstItem="4x4-qP-uEM" firstAttribute="centerX" secondItem="f3x-d8-a1i" secondAttribute="centerX" id="ZQu-Fw-LqH"/>
                             <constraint firstItem="Jtd-g7-mQb" firstAttribute="leading" secondItem="f3x-d8-a1i" secondAttribute="leading" id="beH-dI-hqI"/>
                             <constraint firstItem="Jtd-g7-mQb" firstAttribute="top" secondItem="f3x-d8-a1i" secondAttribute="top" id="hQf-l1-uqx"/>
                             <constraint firstItem="hsU-mj-wW4" firstAttribute="centerX" secondItem="f3x-d8-a1i" secondAttribute="centerX" id="qCp-QD-7PT"/>
@@ -395,11 +395,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vJY-4m-ZU7" id="ejj-aW-RS6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgo-70-JIS">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.94117647059999998" green="0.043137254899999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -516,7 +516,7 @@
             <objects>
                 <tableViewController id="lUD-X3-adU" customClass="TeamBuilderTableViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="5e3-6M-xoF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -526,7 +526,7 @@
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xUv-lf-uPk" id="riM-XF-Lfh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Team Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufR-2d-iKl">
@@ -556,7 +556,7 @@
                                         <rect key="frame" x="0.0" y="157" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYL-x2-c0n" id="N1v-dQ-jG5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="3jc-qg-I3Z">
@@ -604,7 +604,7 @@
                                         <rect key="frame" x="0.0" y="247" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oGh-4D-MdG" id="udm-Yo-uZA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="8oC-bp-Qve">
@@ -652,7 +652,7 @@
                                         <rect key="frame" x="0.0" y="337" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dk1-QQ-Ebh" id="3gf-e7-lVz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-ln-99I">
@@ -700,7 +700,7 @@
                                         <rect key="frame" x="0.0" y="427" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ul1-rc-unm" id="1Ir-l6-tKR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="85r-D3-7Ck">
@@ -748,7 +748,7 @@
                                         <rect key="frame" x="0.0" y="517" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tNT-Ok-WcB" id="uMQ-N5-61m">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="IsW-f2-foU">
@@ -796,7 +796,7 @@
                                         <rect key="frame" x="0.0" y="607" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dKp-JD-7o7" id="iOM-cn-cRi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" placeholderIntrinsicWidth="71" placeholderIntrinsicHeight="71" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-Sl-j9f">
@@ -973,11 +973,11 @@
                                                     <constraint firstAttribute="height" constant="103" id="29K-WP-sVb"/>
                                                     <constraint firstAttribute="width" constant="100" id="5Q7-lX-isy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <inset key="titleEdgeInsets" minX="-408" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Kanto" image="Pokedex Kanto">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="vyj-eQ-rPG"/>
@@ -993,7 +993,7 @@
                                                 <inset key="titleEdgeInsets" minX="-373" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Johto" image="Pokedex Johto">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="V2U-FI-Dlo"/>
@@ -1009,7 +1009,7 @@
                                                 <inset key="titleEdgeInsets" minX="-402" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Hoenn" image="Pokedex Hoenn">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="qXh-Dr-671"/>
@@ -1025,7 +1025,7 @@
                                                 <inset key="titleEdgeInsets" minX="-456" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Sinnoh" image="Pokedex Sinnoh">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="q1K-XE-W0u"/>
@@ -1041,13 +1041,13 @@
                                                 <inset key="titleEdgeInsets" minX="-299" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Unova" image="Pokedex Unova">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="ItC-K3-ahM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REB-nW-pUq" customClass="UIDexButton" customModule="Monsterpedia" customModuleProvider="target">
                                                 <rect key="frame" x="540" y="0.0" width="100" height="103"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="1yL-gX-WWV"/>
@@ -1057,7 +1057,7 @@
                                                 <inset key="titleEdgeInsets" minX="-250" minY="71" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="8" minY="6" maxX="8" maxY="36"/>
                                                 <state key="normal" title="Kalos" image="Pokedex Kalos">
-                                                    <color key="titleColor" red="0.96078431369999995" green="0.1647058824" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94117647058823528" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectDex:" destination="Jr1-iH-QUz" eventType="touchUpInside" id="5Lh-uh-i6V"/>
@@ -1122,6 +1122,6 @@
         <image name="Pokedex Unova" width="298" height="190"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="igf-EH-Gvk"/>
+        <segue reference="JWl-86-Cs8"/>
     </inferredMetricsTieBreakers>
 </document>
