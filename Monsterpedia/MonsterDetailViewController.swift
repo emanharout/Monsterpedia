@@ -201,10 +201,9 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
           }
           
           DispatchQueue.main.async {
-            self.pediaEntry.text = flavorText.replacingOccurrences(of: "\n", with: " ")
             self.pediaEntryActivityIndicator.stopAnimating()
             self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
-            print(self.pediaEntry.text)
+            self.pediaEntry.text =  flavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
           }
           break flavorTextLoop
         }
