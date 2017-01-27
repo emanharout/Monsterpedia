@@ -128,7 +128,7 @@ class MonsterDetailViewController: UIViewController {
 			}
 			self.typeLabel.text = type.trimmingCharacters(in: CharacterSet.punctuationCharacters)
 			// Removes line breaks from downloaded text
-			self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\n", with: " ")
+			self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
 			
 			self.monsterNameLabel.isHidden = false
 			self.heightLabel.isHidden = false
@@ -161,20 +161,17 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
       guard error == nil else {
         print(error!)
         self.stopLoadingAnimation()
-        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
       guard let result = result as? [String: AnyObject] else {
         self.stopLoadingAnimation()
-        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
       guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
         print("Could not retrieve monster's flavor text")
         self.stopLoadingAnimation()
-        self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
         return
       }
       
@@ -182,13 +179,11 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
         guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
           print("Could not retrieve language name")
           self.stopLoadingAnimation()
-          self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
           return
         }
         guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
           print("Could not retrieve game version name")
           self.stopLoadingAnimation()
-          self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
           return
         }
         
@@ -196,15 +191,13 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
           guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
             print("Could not retrieve flavor text")
             self.stopLoadingAnimation()
-            self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
             return
           }
           
           DispatchQueue.main.async {
-            self.pediaEntryActivityIndicator.stopAnimating()
-            self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
             self.pediaEntry.text =  flavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
           }
+          self.stopLoadingAnimation()
           break flavorTextLoop
         }
       }
