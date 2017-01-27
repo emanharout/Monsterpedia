@@ -24,6 +24,7 @@ class CaughtMonstersViewController: UIViewController {
 		super.viewDidLoad()
 		
 		setupFlowLayout()
+    setupCollectionView()
 		
 		fetchRequest = NSFetchRequest(entityName: "Monster")
 		let sortDesc = NSSortDescriptor(key: "id", ascending: true)
@@ -33,12 +34,6 @@ class CaughtMonstersViewController: UIViewController {
 		} catch let error as NSError {
 			print(error)
 		}
-	}
-
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		
-		setupCollectionView()
 	}
 }
 
