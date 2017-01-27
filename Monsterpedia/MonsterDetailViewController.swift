@@ -20,7 +20,8 @@ class MonsterDetailViewController: UIViewController {
 	@IBOutlet weak var pediaEntry: UILabel!
 	@IBOutlet weak var initialLoadActivityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var pediaEntryActivityIndicator: UIActivityIndicatorView!
-	
+  @IBOutlet weak var monsterImageViewHeightConstraint: NSLayoutConstraint!
+  
 	let pokeClient = PokeAPIClient.sharedInstance
 	var selectedMonster: Monster!
 
