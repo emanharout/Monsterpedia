@@ -34,14 +34,15 @@ class TeamBuilderTableViewController: UITableViewController {
 	}
 	
 	// Relevant variables when viewing an existing team
-	var isTeamDetail = false
+	var userIsViewingTeamDetail = false
 	var selectedTeam: Team!
-	var isEditingMode: Bool = false {
+	var isEditingMode = false {
 		didSet {
 			if isEditingMode {
 				rightBarButtonItem.title = "Done"
 				navigationItem.setHidesBackButton(true, animated: true)
-			} else {
+			}
+      else {
 				rightBarButtonItem.title = "Edit"
 				navigationItem.setHidesBackButton(false, animated: true)
 			}
@@ -67,91 +68,13 @@ class TeamBuilderTableViewController: UITableViewController {
 		enableEditingModeIfNeeded()
 	}
 	
-	// Unwind Segue after selecting a monster in MonstersViewController
-	@IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
-		if segue.source.isKind(of: MonstersViewController.self) {
-			let MonstersVC = segue.source as! MonstersViewController
-			guard let monster = MonstersVC.selectedMonster else {
-				return
-			}
-			let monsterInstance = MonsterInstance(name: monster.name, id: monster.id, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
-			let cell: MonsterSpriteCell!
-			guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
-				return
-			}
-			
-			switch selectedRowIndex {
-			case monsterCellNumber.firstCell.rawValue:
-				cell = firstMonsterCell
-				monsterInstance.positionID = Int16(1)
-				firstMonster = monsterInstance
-			case monsterCellNumber.secondCell.rawValue:
-				monsterInstance.positionID = Int16(2)
-				cell = secondMonsterCell
-				secondMonster = monsterInstance
-			case monsterCellNumber.thirdCell.rawValue:
-				monsterInstance.positionID = Int16(3)
-				cell = thirdMonsterCell
-				thirdMonster = monsterInstance
-			case monsterCellNumber.fourthCell.rawValue:
-				monsterInstance.positionID = Int16(4)
-				cell = fourthMonsterCell
-				fourthMonster = monsterInstance
-			case monsterCellNumber.fifthCell.rawValue:
-				monsterInstance.positionID = Int16(5)
-				cell = fifthMonsterCell
-				fifthMonster = monsterInstance
-			case monsterCellNumber.sixthCell.rawValue:
-				monsterInstance.positionID = Int16(6)
-				cell = sixthMonsterCell
-				sixthMonster = monsterInstance
-			default:
-				cell = nil
-			}
-			
-			if cell != nil {
-				cell.nameLabel.text = monsterInstance.name
-				cell.descriptionLabel.text = monsterInstance.genus
-				cell.spriteImageView.image = UIImage(named: monsterInstance.spriteImageName)
-			}
-		}
-	}
-	
-	// If Edit/Done Button Pressed
-	@IBAction func rightBarButtonPressed() {
-		if !isEditingMode {
-			isEditingMode = true
-		} else {
-			guard let teamName = teamNameTextField.text, !teamName.isEmpty else {
-				let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
-				let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-				alertController.addAction(okAction)
-				present(alertController, animated: true, completion: nil)
-				return
-			}
-			
-			selectedTeam.name = teamName
-			var newTeamMembers = [MonsterInstance]()
-			for monster in selectedMonsters {
-				if let monster = monster {
-					newTeamMembers.append(monster)
-				}
-				selectedTeam.monsterInstances = Set(newTeamMembers)
-			}
-			
-			teamNameTextField.resignFirstResponder()
-			isEditingMode = false
-			coreDataStack.save()
-		}
-	}
-	
 	func setupTableView() {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 88
 	}
 	
 	func loadTeamIfNeeded() {
-		if isTeamDetail {
+		if userIsViewingTeamDetail {
 			guard let selectedTeam = selectedTeam else {
 				print("Team is nil, could not load contents")
 				return
@@ -168,7 +91,7 @@ class TeamBuilderTableViewController: UITableViewController {
 				let sortedTeamArray = teamArray.sorted(by: { (monsterA, monsterB) -> Bool in
 					monsterA.positionID < monsterB.positionID
 				})
-				
+        
 				switch index {
 				case 0:
 					firstMonster = sortedTeamArray[index]
@@ -196,7 +119,7 @@ class TeamBuilderTableViewController: UITableViewController {
 	}
 	
 	func enableEditingModeIfNeeded() {
-		if !isEditingMode && isTeamDetail {
+		if !isEditingMode && userIsViewingTeamDetail {
 			isEditingMode = true
 		}
 	}
@@ -215,4 +138,83 @@ extension TeamBuilderTableViewController: UITextFieldDelegate {
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		enableEditingModeIfNeeded()
 	}
+
+  // If Edit/Done Button Pressed
+  @IBAction func rightBarButtonPressed() {
+    if !isEditingMode {
+      isEditingMode = true
+    } else {
+      guard let teamName = teamNameTextField.text, !teamName.isEmpty else {
+        let alertController = UIAlertController(title: "Team Name Missing", message: "Please enter a name for your team", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        return
+      }
+      
+      selectedTeam.name = teamName
+      var newTeamMembers = [MonsterInstance]()
+      for monster in selectedMonsters {
+        if let monster = monster {
+          newTeamMembers.append(monster)
+        }
+        selectedTeam.monsterInstances = Set(newTeamMembers)
+      }
+      
+      teamNameTextField.resignFirstResponder()
+      isEditingMode = false
+      coreDataStack.save()
+    }
+  }
+  
+  // Unwind Segue after selecting a monster in MonstersViewController
+  @IBAction func saveSelectedMonster(_ segue: UIStoryboardSegue, sender: MonsterSpriteCell) {
+    if segue.source.isKind(of: MonstersViewController.self) {
+      let MonstersVC = segue.source as! MonstersViewController
+      guard let monster = MonstersVC.selectedMonster else {
+        return
+      }
+      let monsterInstance = MonsterInstance(name: monster.name, id: monster.id, genus: monster.genus, image2DName: monster.image2DName, spriteImageName: monster.spriteImageName, context: coreDataStack.context)
+      let cell: MonsterSpriteCell!
+      guard let selectedRowIndex = tableView.indexPathForSelectedRow?.row else {
+        return
+      }
+      
+      switch selectedRowIndex {
+      case monsterCellNumber.firstCell.rawValue:
+        cell = firstMonsterCell
+        monsterInstance.positionID = Int16(1)
+        firstMonster = monsterInstance
+      case monsterCellNumber.secondCell.rawValue:
+        monsterInstance.positionID = Int16(2)
+        cell = secondMonsterCell
+        secondMonster = monsterInstance
+      case monsterCellNumber.thirdCell.rawValue:
+        monsterInstance.positionID = Int16(3)
+        cell = thirdMonsterCell
+        thirdMonster = monsterInstance
+      case monsterCellNumber.fourthCell.rawValue:
+        monsterInstance.positionID = Int16(4)
+        cell = fourthMonsterCell
+        fourthMonster = monsterInstance
+      case monsterCellNumber.fifthCell.rawValue:
+        monsterInstance.positionID = Int16(5)
+        cell = fifthMonsterCell
+        fifthMonster = monsterInstance
+      case monsterCellNumber.sixthCell.rawValue:
+        monsterInstance.positionID = Int16(6)
+        cell = sixthMonsterCell
+        sixthMonster = monsterInstance
+      default:
+        cell = nil
+      }
+      
+      if cell != nil {
+        cell.nameLabel.text = monsterInstance.name
+        cell.descriptionLabel.text = monsterInstance.genus
+        cell.spriteImageView.image = UIImage(named: monsterInstance.spriteImageName)
+      }
+    }
+  }
+  
 }

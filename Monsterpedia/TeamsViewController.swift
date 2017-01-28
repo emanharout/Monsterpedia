@@ -42,7 +42,7 @@ class TeamsViewController: UIViewController {
 			let destVC = segue.destination as! TeamBuilderTableViewController
 			destVC.coreDataStack = coreDataStack
 			destVC.selectedTeam = frc.object(at: selectedIndexPath)
-			destVC.isTeamDetail = true
+			destVC.userIsViewingTeamDetail = true
 		}
 	}
 }
