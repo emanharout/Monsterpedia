@@ -12,7 +12,7 @@ class MonsterDetailViewController: UIViewController {
 	
 	@IBOutlet weak var navItem: UINavigationItem!
   @IBOutlet weak var dexContainerView: UIView!
-	@IBOutlet weak var monsterImage: UIImageView!
+	@IBOutlet weak var monsterImageView: UIImageView!
 	@IBOutlet weak var monsterNameLabel: UILabel!
 	@IBOutlet weak var heightLabel: UILabel!
 	@IBOutlet weak var weightLabel: UILabel!
@@ -49,7 +49,8 @@ class MonsterDetailViewController: UIViewController {
 				let action = UIAlertAction(title: "OK", style: .default, handler: nil)
 				alert.addAction(action)
 				self.present(alert, animated: true, completion: nil)
-			} else if let result = result as? [String: AnyObject] {
+			}
+      else if let result = result as? [String: AnyObject] {
 				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int else {
 					let alert = UIAlertController(title: "Error", message: "Failed to retrieve results from server", preferredStyle: .alert)
 					let action = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -118,7 +119,12 @@ class MonsterDetailViewController: UIViewController {
 		// Assign values to UI once data from both requests are downloaded
 		group.notify(queue: .main) {
 			self.monsterNameLabel.text = selectedMonster.name
-			self.monsterImage.image = UIImage(named: selectedMonster.image2DName)
+      if let monsterImage = UIImage(named: selectedMonster.image2DName) {
+        self.monsterImageView.image = monsterImage
+        self.monsterImageView.adjust(vertical: self.monsterImageViewHeightConstraint, toFit: monsterImage)
+      }
+      
+      
 			self.heightLabel.text = "Height: \(monsterHeight)"
 			self.weightLabel.text = "Weight: \(monsterWeight)"
 			
