@@ -34,6 +34,7 @@
 		031608A11E38232D00CD1F9A /* UIDexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031608A01E38232D00CD1F9A /* UIDexButton.swift */; };
 		031608A31E38810300CD1F9A /* InstantHighlightScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */; };
 		033970791D566C69003A95F3 /* MonsterSpriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033970781D566C69003A95F3 /* MonsterSpriteCell.swift */; };
+		039923C81E3C163F002AFB62 /* UIImageView+DynamicHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039923C71E3C163F002AFB62 /* UIImageView+DynamicHeight.swift */; };
 		03C60DCA1D5661390046486B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03C60DC81D5661390046486B /* Model.xcdatamodeld */; };
 		03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */; };
 		03D547021D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */; };
@@ -93,6 +94,7 @@
 		031608A01E38232D00CD1F9A /* UIDexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDexButton.swift; sourceTree = "<group>"; };
 		031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstantHighlightScrollView.swift; sourceTree = "<group>"; };
 		033970781D566C69003A95F3 /* MonsterSpriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterSpriteCell.swift; sourceTree = "<group>"; };
+		039923C71E3C163F002AFB62 /* UIImageView+DynamicHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DynamicHeight.swift"; sourceTree = "<group>"; };
 		03C60DC91D5661390046486B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		03D546FF1D90CBD4002675A1 /* MonsterInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterInstance.swift; sourceTree = "<group>"; };
 		03D547011D90CBFA002675A1 /* MonsterInstance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MonsterInstance+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -179,9 +181,8 @@
 		030939DA1D4DE1EA004CC0A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				039923C91E3C1673002AFB62 /* Modifications */,
 				030939D61D4D9AEA004CC0A7 /* MonsterCell.swift */,
-				031608A01E38232D00CD1F9A /* UIDexButton.swift */,
-				031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */,
 				033970781D566C69003A95F3 /* MonsterSpriteCell.swift */,
 				030939D81D4DBA0E004CC0A7 /* CollectionHeaderView.swift */,
 				03F98D821D8D1C5D0077368C /* Main.storyboard */,
@@ -234,6 +235,16 @@
 			);
 			name = "Managed Objects";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		039923C91E3C1673002AFB62 /* Modifications */ = {
+			isa = PBXGroup;
+			children = (
+				031608A01E38232D00CD1F9A /* UIDexButton.swift */,
+				031608A21E38810300CD1F9A /* InstantHighlightScrollView.swift */,
+				039923C71E3C163F002AFB62 /* UIImageView+DynamicHeight.swift */,
+			);
+			name = Modifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				03D547001D90CBD4002675A1 /* MonsterInstance.swift in Sources */,
 				030B2D841D7263050072263C /* Move+CoreDataProperties.swift in Sources */,
 				030B2D871D7263050072263C /* Monster.swift in Sources */,
+				039923C81E3C163F002AFB62 /* UIImageView+DynamicHeight.swift in Sources */,
 				030B2D621D72259D0072263C /* CoreDataStack.swift in Sources */,
 				03091CCE1D84E9E300810BEF /* Team+CoreDataProperties.swift in Sources */,
 				030939D51D4D63B8004CC0A7 /* PokeAPIClient.swift in Sources */,
