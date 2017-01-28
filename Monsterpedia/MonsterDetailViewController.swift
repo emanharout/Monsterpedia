@@ -44,28 +44,18 @@ class MonsterDetailViewController: UIViewController {
 		
 		group.enter()
 		pokeClient.getMonsterData(selectedMonster) { (result, error) in
-			if let error = error {
-				let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-				let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-				alert.addAction(action)
-				self.present(alert, animated: true, completion: nil)
+			guard error == nil else {
+        self.createAndPresentErrorAlert(with: error!.localizedDescription)
+        group.leave()
+        return
 			}
-      else if let result = result as? [String: AnyObject] {
-				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int else {
-					let alert = UIAlertController(title: "Error", message: "Failed to retrieve results from server", preferredStyle: .alert)
-					let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-					alert.addAction(action)
-					self.present(alert, animated: true, completion: nil)
+      if let result = result as? [String: AnyObject] {
+				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int, let typeArray = result["types"] as?[[String: AnyObject]] else {
+          self.createAndPresentErrorAlert(with: "Failed to retrieve results monster stats")
 					group.leave()
 					return
 				}
-				guard let typeArray = result["types"] as?[[String: AnyObject]] else {
-					print("Could not retrieve typeArray")
-					group.leave()
-					return
-				}
-				
-				for typeDict in typeArray {
+        for typeDict in typeArray {
 					guard let type = typeDict["type"] as? [String: AnyObject], let typeName = type["name"] as? String else {
 						print("Could not retrieve type name")
 						group.leave()
@@ -81,39 +71,39 @@ class MonsterDetailViewController: UIViewController {
 		
 		group.enter()
 		pokeClient.getFlavorTextJSON(for: selectedMonster, dex: .kanto) { (result, error) in
-			if let error = error {
-				print(error)
-			} else if let result = result as? [String: AnyObject] {
-				guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
-					print("Could not retrieve monster's flavor text")
-					group.leave()
-					return
-				}
-				
-        flavorTextLoop: for flavorTextEntry in flavorTextArrays {
-					guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
-						print("Could not retrieve language name")
-						group.leave()
-						return
-					}
-          guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
-            print("Could not retrieve game version name")
+      guard error == nil else {
+        self.createAndPresentErrorAlert(with: error!.localizedDescription)
+        group.leave()
+        return
+      }
+      guard let result = result as? [String: AnyObject], let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
+        print("Could not retrieve monster's flavor text")
+        group.leave()
+        return
+      }
+      flavorTextLoop: for flavorTextEntry in flavorTextArrays {
+        guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
+          print("Could not retrieve language name")
+          group.leave()
+          return
+        }
+        guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
+          print("Could not retrieve game version name")
+          group.leave()
+          return
+        }
+        
+        if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
+          guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
+            print("Could not retrieve flavor text")
             group.leave()
             return
           }
-          
-					if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
-						guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
-							print("Could not retrieve flavor text")
-							group.leave()
-							return
-						}
-						monsterFlavorText = flavorText
-						break flavorTextLoop
-					}
-				}
-			}
-			group.leave()
+          monsterFlavorText = flavorText
+          break flavorTextLoop
+        }
+      }
+      group.leave()
 		}
 		
 		// Assign values to UI once data from both requests are downloaded
@@ -123,8 +113,6 @@ class MonsterDetailViewController: UIViewController {
         self.monsterImageView.image = monsterImage
         self.monsterImageView.adjust(vertical: self.monsterImageViewHeightConstraint, toFit: monsterImage)
       }
-      
-      
 			self.heightLabel.text = "Height: \(monsterHeight)"
 			self.weightLabel.text = "Weight: \(monsterWeight)"
 			
@@ -137,6 +125,7 @@ class MonsterDetailViewController: UIViewController {
 			// Removes line breaks from downloaded text
 			self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
 			
+      //Unhide UI
 			self.monsterNameLabel.isHidden = false
 			self.heightLabel.isHidden = false
 			self.weightLabel.isHidden = false
@@ -154,9 +143,19 @@ class MonsterDetailViewController: UIViewController {
         return
       }
       dexSelectionViewController.delegate = self
-      
     }
   }
+  // TODO: Add print error + leave group func
+  func createAndPresentErrorAlert(with message: String) {
+    let mainQueue = DispatchQueue.main
+    mainQueue.async {
+      let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+      let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+      alert.addAction(action)
+      self.present(alert, animated: true, completion: nil)
+    }
+  }
+  
 }
 
 extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
