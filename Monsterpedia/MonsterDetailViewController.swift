@@ -43,29 +43,18 @@ class MonsterDetailViewController: UIViewController {
 		var monsterFlavorText = String()
 		
 		group.enter()
-		pokeClient.getMonsterData(selectedMonster) { (result, error) in
+    pokeClient.getMonsterHeaderJSON(for: selectedMonster) { (result, error) in
 			guard error == nil else {
         self.createAndPresentErrorAlert(with: error!.localizedDescription)
         group.leave()
         return
 			}
-      if let result = result as? [String: AnyObject] {
-				guard let height = result["height"] as? Int, let weight = result["weight"] as? Int, let typeArray = result["types"] as?[[String: AnyObject]] else {
-          self.createAndPresentErrorAlert(with: "Failed to retrieve results monster stats")
-					group.leave()
-					return
-				}
-        for typeDict in typeArray {
-					guard let type = typeDict["type"] as? [String: AnyObject], let typeName = type["name"] as? String else {
-						print("Could not retrieve type name")
-						group.leave()
-						return
-					}
-					monsterTypes.append(typeName)
-				}
-				monsterHeight = height
-				monsterWeight = weight
-			}
+      let monsterHeaderInfo = self.parse(monsterHeaderJSON: result)
+      if let height = monsterHeaderInfo.height, let weight = monsterHeaderInfo.weight, let types = monsterHeaderInfo.types {
+        monsterHeight = height
+        monsterWeight = weight
+        monsterTypes = types
+      }
 			group.leave()
 		}
 		
@@ -76,65 +65,93 @@ class MonsterDetailViewController: UIViewController {
         group.leave()
         return
       }
-      guard let result = result as? [String: AnyObject], let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
-        print("Could not retrieve monster's flavor text")
-        group.leave()
-        return
-      }
-      flavorTextLoop: for flavorTextEntry in flavorTextArrays {
-        guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
-          print("Could not retrieve language name")
-          group.leave()
-          return
-        }
-        guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
-          print("Could not retrieve game version name")
-          group.leave()
-          return
-        }
-        
-        if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
-          guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
-            print("Could not retrieve flavor text")
-            group.leave()
-            return
-          }
-          monsterFlavorText = flavorText
-          break flavorTextLoop
-        }
+      
+      let flavorText = self.parse(flavorTextJSON: result)
+      if let flavorText = flavorText {
+        monsterFlavorText = flavorText
       }
       group.leave()
 		}
 		
-		// Assign values to UI once data from both requests are downloaded
 		group.notify(queue: .main) {
-			self.monsterNameLabel.text = selectedMonster.name
-      if let monsterImage = UIImage(named: selectedMonster.image2DName) {
-        self.monsterImageView.image = monsterImage
-        self.monsterImageView.adjust(vertical: self.monsterImageViewHeightConstraint, toFit: monsterImage)
-      }
-			self.heightLabel.text = "Height: \(monsterHeight)"
-			self.weightLabel.text = "Weight: \(monsterWeight)"
-			
-			var type = "Type:"
-			for typeName in monsterTypes {
-				let formattedTypeName = typeName.capitalized
-				type.append(" \(formattedTypeName),")
-			}
-			self.typeLabel.text = type.trimmingCharacters(in: CharacterSet.punctuationCharacters)
-			// Removes line breaks from downloaded text
-			self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
-			
-      //Unhide UI
-			self.monsterNameLabel.isHidden = false
-			self.heightLabel.isHidden = false
-			self.weightLabel.isHidden = false
-			self.typeLabel.isHidden = false
-      self.dexContainerView.isHidden = false
-			
-			self.initialLoadActivityIndicator.stopAnimating()
+      self.displayUIWithRetrievedValues(monsterHeight, monsterWeight, monsterTypes, monsterFlavorText)
 		}
 	}
+  
+  func parse(monsterHeaderJSON: AnyObject?) -> (height: Int?, weight: Int?, types: [String]?)  {
+    guard let monsterHeaderJSON = monsterHeaderJSON as? [String: AnyObject] else {
+      return (height: nil, weight: nil, types: nil)
+    }
+    guard let height = monsterHeaderJSON["height"] as? Int, let weight = monsterHeaderJSON["weight"] as? Int, let typeArray = monsterHeaderJSON["types"] as?[[String: AnyObject]] else {
+      self.createAndPresentErrorAlert(with: "Failed to retrieve results monster stats")
+      return (height: nil, weight: nil, types: nil)
+    }
+    
+    var monsterTypes = [String]()
+    for typeDict in typeArray {
+      guard let type = typeDict["type"] as? [String: AnyObject], let typeName = type["name"] as? String else {
+        print("Could not retrieve type name")
+        return (height: nil, weight: nil, types: nil)
+      }
+      monsterTypes.append(typeName)
+    }
+    return (height: height, weight: weight, types: monsterTypes)
+  }
+  
+  func parse(flavorTextJSON: AnyObject?) -> String? {
+    guard let flavorTextJSON = flavorTextJSON as? [String: AnyObject], let flavorTextArrays = flavorTextJSON["flavor_text_entries"] as? [[String: AnyObject]] else {
+      print("Could not retrieve monster's flavor text")
+      return nil
+    }
+    
+    for flavorTextEntry in flavorTextArrays {
+      guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
+        print("Could not retrieve language name")
+        return nil
+      }
+      guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
+        print("Could not retrieve game version name")
+        return nil
+      }
+      
+      if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
+        guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
+          print("Could not retrieve flavor text")
+          return nil
+        }
+        return flavorText
+      }
+    }
+    return nil
+  }
+  
+  func displayUIWithRetrievedValues(_ monsterHeight: Int, _ monsterWeight: Int, _ monsterTypes: [String], _ monsterFlavorText: String) {
+    monsterNameLabel.text = selectedMonster.name
+    if let monsterImage = UIImage(named: selectedMonster.image2DName) {
+      monsterImageView.image = monsterImage
+      monsterImageView.adjust(vertical: self.monsterImageViewHeightConstraint, toFit: monsterImage)
+    }
+    heightLabel.text = "Height: \(monsterHeight)"
+    weightLabel.text = "Weight: \(monsterWeight)"
+    
+    var type = "Type:"
+    for typeName in monsterTypes {
+      let formattedTypeName = typeName.capitalized
+      type.append(" \(formattedTypeName),")
+    }
+    self.typeLabel.text = type.trimmingCharacters(in: CharacterSet.punctuationCharacters)
+    // Removes line breaks from downloaded text
+    self.pediaEntry.text = monsterFlavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
+    
+    self.monsterNameLabel.isHidden = false
+    self.heightLabel.isHidden = false
+    self.weightLabel.isHidden = false
+    self.typeLabel.isHidden = false
+    self.dexContainerView.isHidden = false
+    
+    self.initialLoadActivityIndicator.stopAnimating()
+  }
+
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "embedDexSelectionViewController" {
@@ -145,7 +162,7 @@ class MonsterDetailViewController: UIViewController {
       dexSelectionViewController.delegate = self
     }
   }
-  // TODO: Add print error + leave group func
+
   func createAndPresentErrorAlert(with message: String) {
     let mainQueue = DispatchQueue.main
     mainQueue.async {
@@ -163,48 +180,16 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
     self.pediaEntry.textColor = UIColor.clear
     self.pediaEntryActivityIndicator.startAnimating()
     pokeClient.getFlavorTextJSON(for: selectedMonster, dex: dex) { (result, error) in
-      
       guard error == nil else {
         print(error!)
         self.stopLoadingAnimation()
         return
       }
       
-      guard let result = result as? [String: AnyObject] else {
-        self.stopLoadingAnimation()
-        return
-      }
-      
-      guard let flavorTextArrays = result["flavor_text_entries"] as? [[String: AnyObject]] else {
-        print("Could not retrieve monster's flavor text")
-        self.stopLoadingAnimation()
-        return
-      }
-      
-      flavorTextLoop: for flavorTextEntry in flavorTextArrays {
-        guard let language = flavorTextEntry["language"] as? [String: AnyObject], let languageName = language["name"] as? String else {
-          print("Could not retrieve language name")
+      if let flavorText = self.parse(flavorTextJSON: result) {
+        DispatchQueue.main.async {
           self.stopLoadingAnimation()
-          return
-        }
-        guard let gameVersion = flavorTextEntry["version"] as? [String: AnyObject], let gameVersionName = gameVersion["name"] as? String else {
-          print("Could not retrieve game version name")
-          self.stopLoadingAnimation()
-          return
-        }
-        
-        if languageName == "en" && gameVersionName == dex.rawValue {
-          guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
-            print("Could not retrieve flavor text")
-            self.stopLoadingAnimation()
-            return
-          }
-          
-          DispatchQueue.main.async {
-            self.pediaEntry.text =  flavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
-          }
-          self.stopLoadingAnimation()
-          break flavorTextLoop
+          self.pediaEntry.text =  flavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
         }
       }
     }
@@ -214,6 +199,7 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
     let mainQueue = DispatchQueue.main
     mainQueue.async {
       self.pediaEntryActivityIndicator.stopAnimating()
+      // UILabel goes from alpha 0 to 1 when animation stops
       self.pediaEntry.textColor = UIColor(red: 240/255, green: 11/255, blue: 49/255, alpha: 1)
     }
   }

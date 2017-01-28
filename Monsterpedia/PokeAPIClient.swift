@@ -79,11 +79,7 @@ extension PokeAPIClient {
 		}
 	}
 	
-	// Create URL
-	// Pass into taskForGET
-	// return entire JSON to completion handler
-	
-	func getMonsterData(_ monster: Monster, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
+	func getMonsterHeaderJSON(for monster: Monster, completionHandler: @escaping (_ result: AnyObject?, _ error: NSError?)->Void) {
 		guard let path = substituteValueInString(Constants.MonsterPath, value: "{id}", withValue: "\(monster.id)") else {
 			let error = NSError(domain: "getMonsterData", code: 9, userInfo: [NSLocalizedDescriptionKey: "Failed to build URL with MonsterPath"])
 			completionHandler(nil, error)
