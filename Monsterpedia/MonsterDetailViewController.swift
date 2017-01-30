@@ -66,7 +66,7 @@ class MonsterDetailViewController: UIViewController {
         return
       }
       
-      let flavorText = self.parse(flavorTextJSON: result)
+      let flavorText = self.parse(flavorTextJSON: result, dex: Dex.kanto)
       if let flavorText = flavorText {
         monsterFlavorText = flavorText
       }
@@ -98,7 +98,7 @@ class MonsterDetailViewController: UIViewController {
     return (height: height, weight: weight, types: monsterTypes)
   }
   
-  func parse(flavorTextJSON: AnyObject?) -> String? {
+  func parse(flavorTextJSON: AnyObject?, dex: Dex) -> String? {
     guard let flavorTextJSON = flavorTextJSON as? [String: AnyObject], let flavorTextArrays = flavorTextJSON["flavor_text_entries"] as? [[String: AnyObject]] else {
       print("Could not retrieve monster's flavor text")
       return nil
@@ -114,7 +114,7 @@ class MonsterDetailViewController: UIViewController {
         return nil
       }
       
-      if languageName == "en" && gameVersionName == Dex.kanto.rawValue {
+      if languageName == "en" && gameVersionName == dex.rawValue {
         guard let flavorText = flavorTextEntry["flavor_text"] as? String else {
           print("Could not retrieve flavor text")
           return nil
@@ -186,7 +186,7 @@ extension MonsterDetailViewController: DexSelectionViewControllerDelegate {
         return
       }
       
-      if let flavorText = self.parse(flavorTextJSON: result) {
+      if let flavorText = self.parse(flavorTextJSON: result, dex: dex) {
         DispatchQueue.main.async {
           self.stopLoadingAnimation()
           self.pediaEntry.text =  flavorText.replacingOccurrences(of: "\\s", with: " ", options: .regularExpression)
