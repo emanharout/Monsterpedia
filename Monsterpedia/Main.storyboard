@@ -314,7 +314,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-0v-Zzi">
-                                            <rect key="frame" x="119" y="19" width="176" height="29"/>
+                                            <rect key="frame" x="72" y="19" width="176" height="29"/>
                                             <segments>
                                                 <segment title="All"/>
                                                 <segment title="Caught"/>
