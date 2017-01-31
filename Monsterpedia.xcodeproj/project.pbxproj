@@ -315,8 +315,9 @@
 				TargetAttributes = {
 					030939A21D4D5FE8004CC0A7 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 45P953T7BD;
+						DevelopmentTeam = R7LULH4QGM;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 					030939B61D4D5FE9004CC0A7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -551,12 +552,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emmanuoel Haroutunian (3D35ERN739)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emmanuoel Haroutunian (3D35ERN739)";
+				DEVELOPMENT_TEAM = R7LULH4QGM;
 				INFOPLIST_FILE = Monsterpedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.emmanuoel.Monsterpedia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcraftstudios.Monsterpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c6c37ff1-02d7-4d20-bc32-852392e45179";
+				PROVISIONING_PROFILE_SPECIFIER = MonsterpediaDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -565,12 +571,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Emmanuoel Haroutunian (R7LULH4QGM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Emmanuoel Haroutunian (R7LULH4QGM)";
+				DEVELOPMENT_TEAM = R7LULH4QGM;
 				INFOPLIST_FILE = Monsterpedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOMC_NO_INVERSE_RELATIONSHIP_WARNINGS = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.emmanuoel.Monsterpedia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcraftstudios.Monsterpedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a2deede9-6817-4a9b-932d-74c834b9da4c";
+				PROVISIONING_PROFILE_SPECIFIER = MonsterpediaDistribution;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
