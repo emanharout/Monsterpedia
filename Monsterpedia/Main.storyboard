@@ -270,13 +270,13 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ezp-6Q-hea">
                                     <size key="itemSize" width="168" height="208"/>
-                                    <size key="headerReferenceSize" width="50" height="66"/>
+                                    <size key="headerReferenceSize" width="50" height="58"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MonsterCell" id="P0y-1v-NaP" customClass="MonsterCell" customModule="Monsterpedia" customModuleProvider="target">
-                                        <rect key="frame" x="76" y="66" width="168" height="208"/>
+                                        <rect key="frame" x="76" y="58" width="168" height="208"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="208"/>
@@ -311,11 +311,11 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionHeaderView" id="yDp-Rd-OsS" customClass="CollectionHeaderView" customModule="Monsterpedia" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E4o-0v-Zzi">
-                                            <rect key="frame" x="72" y="19" width="176" height="29"/>
+                                            <rect key="frame" x="72" y="10" width="176" height="29"/>
                                             <segments>
                                                 <segment title="All"/>
                                                 <segment title="Caught"/>
@@ -328,8 +328,8 @@
                                         </segmentedControl>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="E4o-0v-Zzi" firstAttribute="centerY" secondItem="yDp-Rd-OsS" secondAttribute="centerY" id="3sK-mI-Wgr"/>
                                         <constraint firstItem="E4o-0v-Zzi" firstAttribute="centerX" secondItem="yDp-Rd-OsS" secondAttribute="centerX" id="4Iu-yN-sos"/>
+                                        <constraint firstItem="E4o-0v-Zzi" firstAttribute="top" secondItem="yDp-Rd-OsS" secondAttribute="top" constant="10" id="60l-JQ-PE5"/>
                                     </constraints>
                                     <connections>
                                         <outlet property="segmentedControl" destination="E4o-0v-Zzi" id="37b-q2-Oeg"/>
@@ -357,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRS-ZS-GAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1730" y="394"/>
+            <point key="canvasLocation" x="1728.75" y="392.95774647887322"/>
         </scene>
         <!--Teams-->
         <scene sceneID="vwF-bL-xVf">
@@ -518,7 +518,7 @@
             </objects>
             <point key="canvasLocation" x="3431" y="1245"/>
         </scene>
-        <!--Title-->
+        <!--Team-->
         <scene sceneID="tj2-Hy-6kq">
             <objects>
                 <tableViewController id="lUD-X3-adU" customClass="TeamBuilderTableViewController" customModule="Monsterpedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -856,7 +856,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="PBi-fm-AC8">
+                    <navigationItem key="navigationItem" title="Team" id="PBi-fm-AC8">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="xmb-cY-aOq">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -1129,7 +1129,7 @@
         <image name="Pokedex Unova" width="298" height="190"/>
         <image name="caught-tab-icon" width="25" height="25"/>
         <image name="monster-tab-icon" width="60" height="25"/>
-        <image name="team-tab-icon" width="40" height="25"/>
+        <image name="team-tab-icon" width="35" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JWl-86-Cs8"/>
