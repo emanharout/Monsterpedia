@@ -12,13 +12,35 @@ class UIDexButton: UIButton {
   
   override var isHighlighted: Bool {
     didSet {
-      switch isHighlighted {
-      case true:
+      if isHighlighted {
         backgroundColor = UIColor.lightGray
-      case false:
-        backgroundColor = UIColor.clear
+      } else {
+        backgroundColor = UIColor.white
       }
     }
+  }
+  
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    setupLayer()
+  }
+  
+  override func prepareForInterfaceBuilder() {
+    super.prepareForInterfaceBuilder()
+    setupLayer()
+  }
+  
+  func setupLayer() {
+    layer.cornerRadius = 10
+    
+    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowOffset = CGSize.zero
+    layer.shadowOpacity = 0.5
+    layer.shadowRadius = 2.0
+    
+    layer.masksToBounds = false
+    
   }
 
 }

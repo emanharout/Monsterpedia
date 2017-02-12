@@ -15,10 +15,6 @@ class DexSelectionViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-    
-    for button in dexSelectionButtons {
-      button.layer.cornerRadius = 10
-    }
   }
 
   @IBAction func selectDex(_ sender: UIButton) {
