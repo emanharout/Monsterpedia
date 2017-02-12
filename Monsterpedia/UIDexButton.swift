@@ -19,7 +19,6 @@ class UIDexButton: UIButton {
       }
     }
   }
-  
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -40,7 +39,6 @@ class UIDexButton: UIButton {
     layer.shadowRadius = 2.0
     
     layer.masksToBounds = false
-    
   }
 
 }
