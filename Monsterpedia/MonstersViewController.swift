@@ -107,10 +107,5 @@ extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
   func setupTableView() {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 88
-    
-    if !isTeamBuilding {
-      let searchBarHeight = searchBar.bounds.height
-      tableView.contentOffset = CGPoint(x: 0, y: searchBarHeight)
-    }
   }
 }
