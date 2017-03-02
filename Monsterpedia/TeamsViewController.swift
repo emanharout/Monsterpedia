@@ -69,6 +69,18 @@ extension TeamsViewController: UITableViewDataSource, UITableViewDelegate {
       return 0
     }
   }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let team = frc.object(at: indexPath)
+      coreDataStack.context.delete(team)
+      coreDataStack.save()
+    }
+  }
 }
 
 extension TeamsViewController: NSFetchedResultsControllerDelegate {
@@ -94,6 +106,5 @@ extension TeamsViewController: NSFetchedResultsControllerDelegate {
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
     tableView.endUpdates()
   }
-  
-  // TODO: Swipe to Delete Feature
 }
+
