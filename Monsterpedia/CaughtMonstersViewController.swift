@@ -23,8 +23,7 @@ class CaughtMonstersViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    setupFlowLayout()
-    setupCollectionView()
+    setupViews()
     
     fetchRequest = NSFetchRequest(entityName: "Monster")
     let sortDesc = NSSortDescriptor(key: "id", ascending: true)
@@ -82,8 +81,9 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
   
   
   // MARK: CollectionView Functions
-  func setupFlowLayout() {
+  func setupViews() {
     
+    // Setup flowLayout
     flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
     
     let itemWidthDimension = ((view.frame.size.width - 36.0)/3)
@@ -91,6 +91,9 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
     flowLayout.minimumLineSpacing = CGFloat(20.0)
     flowLayout.minimumInteritemSpacing = CGFloat(6.0)
     flowLayout.itemSize = CGSize(width: itemWidthDimension, height: itemHeightDimension)
+    
+    // Setup collectionView
+    collectionView.alwaysBounceVertical = true
   }
   
   func didSelectSegment(_ sender: CollectionHeaderView, selectedSegmentIndex: Int) {
@@ -114,12 +117,6 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
     } catch let error as NSError {
       print(error)
     }
-  }
-  
-  func setupCollectionView() {
-    collectionView.alwaysBounceVertical = true
-    let verticalOffsetValue = CGFloat(66)
-    collectionView.contentOffset = CGPoint(x: 0, y: verticalOffsetValue)
   }
 }
 
