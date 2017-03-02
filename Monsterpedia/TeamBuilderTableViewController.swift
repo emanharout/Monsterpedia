@@ -10,135 +10,135 @@ import UIKit
 import CoreData
 
 class TeamBuilderTableViewController: UITableViewController {
-	
-	var coreDataStack: CoreDataStack!
-	
-	@IBOutlet weak var firstMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var secondMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var thirdMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var fourthMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var fifthMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
-	@IBOutlet weak var teamNameTextField: UITextField!
-	@IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
-
-	var firstMonster: MonsterInstance?
-	var secondMonster: MonsterInstance?
-	var thirdMonster: MonsterInstance?
-	var fourthMonster: MonsterInstance?
-	var fifthMonster: MonsterInstance?
-	var sixthMonster: MonsterInstance?
-	var selectedMonsters: [MonsterInstance?] {
-		let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
-		return monsters
-	}
-	
-	// Relevant variables when viewing an existing team
-	var userIsViewingTeamDetail = false
-	var selectedTeam: Team!
-	var isEditingMode = false {
-		didSet {
-			if isEditingMode {
-				rightBarButtonItem.title = "Done"
-				navigationItem.setHidesBackButton(true, animated: true)
-			}
+  
+  var coreDataStack: CoreDataStack!
+  
+  @IBOutlet weak var firstMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var secondMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var thirdMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var fourthMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var fifthMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var sixthMonsterCell: MonsterSpriteCell!
+  @IBOutlet weak var teamNameTextField: UITextField!
+  @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
+  
+  var firstMonster: MonsterInstance?
+  var secondMonster: MonsterInstance?
+  var thirdMonster: MonsterInstance?
+  var fourthMonster: MonsterInstance?
+  var fifthMonster: MonsterInstance?
+  var sixthMonster: MonsterInstance?
+  var selectedMonsters: [MonsterInstance?] {
+    let monsters = [firstMonster, secondMonster, thirdMonster, fourthMonster, fifthMonster, sixthMonster]
+    return monsters
+  }
+  
+  // Relevant variables when viewing an existing team
+  var userIsViewingTeamDetail = false
+  var selectedTeam: Team!
+  var isEditingMode = false {
+    didSet {
+      if isEditingMode {
+        rightBarButtonItem.title = "Done"
+        navigationItem.setHidesBackButton(true, animated: true)
+      }
       else {
-				rightBarButtonItem.title = "Edit"
-				navigationItem.setHidesBackButton(false, animated: true)
-			}
-		}
-	}
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		setupTableView()
-		loadTeamIfNeeded()
-	}
-	
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section == 0 {
-			teamNameTextField.becomeFirstResponder()
-		} else if indexPath.section == 1 {
-			let MonstersVC = storyboard?.instantiateViewController(withIdentifier: "MonstersVC") as! MonstersViewController
-			MonstersVC.isTeamBuilding = true
-			MonstersVC.coreDataStack = coreDataStack
-			navigationController?.pushViewController(MonstersVC, animated: true)
-		}
-		enableEditingModeIfNeeded()
-	}
-	
-	func setupTableView() {
-		tableView.rowHeight = UITableViewAutomaticDimension
-		tableView.estimatedRowHeight = 88
-	}
-	
-	func loadTeamIfNeeded() {
-		if userIsViewingTeamDetail {
-			guard let selectedTeam = selectedTeam else {
-				print("Team is nil, could not load contents")
-				return
-			}
-			teamNameTextField.text = selectedTeam.name
-			guard let teamMonsters = selectedTeam.monsterInstances else {
-				print("The selected team has a monsters property that is nil")
-				return
-			}
-			let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
-			
-			for (index, cell) in monsterCells.enumerated() {
-				let teamArray = Array(teamMonsters)
-				let sortedTeamArray = teamArray.sorted(by: { (monsterA, monsterB) -> Bool in
-					monsterA.positionID < monsterB.positionID
-				})
+        rightBarButtonItem.title = "Edit"
+        navigationItem.setHidesBackButton(false, animated: true)
+      }
+    }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    setupTableView()
+    loadTeamIfNeeded()
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if indexPath.section == 0 {
+      teamNameTextField.becomeFirstResponder()
+    } else if indexPath.section == 1 {
+      let MonstersVC = storyboard?.instantiateViewController(withIdentifier: "MonstersVC") as! MonstersViewController
+      MonstersVC.isTeamBuilding = true
+      MonstersVC.coreDataStack = coreDataStack
+      navigationController?.pushViewController(MonstersVC, animated: true)
+    }
+    enableEditingModeIfNeeded()
+  }
+  
+  func setupTableView() {
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 88
+  }
+  
+  func loadTeamIfNeeded() {
+    if userIsViewingTeamDetail {
+      guard let selectedTeam = selectedTeam else {
+        print("Team is nil, could not load contents")
+        return
+      }
+      teamNameTextField.text = selectedTeam.name
+      guard let teamMonsters = selectedTeam.monsterInstances else {
+        print("The selected team has a monsters property that is nil")
+        return
+      }
+      let monsterCells = [firstMonsterCell, secondMonsterCell, thirdMonsterCell, fourthMonsterCell, fifthMonsterCell, sixthMonsterCell]
+      
+      for (index, cell) in monsterCells.enumerated() {
+        let teamArray = Array(teamMonsters)
+        let sortedTeamArray = teamArray.sorted(by: { (monsterA, monsterB) -> Bool in
+          monsterA.positionID < monsterB.positionID
+        })
         
-				switch index {
-				case 0:
-					firstMonster = sortedTeamArray[index]
-				case 1:
-					secondMonster = sortedTeamArray[index]
-				case 2:
-					thirdMonster = sortedTeamArray[index]
-				case 3:
-					fourthMonster = sortedTeamArray[index]
-				case 4:
-					fifthMonster = sortedTeamArray[index]
-				case 5:
-					sixthMonster = sortedTeamArray[index]
-				default:
-					continue
-				}
-				
-				let monster = sortedTeamArray[index]
-				cell?.nameLabel.text = monster.name
-				cell?.descriptionLabel.text = monster.genus
-				let imageName = monster.spriteImageName
-				cell?.spriteImageView.image = UIImage(named: imageName)
-			}
-		}
-	}
-	
-	func enableEditingModeIfNeeded() {
-		if !isEditingMode && userIsViewingTeamDetail {
-			isEditingMode = true
-		}
-	}
-	
-	enum monsterCellNumber: Int {
-		case firstCell = 0, secondCell, thirdCell, fourthCell, fifthCell, sixthCell
-	}
+        switch index {
+        case 0:
+          firstMonster = sortedTeamArray[index]
+        case 1:
+          secondMonster = sortedTeamArray[index]
+        case 2:
+          thirdMonster = sortedTeamArray[index]
+        case 3:
+          fourthMonster = sortedTeamArray[index]
+        case 4:
+          fifthMonster = sortedTeamArray[index]
+        case 5:
+          sixthMonster = sortedTeamArray[index]
+        default:
+          continue
+        }
+        
+        let monster = sortedTeamArray[index]
+        cell?.nameLabel.text = monster.name
+        cell?.descriptionLabel.text = monster.genus
+        let imageName = monster.spriteImageName
+        cell?.spriteImageView.image = UIImage(named: imageName)
+      }
+    }
+  }
+  
+  func enableEditingModeIfNeeded() {
+    if !isEditingMode && userIsViewingTeamDetail {
+      isEditingMode = true
+    }
+  }
+  
+  enum monsterCellNumber: Int {
+    case firstCell = 0, secondCell, thirdCell, fourthCell, fifthCell, sixthCell
+  }
 }
 
 // MARK: Textfield Methods
 extension TeamBuilderTableViewController: UITextFieldDelegate {
-	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		return true
-	}
-	
-	func textFieldDidBeginEditing(_ textField: UITextField) {
-		enableEditingModeIfNeeded()
-	}
-
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    return true
+  }
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    enableEditingModeIfNeeded()
+  }
+  
   // If Edit/Done Button Pressed
   @IBAction func rightBarButtonPressed() {
     if !isEditingMode {

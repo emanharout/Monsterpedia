@@ -9,9 +9,9 @@
 import UIKit
 
 class MonsterSpriteCell: UITableViewCell {
-	
-	@IBOutlet weak var spriteImageView: UIImageView!
-	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var descriptionLabel: UILabel!
-	
+  
+  @IBOutlet weak var spriteImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  
 }

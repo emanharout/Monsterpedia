@@ -14,9 +14,9 @@ class DexSelectionViewController: UIViewController {
   var delegate: DexSelectionViewControllerDelegate?
   
   override func viewDidLoad() {
-      super.viewDidLoad()
+    super.viewDidLoad()
   }
-
+  
   @IBAction func selectDex(_ sender: UIButton) {
     switch sender.tag {
     case 0:

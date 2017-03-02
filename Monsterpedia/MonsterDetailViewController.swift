@@ -9,57 +9,57 @@
 import UIKit
 
 class MonsterDetailViewController: UIViewController {
-	
-	@IBOutlet weak var navItem: UINavigationItem!
+  
+  @IBOutlet weak var navItem: UINavigationItem!
   @IBOutlet weak var dexContainerView: UIView!
-	@IBOutlet weak var monsterImageView: UIImageView!
-	@IBOutlet weak var monsterNameLabel: UILabel!
-	@IBOutlet weak var heightLabel: UILabel!
-	@IBOutlet weak var weightLabel: UILabel!
-	@IBOutlet weak var typeLabel: UILabel!
-	@IBOutlet weak var pediaEntry: UILabel!
-	@IBOutlet weak var initialLoadActivityIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var monsterImageView: UIImageView!
+  @IBOutlet weak var monsterNameLabel: UILabel!
+  @IBOutlet weak var heightLabel: UILabel!
+  @IBOutlet weak var weightLabel: UILabel!
+  @IBOutlet weak var typeLabel: UILabel!
+  @IBOutlet weak var pediaEntry: UILabel!
+  @IBOutlet weak var initialLoadActivityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var pediaEntryActivityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var monsterImageViewHeightConstraint: NSLayoutConstraint!
   
-	let pokeClient = PokeAPIClient.sharedInstance
-	var selectedMonster: Monster!
-
+  let pokeClient = PokeAPIClient.sharedInstance
+  var selectedMonster: Monster!
+  
   override func viewDidLoad() {
-      super.viewDidLoad()
-
+    super.viewDidLoad()
+    
     navItem.title = selectedMonster.name
     pediaEntryActivityIndicator.stopAnimating()
     loadMonsterData(selectedMonster: selectedMonster)
   }
-	
-	func loadMonsterData(selectedMonster: Monster) {
-		initialLoadActivityIndicator.startAnimating()
-		
-		let group = DispatchGroup()
-		var monsterHeight = Int()
-		var monsterWeight = Int()
-		var monsterTypes = [String]()
-		var monsterFlavorText = String()
-		
-		group.enter()
+  
+  func loadMonsterData(selectedMonster: Monster) {
+    initialLoadActivityIndicator.startAnimating()
+    
+    let group = DispatchGroup()
+    var monsterHeight = Int()
+    var monsterWeight = Int()
+    var monsterTypes = [String]()
+    var monsterFlavorText = String()
+    
+    group.enter()
     pokeClient.getMonsterHeaderJSON(for: selectedMonster) { (result, error) in
-			guard error == nil else {
+      guard error == nil else {
         self.createAndPresentErrorAlert(with: error!.localizedDescription)
         group.leave()
         return
-			}
+      }
       let monsterHeaderInfo = self.parse(monsterHeaderJSON: result)
       if let height = monsterHeaderInfo.height, let weight = monsterHeaderInfo.weight, let types = monsterHeaderInfo.types {
         monsterHeight = height
         monsterWeight = weight
         monsterTypes = types
       }
-			group.leave()
-		}
-		
-		group.enter()
-		pokeClient.getFlavorTextJSON(for: selectedMonster, dex: .kanto) { (result, error) in
+      group.leave()
+    }
+    
+    group.enter()
+    pokeClient.getFlavorTextJSON(for: selectedMonster, dex: .kanto) { (result, error) in
       guard error == nil else {
         self.createAndPresentErrorAlert(with: error!.localizedDescription)
         group.leave()
@@ -71,12 +71,12 @@ class MonsterDetailViewController: UIViewController {
         monsterFlavorText = flavorText
       }
       group.leave()
-		}
-		
-		group.notify(queue: .main) {
+    }
+    
+    group.notify(queue: .main) {
       self.displayUIWithRetrievedValues(monsterHeight, monsterWeight, monsterTypes, monsterFlavorText)
-		}
-	}
+    }
+  }
   
   func parse(monsterHeaderJSON: AnyObject?) -> (height: Int?, weight: Int?, types: [String]?)  {
     guard let monsterHeaderJSON = monsterHeaderJSON as? [String: AnyObject] else {
@@ -151,7 +151,7 @@ class MonsterDetailViewController: UIViewController {
     
     self.initialLoadActivityIndicator.stopAnimating()
   }
-
+  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "embedDexSelectionViewController" {
@@ -162,7 +162,7 @@ class MonsterDetailViewController: UIViewController {
       dexSelectionViewController.delegate = self
     }
   }
-
+  
   func createAndPresentErrorAlert(with message: String) {
     let mainQueue = DispatchQueue.main
     mainQueue.async {

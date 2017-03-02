@@ -9,19 +9,19 @@
 import UIKit
 
 class CollectionHeaderView: UICollectionReusableView {
-	
-	@IBOutlet weak var segmentedControl: UISegmentedControl!
-	
-	@IBAction func segmentSelected (_ sender: AnyObject) {
-		delegate?.didSelectSegment(self, selectedSegmentIndex: segmentedControl.selectedSegmentIndex)
-	}
-	
-	var delegate: CollectionHeaderViewDelegate?
-	
+  
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
+  
+  @IBAction func segmentSelected (_ sender: AnyObject) {
+    delegate?.didSelectSegment(self, selectedSegmentIndex: segmentedControl.selectedSegmentIndex)
+  }
+  
+  var delegate: CollectionHeaderViewDelegate?
+  
 }
 
 protocol CollectionHeaderViewDelegate {
-	func didSelectSegment(_ sender: CollectionHeaderView, selectedSegmentIndex: Int)
+  func didSelectSegment(_ sender: CollectionHeaderView, selectedSegmentIndex: Int)
 }
 
 
