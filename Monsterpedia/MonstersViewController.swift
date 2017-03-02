@@ -108,4 +108,8 @@ extension MonstersViewController: UITableViewDelegate, UITableViewDataSource {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 88
   }
+  
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    searchBar.resignFirstResponder()
+  }
 }
