@@ -33,7 +33,7 @@ class UIDexButton: UIButton {
   func setupLayer() {
     layer.cornerRadius = 10
     
-    layer.shadowColor = UIColor.black.cgColor
+    layer.shadowColor = UIColor.darkGray.cgColor
     layer.shadowOffset = CGSize.zero
     layer.shadowOpacity = 0.5
     layer.shadowRadius = 2.0
