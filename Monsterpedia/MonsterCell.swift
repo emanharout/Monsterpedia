@@ -12,5 +12,7 @@ class MonsterCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var pokeBallImageView: UIImageView!
+  
   
 }

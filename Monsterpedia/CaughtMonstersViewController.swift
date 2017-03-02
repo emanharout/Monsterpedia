@@ -53,8 +53,10 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
     
     if monster.isCaught {
       cell.alpha = 1.0
+      cell.pokeBallImageView.alpha = 1.0
     } else {
       cell.alpha = 0.40
+      cell.pokeBallImageView.alpha = 0
     }
     
     return cell
@@ -64,12 +66,16 @@ extension CaughtMonstersViewController: UICollectionViewDelegate, UICollectionVi
     let cell = collectionView.cellForItem(at: indexPath) as! MonsterCell
     let monster = monsters[(indexPath as NSIndexPath).row]
     
-    if monster.isCaught {
-      cell.alpha = 0.4
-      monster.isCaught = false
-    } else {
-      cell.alpha = 1.0
-      monster.isCaught = true
+    UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+      if monster.isCaught {
+        cell.alpha = 0.4
+        cell.pokeBallImageView.alpha = 0
+      } else {
+        cell.alpha = 1.0
+        cell.pokeBallImageView.alpha = 1.0
+      }
+    }) { (completed) in
+      monster.isCaught = !monster.isCaught
     }
   }
   
