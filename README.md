@@ -1,7 +1,9 @@
 # Monsterpedia
 Learn about your favorite Pokémon while building the perfect team!
 
-##Installation
+![Monsterpedia](Readme_Assets/Monsterpedia_Gallery.png?raw=true "Monsterpedia Gallery")
+
+## Installation
 
 1. Download the repository
 2. Open the Xcode project file 
