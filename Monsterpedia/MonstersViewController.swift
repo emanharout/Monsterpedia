@@ -15,7 +15,7 @@ class MonstersViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   
   var coreDataStack: CoreDataStack!
-  var fetchRequest: NSFetchRequest<Monster>!
+  var fetchRequest = Monster.fetchRequest() as NSFetchRequest<Monster>
   var monsters = [Monster]()
   var filteredMonsters = [Monster]()
   
@@ -25,9 +25,8 @@ class MonstersViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    fetchRequest = NSFetchRequest(entityName: "Monster")
-    let sortDesc = NSSortDescriptor(key: "id", ascending: true)
+		
+		let sortDesc = NSSortDescriptor(keyPath: \Monster.id, ascending: true)
     fetchRequest.sortDescriptors = [sortDesc]
     do {
       monsters = try coreDataStack.context.fetch(fetchRequest)

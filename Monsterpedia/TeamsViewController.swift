@@ -14,15 +14,14 @@ class TeamsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   
   var coreDataStack: CoreDataStack!
-  var fetchRequest: NSFetchRequest<Team>!
+  var fetchRequest = Team.fetchRequest() as NSFetchRequest<Team>
   var frc: NSFetchedResultsController<Team>!
   var selectedIndexPath: IndexPath!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    fetchRequest = NSFetchRequest(entityName: "Team")
-    let sortDesc = NSSortDescriptor(key: "name", ascending: true)
+		
+		let sortDesc = NSSortDescriptor(keyPath: \Team.name, ascending: true)
     fetchRequest.sortDescriptors = [sortDesc]
     frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
     frc.delegate = self

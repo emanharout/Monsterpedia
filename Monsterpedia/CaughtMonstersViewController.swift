@@ -16,7 +16,7 @@ class CaughtMonstersViewController: UIViewController {
   @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
   
   var coreDataStack: CoreDataStack!
-  var fetchRequest: NSFetchRequest<Monster>!
+  var fetchRequest = Monster.fetchRequest() as NSFetchRequest<Monster>
   var monsters = [Monster]()
   
   
@@ -25,8 +25,7 @@ class CaughtMonstersViewController: UIViewController {
     
     setupViews()
     
-    fetchRequest = NSFetchRequest(entityName: "Monster")
-    let sortDesc = NSSortDescriptor(key: "id", ascending: true)
+    let sortDesc = NSSortDescriptor(keyPath: \Monster.id, ascending: true)
     fetchRequest.sortDescriptors = [sortDesc]
     do {
       monsters = try coreDataStack.context.fetch(fetchRequest)
