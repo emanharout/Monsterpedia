@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Monster" representedClassName=".Monster" syncable="YES">
         <attribute name="genus" attributeType="String" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image2DName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="spriteImageName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="moves" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Move" inverseName="monster" inverseEntity="Move" syncable="YES"/>
         <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="monster" inverseEntity="Type" syncable="YES"/>
+        <fetchIndex name="byIdIndex">
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byIsCaughtIndex">
+            <fetchIndexElement property="isCaught" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byNameIndex">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="MonsterInstance" representedClassName=".MonsterInstance" syncable="YES">
         <attribute name="genus" attributeType="String" syncable="YES"/>
-        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="image2DName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" indexed="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isCaught" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="positionID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="spriteImageName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="monsterInstances" inverseEntity="Team" syncable="YES"/>
+        <fetchIndex name="byIdIndex">
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byIsCaughtIndex">
+            <fetchIndexElement property="isCaught" type="Binary" order="ascending"/>
+        </fetchIndex>
+        <fetchIndex name="byNameIndex">
+            <fetchIndexElement property="name" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="Move" representedClassName=".Move" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>

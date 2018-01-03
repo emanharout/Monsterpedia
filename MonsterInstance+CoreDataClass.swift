@@ -2,17 +2,17 @@
 //  MonsterInstance+CoreDataClass.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 9/17/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
-//  This file was automatically generated and should not be edited.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
+//
 //
 
 import Foundation
 import CoreData
 
 
-class MonsterInstance: NSManagedObject {
-	
+public class MonsterInstance: NSManagedObject {
+
 	convenience init(name: String, id: Int16, genus: String, image2DName: String, spriteImageName: String, context: NSManagedObjectContext){
 		if let monsterEntity = NSEntityDescription.entity(forEntityName: "MonsterInstance", in: context) {
 			self.init(entity: monsterEntity, insertInto: context)
@@ -40,4 +40,5 @@ class MonsterInstance: NSManagedObject {
 			fatalError("Could not initialize Monster Managed Object")
 		}
 	}
+	
 }

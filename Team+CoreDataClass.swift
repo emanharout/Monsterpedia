@@ -1,16 +1,17 @@
 //
-//  Team.swift
+//  Team+CoreDataClass.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 8/27/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
+//
 //
 
 import Foundation
 import CoreData
 
 
-class Team: NSManagedObject {
+public class Team: NSManagedObject {
 	
 	convenience init(teamName: String, monsters: Set<MonsterInstance>, context: NSManagedObjectContext) {
 		if let entityDesc = NSEntityDescription.entity(forEntityName: "Team", in: context) {
@@ -21,5 +22,5 @@ class Team: NSManagedObject {
 			fatalError("Failed to create Team managed object")
 		}
 	}
-	
+
 }

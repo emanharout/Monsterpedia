@@ -1,19 +1,20 @@
 //
-//  Move.swift
+//  Type+CoreDataClass.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 8/27/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
+//
 //
 
 import Foundation
 import CoreData
 
 
-class Move: NSManagedObject {
-
+public class Type: NSManagedObject {
+	
 	convenience init(name: String, context: NSManagedObjectContext){
-		if let monsterEntity = NSEntityDescription.entity(forEntityName: "Move", in: context) {
+		if let monsterEntity = NSEntityDescription.entity(forEntityName: "Type", in: context) {
 			self.init(entity: monsterEntity, insertInto: context)
 			self.name = name
 		} else {

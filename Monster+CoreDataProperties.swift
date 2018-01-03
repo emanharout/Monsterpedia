@@ -2,24 +2,62 @@
 //  Monster+CoreDataProperties.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 8/27/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
 import Foundation
 import CoreData
 
-extension Monster {
 
-    @NSManaged var name: String
-    @NSManaged var id: Int16
-    @NSManaged var genus: String
-    @NSManaged var isCaught: Bool
-    @NSManaged var image2DName: String
-    @NSManaged var spriteImageName: String
-    @NSManaged var moves: NSSet?
-    @NSManaged var types: NSSet?
+extension Monster {
+	
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<Monster> {
+		return NSFetchRequest<Monster>(entityName: "Monster")
+	}
+	
+	@NSManaged public var name: String
+	@NSManaged public var id: Int16
+	@NSManaged public var genus: String
+	@NSManaged public var isCaught: Bool
+	@NSManaged public var image2DName: String
+	@NSManaged public var spriteImageName: String
+	@NSManaged public var moves: NSSet?
+	@NSManaged public var types: NSSet?
+	
+}
+
+// MARK: Generated accessors for moves
+extension Monster {
+	
+	@objc(addMovesObject:)
+	@NSManaged func addToMoves(_ value: Move)
+	
+	@objc(removeMovesObject:)
+	@NSManaged func removeFromMoves(_ value: Move)
+	
+	@objc(addMoves:)
+	@NSManaged func addToMoves(_ values: NSSet)
+	
+	@objc(removeMoves:)
+	@NSManaged func removeFromMoves(_ values: NSSet)
+	
+}
+
+// MARK: Generated accessors for types
+extension Monster {
+	
+	@objc(addTypesObject:)
+	@NSManaged func addToTypes(_ value: Type)
+	
+	@objc(removeTypesObject:)
+	@NSManaged func removeFromTypes(_ value: Type)
+	
+	@objc(addTypes:)
+	@NSManaged func addToTypes(_ values: NSSet)
+	
+	@objc(removeTypes:)
+	@NSManaged func removeFromTypes(_ values: NSSet)
+	
 }

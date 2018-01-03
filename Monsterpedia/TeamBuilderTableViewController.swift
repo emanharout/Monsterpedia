@@ -89,7 +89,7 @@ class TeamBuilderTableViewController: UITableViewController {
       for (index, cell) in monsterCells.enumerated() {
         let teamArray = Array(teamMonsters)
         let sortedTeamArray = teamArray.sorted(by: { (monsterA, monsterB) -> Bool in
-          monsterA.positionID < monsterB.positionID
+          Int16(monsterA.positionID) < Int16(monsterB.positionID)
         })
         
         switch index {

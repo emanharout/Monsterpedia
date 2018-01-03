@@ -2,58 +2,39 @@
 //  Team+CoreDataProperties.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 9/17/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
+//
 //
 
 import Foundation
 import CoreData
 
+
 extension Team {
-	
-	@NSManaged var name: String?
-	@NSManaged var monsterInstances: Set<MonsterInstance>?
-	
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<Team> {
-		return NSFetchRequest<Team>(entityName: "Team");
-	}
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Team> {
+        return NSFetchRequest<Team>(entityName: "Team")
+    }
+
+    @NSManaged public var name: String?
+    @NSManaged public var monsterInstances: Set<MonsterInstance>?
+
 }
 
+// MARK: Generated accessors for monsterInstances
+extension Team {
 
+    @objc(addMonsterInstancesObject:)
+    @NSManaged public func addToMonsterInstances(_ value: MonsterInstance)
 
+    @objc(removeMonsterInstancesObject:)
+    @NSManaged public func removeFromMonsterInstances(_ value: MonsterInstance)
 
+    @objc(addMonsterInstances:)
+    @NSManaged public func addToMonsterInstances(_ values: NSSet)
 
-// MARK: Generated accessors for monsters
-//extension Team {
-//	
-//	@objc(insertObject:inMonstersAtIndex:)
-//	@NSManaged public func insertIntoMonsters(_ value: MonsterInstance, at idx: Int)
-//	
-//	@objc(removeObjectFromMonstersAtIndex:)
-//	@NSManaged public func removeFromMonsters(at idx: Int)
-//	
-//	@objc(insertMonsters:atIndexes:)
-//	@NSManaged public func insertIntoMonsters(_ values: [MonsterInstance], at indexes: NSIndexSet)
-//	
-//	@objc(removeMonstersAtIndexes:)
-//	@NSManaged public func removeFromMonsters(at indexes: NSIndexSet)
-//	
-//	@objc(replaceObjectInMonstersAtIndex:withObject:)
-//	@NSManaged public func replaceMonsters(at idx: Int, with value: MonsterInstance)
-//	
-//	@objc(replaceMonstersAtIndexes:withMonsters:)
-//	@NSManaged public func replaceMonsters(at indexes: NSIndexSet, with values: [MonsterInstance])
-//	
-//	@objc(addMonstersObject:)
-//	@NSManaged public func addToMonsters(_ value: MonsterInstance)
-//	
-//	@objc(removeMonstersObject:)
-//	@NSManaged public func removeFromMonsters(_ value: MonsterInstance)
-//	
-//	@objc(addMonsters:)
-//	@NSManaged public func addToMonsters(_ values: NSOrderedSet)
-//	
-//	@objc(removeMonsters:)
-//	@NSManaged public func removeFromMonsters(_ values: NSOrderedSet)
-//	
-//}
+    @objc(removeMonsterInstances:)
+    @NSManaged public func removeFromMonsterInstances(_ values: NSSet)
+
+}

@@ -2,20 +2,23 @@
 //  Type+CoreDataProperties.swift
 //  Monsterpedia
 //
-//  Created by Emmanuoel Eldridge on 8/27/16.
-//  Copyright © 2016 Emmanuoel Haroutunian. All rights reserved.
+//  Created by Emmanuoel Haroutunian on 1/2/18.
+//  Copyright © 2018 Emmanuoel Haroutunian. All rights reserved.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
 import Foundation
 import CoreData
 
+
 extension Type {
 
-    @NSManaged var name: String
-    @NSManaged var monster: Monster?
-    @NSManaged var move: Move?
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Type> {
+        return NSFetchRequest<Type>(entityName: "Type")
+    }
+
+    @NSManaged public var name: String
+    @NSManaged public var monster: Monster?
+    @NSManaged public var move: Move?
 
 }
